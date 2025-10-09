@@ -1,0 +1,165 @@
+"use client"
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { LanguageSwitcher } from "./language-switcher"
+import { ThemeToggle } from "./theme-toggle"
+import { MegaMenu } from "./mega-menu"
+import { useI18n } from "./providers"
+import { Menu } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+
+export function SiteHeader() {
+  const { t } = useI18n()
+  const [industriesOpen, setIndustriesOpen] = useState(false)
+
+  return (
+    <>
+      <header className={cn("sticky top-0 z-50 w-full")}>
+        <div className="glass backdrop-blur-md">
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+            {/* Mobile minimal header */}
+            <div className="flex flex-1 items-center gap-3 md:hidden">
+              <a href="/" className="font-serif text-xl font-bold tracking-tight">
+                konneckin
+              </a>
+            </div>
+            <div className="hidden flex-1 items-center md:flex">
+              <a href="/" className="font-serif text-xl font-bold tracking-tight">
+                konneckin
+              </a>
+            </div>
+
+            {/* Centered nav (desktop) */}
+            <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block">
+              <ul className="flex items-center gap-6 text-sm">
+                <li>
+                  <a href="/services" className="hover:underline">
+                    {t("services")}
+                  </a>
+                </li>
+                <li
+                  className="relative group"
+                  onMouseEnter={() => setIndustriesOpen(true)}
+                  onMouseLeave={() => setIndustriesOpen(false)}
+                >
+                  <a href="/industries" className="hover:underline">
+                    {t("industries")}
+                  </a>
+                </li>
+                <li>
+                  <a href="/insights" className="hover:underline">
+                    {t("insights")}
+                  </a>
+                </li>
+                <li>
+                  <a href="/careers" className="hover:underline">
+                    {t("careers")}
+                  </a>
+                </li>
+                <li>
+                  <a href="/about" className="hover:underline">
+                    {t("about")}
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            {/* Right controls */}
+            <div className="flex flex-1 items-center justify-end gap-2">
+              <div className="hidden md:block">
+                <LanguageSwitcher />
+              </div>
+              <ThemeToggle />
+              <a href="/contact" className="hidden md:inline-flex">
+                <Button variant="default">{t("contact")}</Button>
+              </a>
+
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button className="md:hidden" variant="ghost" aria-label="Open menu">
+                    <Menu className="size-5" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-full max-w-sm">
+                  <div className="p-4">
+                    <div className="font-serif text-lg font-semibold">konneckin</div>
+                    <div className="mt-2 text-sm text-muted-foreground">
+                      {t("insights")}: Strategy, Digital, Sustainability
+                    </div>
+                  </div>
+
+                  <nav className="px-4">
+                    <div className="mb-3 text-xs font-medium uppercase text-muted-foreground">Main</div>
+                    <ul className="space-y-2">
+                      <li>
+                        <a href="/" className="block rounded-sm px-2 py-2 hover:bg-muted">
+                          {t("home")}
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/services" className="block rounded-sm px-2 py-2 hover:bg-muted">
+                          {t("services")}
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/industries" className="block rounded-sm px-2 py-2 hover:bg-muted">
+                          {t("industries")}
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/insights" className="block rounded-sm px-2 py-2 hover:bg-muted">
+                          {t("insights")}
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/careers" className="block rounded-sm px-2 py-2 hover:bg-muted">
+                          {t("careers")}
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/about" className="block rounded-sm px-2 py-2 hover:bg-muted">
+                          {t("about")}
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/contact" className="block rounded-sm px-2 py-2 hover:bg-muted">
+                          {t("contact")}
+                        </a>
+                      </li>
+                    </ul>
+
+                    <div className="mt-6 mb-3 text-xs font-medium uppercase text-muted-foreground">Legal</div>
+                    <ul className="space-y-2">
+                      <li>
+                        <a href="/privacy-policy" className="block rounded-sm px-2 py-2 hover:bg-muted">
+                          Privacy Policy
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/terms" className="block rounded-sm px-2 py-2 hover:bg-muted">
+                          Terms of Use
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+
+                  <div className="mt-auto px-4 py-4">
+                    <div className="flex items-center justify-between">
+                      <LanguageSwitcher />
+                      <a href="/contact">
+                        <Button size="sm">{t("contact")}</Button>
+                      </a>
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+          </div>
+          {/* Mega menu (desktop hover) */}
+          <MegaMenu open={industriesOpen} />
+        </div>
+      </header>
+    </>
+  )
+}

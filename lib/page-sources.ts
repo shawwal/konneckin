@@ -1,0 +1,16 @@
+export const pageSources: Record<string, string> = {
+  "business-expansion": "http://konneckin.com/business-expansion/",
+  "company-registration": "http://konneckin.com/company-registration/",
+  "market-research": "http://konneckin.com/market-research/",
+  "business-matchmaking": "http://konneckin.com/business-matchmaking/",
+  "post-establishment": "http://konneckin.com/post-establishment/",
+  "tax-accounting-solutions": "http://konneckin.com/tax-accounting-solutions/",
+  "recruitment-service": "http://konneckin.com/recruitment-service/",
+  "product-certification-regulatory-compliance": "http://konneckin.com/product-certification-regulatory-compliance/",
+  "company-regulation": "http://konneckin.com/company-regulation/",
+  licensing: "http://konneckin.com/licensing/",
+  "expatriate-support": "http://konneckin.com/expatriate-support/",
+  "importer-of-record": "http://konneckin.com/importer-of-record/",
+  "news-insight": "http://konneckin.com/news-insight/",
+  "industry-coverage": "http://konneckin.com/industry-coverage/",
+}
