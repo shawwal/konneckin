@@ -19,29 +19,28 @@ export function SiteHeader() {
       <header className={cn("sticky top-0 z-50 w-full")}>
         <div className="glass backdrop-blur-md">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-            {/* START: === LOGO FIX === */}
-            {/* This single block handles both mobile and desktop, and light/dark modes */}
             <div className="flex flex-1 items-center">
               <a href="/">
                 {/* Light Mode Logo */}
                 <Image
                   src="/konneckin-logo.png"
                   alt="Konneckin Logo"
-                  width={32}
-                  height={32}
-                  className="h-8 w-auto block dark:hidden"
+                  width={721}  // <-- The image file's actual width
+                  height={111} // <-- The image file's actual height
+                  className="h-8 w-auto block dark:hidden" // Scales it down for display
+                  priority
                 />
                 {/* Dark Mode Logo */}
                 <Image
                   src="/konneckin-logo-white.png"
                   alt="Konneckin Logo"
-                  width={32}
-                  height={32}
-                  className="h-8 w-auto hidden dark:block"
+                  width={721}  // <-- The image file's actual width
+                  height={111} // <-- The image file's actual height
+                  className="h-8 w-auto hidden dark:block" // Scales it down for display
+                  priority
                 />
               </a>
             </div>
-            {/* END: === LOGO FIX === */}
 
             {/* Centered nav (desktop) */}
             <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block">
