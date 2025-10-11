@@ -4,22 +4,26 @@ const items = [
   {
     tag: "Business Expansion",
     title: "Market Research",
-    img: "/placeholder.jpg",
+    description: "Understand consumer behavior, competition, and regulatory trends before entering the Indonesian market.",
+    img: "/assets/image-fx-15.webp",
   },
   {
     tag: "Post-establishment",
     title: "Recruitment service",
-    img: "/placeholder.jpg",
+    description: "Attract and hire qualified talent to support your business growth with our efficient recruitment solutions.",
+    img: "/assets/image-fx-4.webp",
   },
   {
-    tag: "Corporate Support",
+    tag: "Expatriate Support",
     title: "KITAP & work permit",
-    img: "/placeholder.jpg",
+    description: "If you’ve held a KITAS for several consecutive years or are married to an Indonesian national, you may qualify for a KITAP (Permanent Stay Permit).",
+    img: "/assets/image-fx-17.webp",
   },
   {
     tag: "Importer of Record",
     title: "IOR Services in Indonesia",
-    img: "/placeholder.jpg",
+    description: "Ensure full customs compliance and import clearance in Indonesia—without establishing a local legal entity.",
+    img: "/assets/image-fx-78.webp",
   },
 ]
 
@@ -27,7 +31,7 @@ export function ServicesGlassGrid() {
   return (
     <section className="bg-muted/30 py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="text-center font-serif text-2xl md:text-3xl">
+        <h2 className="text-center font-serif text-2xl md:text-4xl">
           {"Everything you need to launch & grow in Indonesia"}
         </h2>
         <div className="mt-8 grid gap-4 md:grid-cols-4">
@@ -43,6 +47,7 @@ export function ServicesGlassGrid() {
                 <Badge className="glass mb-2">{it.tag}</Badge>
                 <div className="glass rounded-xl p-4">
                   <h3 className="text-sm font-semibold md:text-base">{it.title}</h3>
+                  <p  className="text-sm md:text-base">{it.description}</p>
                 </div>
               </div>
             </article>
