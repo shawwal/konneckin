@@ -18,6 +18,8 @@ const dictionaries: Record<Locale, Dict> = {
   en: {
     headline: "Shaping the Future, Together.",
     subheadline: "We partner with leaders to unlock transformative growth.",
+    videoHeadline: "Your business in Indonesia — Launched with clarity, grown with confidence",
+    videoSubheadline: "Set up your foreign-owned company, secure investor or working permit, and stay compliant — with Konneckin as your trusted local partner from day one.",
     cta_discover: "Discover Our Impact",
     latest_thinking: "Latest Thinking.",
     services: "What We Do",
@@ -33,6 +35,8 @@ const dictionaries: Record<Locale, Dict> = {
   fr: {
     headline: "Façonner l’avenir, ensemble.",
     subheadline: "Nous collaborons avec des dirigeants pour libérer une croissance transformatrice.",
+    videoHeadline: "Votre entreprise en Indonésie — Lancée avec clarté, développée en toute confiance.",
+    videoSubheadline: "Créez votre société à capitaux étrangers, obtenez un permis d'investisseur ou de travail, et restez en conformité — avec Konneckin comme partenaire local de confiance dès le premier jour.",
     cta_discover: "Découvrir notre impact",
     latest_thinking: "Dernières réflexions.",
     services: "Nos services",
@@ -48,6 +52,8 @@ const dictionaries: Record<Locale, Dict> = {
   id: {
     headline: "Membangun masa depan — bersama.",
     subheadline: "Kami bermitra dengan para pemimpin untuk membuka pertumbuhan yang transformatif.",
+    videoHeadline: "Bisnis Anda di Indonesia — Dimulai dengan pasti, berkembang dengan percaya diri.",
+    videoSubheadline: "Dirikan perusahaan penanaman modal asing Anda, amankan izin investor atau kerja, dan tetap patuh pada peraturan — bersama Konneckin sebagai mitra lokal terpercaya Anda sejak hari pertama.",
     cta_discover: "Jelajahi Dampak Kami",
     latest_thinking: "Wawasan Terbaru.",
     services: "Layanan",
