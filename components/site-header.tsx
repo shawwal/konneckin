@@ -10,9 +10,9 @@ import { cn } from "@/lib/utils"
 import {
   Sheet,
   SheetContent,
-  SheetDescription, // 1. Import SheetDescription
-  SheetHeader,      // 2. Import SheetHeader
-  SheetTitle,       // 3. Import SheetTitle
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import Image from "next/image"
@@ -101,7 +101,6 @@ export function SiteHeader() {
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="left" className="w-full max-w-sm glass backdrop-blur-md">
-                  {/* FIX: Add a visually hidden header for accessibility */}
                   <SheetHeader className="sr-only">
                     <SheetTitle>Menu</SheetTitle>
                     <SheetDescription>Main navigation menu for the website.</SheetDescription>
@@ -181,9 +180,9 @@ export function SiteHeader() {
               </Sheet>
             </div>
           </div>
-          {/* Mega menu (desktop hover) */}
-          <MegaMenu open={industriesOpen} />
         </div>
+        {/* Mega menu moved outside glass container */}
+        <MegaMenu open={industriesOpen} />
       </header>
     </>
   )

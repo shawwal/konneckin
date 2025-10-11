@@ -22,7 +22,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   // Set the base URL for resolving images and other assets
-  metadataBase: new URL('https://www.konneckin.com'), // <-- IMPORTANT: REPLACE WITH YOUR DOMAIN
+  metadataBase: new URL('https://konneckin.shawwals.com'), // <-- IMPORTANT: REPLACE WITH YOUR DOMAIN
 
   // Title & Description
   title: {
