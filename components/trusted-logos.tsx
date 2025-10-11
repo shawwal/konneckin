@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react';
+import { useI18n } from './providers';
 
 // Keyframes for a continuous scrolling animation.
 const slideKeyframes = `
@@ -16,6 +17,7 @@ const slideKeyframes = `
 
 export function TrustedLogos({ isAnimationEnabled = true }) {
   // Simplified the logos array - no theme-specific properties needed anymore.
+  const { t } = useI18n()
   const logos = [
     { src: "/client-logo/google.png", alt: "Google Logo" },
     { src: "/client-logo/shopee.png", alt: "Shopee Logo" },
@@ -35,7 +37,7 @@ export function TrustedLogos({ isAnimationEnabled = true }) {
       <style>{slideKeyframes}</style>
       
       <div className="mx-auto text-center w-fit rounded-full border bg-neutral-100 px-4 py-2 text-sm text-neutral-700 shadow-sm dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300">
-        {"Trusted by leading companies around the world"}
+        {t("trustedBy")}
       </div>
 
       {/* --- EDITED SECTION --- */}

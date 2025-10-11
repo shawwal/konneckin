@@ -14,6 +14,7 @@ export function useTheme() {
 // Simple dictionaries; extendable
 type Locale = "en" | "fr" | "id"
 type Dict = Record<string, string>
+
 const dictionaries: Record<Locale, Dict> = {
   en: {
     headline: "Shaping the Future, Together.",
@@ -26,6 +27,10 @@ const dictionaries: Record<Locale, Dict> = {
     client_impact: "Client Impact",
     getInTouch: "Get in Touch",
     seeHowWeWork: "See How We Work",
+    trustedBy: "Trusted by leading companies around the world",
+    businessExpansion: "Business expansion to Indonesia: Opportunities and challenges",
+    indonesiaRapidGrowth: "Indonesia’s rapidly growing market, supported by an expanding middle class and a young, educated workforce, offers immense opportunities for international businesses. Navigating regulations and compliance, however, can be complex.",
+    everythingYouNeed: "Everything you need to launch & grow in Indonesia",
     contact: "Contact Us",
     insights: "Insights",
     industries: "Industries",
@@ -35,7 +40,7 @@ const dictionaries: Record<Locale, Dict> = {
     learn_more: "Learn more",
   },
   fr: {
-    headline: "Façonner l’avenir, ensemble.",
+    headline: "Façonner l'avenir, ensemble.",
     subheadline: "Nous collaborons avec des dirigeants pour libérer une croissance transformatrice.",
     videoHeadline: "Votre entreprise en Indonésie — Lancée avec clarté, développée en toute confiance.",
     videoSubheadline: "Créez votre société à capitaux étrangers, obtenez un permis d'investisseur ou de travail, et restez en conformité — avec Konneckin comme partenaire local de confiance dès le premier jour.",
@@ -43,8 +48,12 @@ const dictionaries: Record<Locale, Dict> = {
     latest_thinking: "Dernières réflexions.",
     services: "Nos services",
     client_impact: "Impact client",
-    getInTouch: "Prendre contact",
-    seeHowWeWork: "Découvrez notre méthode",
+    getInTouch: "Contactez-nous",
+    seeHowWeWork: "Découvrez comment nous travaillons",
+    trustedBy: "Reconnu par les entreprises leaders à travers le monde",
+    businessExpansion: "Expansion commerciale en Indonésie : Opportunités et défis",
+    indonesiaRapidGrowth: "Le marché indonésien en croissance rapide, soutenu par une classe moyenne en expansion et une main-d'œuvre jeune et qualifiée, offre d'immenses opportunités pour les entreprises internationales. Naviguer dans les réglementations et la conformité peut cependant s'avérer complexe.",
+    everythingYouNeed: "Tout ce dont vous avez besoin pour vous lancer et grandir en Indonésie",
     contact: "Nous contacter",
     insights: "Analyses",
     industries: "Secteurs",
@@ -54,16 +63,20 @@ const dictionaries: Record<Locale, Dict> = {
     learn_more: "En savoir plus",
   },
   id: {
-    headline: "Membangun masa depan — bersama.",
-    subheadline: "Kami bermitra dengan para pemimpin untuk membuka pertumbuhan yang transformatif.",
-    videoHeadline: "Bisnis Anda di Indonesia — Dimulai dengan pasti, berkembang dengan percaya diri.",
+    headline: "Membentuk Masa Depan, Bersama-sama.",
+    subheadline: "Kami bermitra dengan para pemimpin untuk mewujudkan pertumbuhan transformatif.",
+    videoHeadline: "Bisnis Anda di Indonesia — Diluncurkan dengan Kejelasan, Dikembangkan dengan Keyakinan.",
     videoSubheadline: "Dirikan perusahaan penanaman modal asing Anda, amankan izin investor atau kerja, dan tetap patuh pada peraturan — bersama Konneckin sebagai mitra lokal terpercaya Anda sejak hari pertama.",
-    cta_discover: "Jelajahi Dampak Kami",
+    cta_discover: "Temukan Dampak Kami",
     latest_thinking: "Wawasan Terbaru.",
-    services: "Layanan",
+    services: "Layanan Kami",
     client_impact: "Dampak Klien",
-    getInTouch: "Terhubung dengan Kami",
+    getInTouch: "Hubungi Kami",
     seeHowWeWork: "Lihat Cara Kami Bekerja",
+    trustedBy: "Dipercaya oleh perusahaan-perusahaan terkemuka di seluruh dunia",
+    businessExpansion: "Ekspansi bisnis ke Indonesia: Peluang dan tantangan",
+    indonesiaRapidGrowth: "Pasar Indonesia yang berkembang pesat, didukung oleh kelas menengah yang terus tumbuh dan tenaga kerja muda terdidik, menawarkan peluang besar bagi bisnis internasional. Namun, menavigasi peraturan dan kepatuhan bisa menjadi hal yang rumit.",
+    everythingYouNeed: "Semua yang Anda butuhkan untuk memulai & berkembang di Indonesia",
     contact: "Hubungi Kami",
     insights: "Wawasan",
     industries: "Industri",
@@ -97,7 +110,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       const t = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
       setThemeState(t)
       document.documentElement.classList.toggle("dark", t === "dark")
-    } catch {}
+    } catch { }
   }, [])
 
   const setTheme = (t: Theme) => {
@@ -105,21 +118,21 @@ export function Providers({ children }: { children: React.ReactNode }) {
     document.documentElement.classList.toggle("dark", t === "dark")
     try {
       localStorage.setItem("theme", t)
-    } catch {}
+    } catch { }
   }
 
   useEffect(() => {
     try {
       const saved = localStorage.getItem("locale") as Locale | null
       if (saved) setLocaleState(saved)
-    } catch {}
+    } catch { }
   }, [])
 
   const setLocale = (l: Locale) => {
     setLocaleState(l)
     try {
       localStorage.setItem("locale", l)
-    } catch {}
+    } catch { }
   }
 
   const t = useMemo(() => {

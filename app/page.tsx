@@ -5,11 +5,11 @@ import { VideoHeroBanner } from "@/components/video-hero-baner"
 
 export default function Page() {
   return (
-    <main>
+    <>
       <VideoHeroBanner />
       <TrustedLogos />
       <InsightFeature />
       <ServicesGlassGrid />
-    </main>
+    </>
   )
 }

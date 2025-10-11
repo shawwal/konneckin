@@ -1,4 +1,6 @@
+'use client'
 import { Badge } from "@/components/ui/badge"
+import { useI18n } from "./providers"
 
 const items = [
   {
@@ -28,11 +30,12 @@ const items = [
 ]
 
 export function ServicesGlassGrid() {
+  const { t } = useI18n();
   return (
     <section className="bg-muted/30 py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="text-center font-serif text-2xl md:text-4xl">
-          {"Everything you need to launch & grow in Indonesia"}
+          {t("everythingYouNeed")}
         </h2>
         <div className="mt-8 grid gap-4 md:grid-cols-4">
           {items.map((it, i) => (
@@ -44,10 +47,12 @@ export function ServicesGlassGrid() {
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-black/0" />
               <div className="absolute inset-x-0 bottom-0 p-4">
-                <Badge className="glass mb-2">{it.tag}</Badge>
+                <Badge variant="glass" className="glass mb-2">
+                  {it.tag}
+                </Badge>
                 <div className="glass rounded-xl p-4">
                   <h3 className="text-sm font-semibold md:text-base">{it.title}</h3>
-                  <p  className="text-sm md:text-base">{it.description}</p>
+                  <p className="text-sm md:text-base">{it.description}</p>
                 </div>
               </div>
             </article>
