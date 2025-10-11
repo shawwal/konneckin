@@ -7,7 +7,14 @@ import { MegaMenu } from "./mega-menu"
 import { useI18n } from "./providers"
 import { Menu } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription, // 1. Import SheetDescription
+  SheetHeader,      // 2. Import SheetHeader
+  SheetTitle,       // 3. Import SheetTitle
+  SheetTrigger,
+} from "@/components/ui/sheet"
 import Image from "next/image"
 
 export function SiteHeader() {
@@ -25,18 +32,18 @@ export function SiteHeader() {
                 <Image
                   src="/konneckin-logo.png"
                   alt="Konneckin Logo"
-                  width={721}  // <-- The image file's actual width
-                  height={111} // <-- The image file's actual height
-                  className="h-8 w-auto block dark:hidden" // Scales it down for display
+                  width={721}
+                  height={111}
+                  className="block h-8 w-auto dark:hidden"
                   priority
                 />
                 {/* Dark Mode Logo */}
                 <Image
                   src="/konneckin-logo-white.png"
                   alt="Konneckin Logo"
-                  width={721}  // <-- The image file's actual width
-                  height={111} // <-- The image file's actual height
-                  className="h-8 w-auto hidden dark:block" // Scales it down for display
+                  width={721}
+                  height={111}
+                  className="hidden h-8 w-auto dark:block"
                   priority
                 />
               </a>
@@ -93,7 +100,13 @@ export function SiteHeader() {
                     <Menu className="size-5" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="left" className="w-full max-w-sm">
+                <SheetContent side="left" className="w-full max-w-sm glass backdrop-blur-md">
+                  {/* FIX: Add a visually hidden header for accessibility */}
+                  <SheetHeader className="sr-only">
+                    <SheetTitle>Menu</SheetTitle>
+                    <SheetDescription>Main navigation menu for the website.</SheetDescription>
+                  </SheetHeader>
+                  
                   <div className="p-4">
                     <div className="font-serif text-lg font-semibold">konneckin</div>
                     <div className="mt-2 text-sm text-muted-foreground">

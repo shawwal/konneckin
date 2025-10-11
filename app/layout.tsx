@@ -23,7 +23,6 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "konneckin",
   description: "Shaping the Future, Together.",
-  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -31,6 +30,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const isProduction = process.env.NODE_ENV === "production";
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} antialiased`} suppressHydrationWarning>
       <head>
@@ -61,7 +61,7 @@ export default function RootLayout({
             {/* spacer for bottom tabbar safe area on mobile */}
             <div className="h-16 md:hidden" aria-hidden="true" />
           </Providers>
-          <Analytics />
+          {isProduction && <Analytics />}
         </Suspense>
       </body>
     </html>
