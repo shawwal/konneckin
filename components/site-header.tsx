@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { LanguageSwitcher } from "./language-switcher"
 import { ThemeToggle } from "./theme-toggle"
@@ -20,6 +20,23 @@ import Image from "next/image"
 export function SiteHeader() {
   const { t } = useI18n()
   const [industriesOpen, setIndustriesOpen] = useState(false)
+  // Ref to hold the timer ID
+  const closeTimer = useRef<NodeJS.Timeout | null>(null)
+
+  // When mouse enters either the link OR the menu, cancel any pending close actions
+  const handleMouseEnter = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current)
+    }
+    setIndustriesOpen(true)
+  }
+
+  // When mouse leaves either the link OR the menu, start a timer to close it
+  const handleMouseLeave = () => {
+    closeTimer.current = setTimeout(() => {
+      setIndustriesOpen(false)
+    }, 200) // 200ms grace period
+  }
 
   return (
     <>
@@ -59,8 +76,9 @@ export function SiteHeader() {
                 </li>
                 <li
                   className="relative group"
-                  onMouseEnter={() => setIndustriesOpen(true)}
-                  onMouseLeave={() => setIndustriesOpen(false)}
+                  // Apply the timer handlers to the trigger
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <a href="/industries" className="hover:underline">
                     {t("industries")}
@@ -116,55 +134,19 @@ export function SiteHeader() {
                   <nav className="px-4">
                     <div className="mb-3 text-xs font-medium uppercase text-muted-foreground">Main</div>
                     <ul className="space-y-2">
-                      <li>
-                        <a href="/" className="block rounded-sm px-2 py-2 hover:bg-muted">
-                          {t("home")}
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/services" className="block rounded-sm px-2 py-2 hover:bg-muted">
-                          {t("services")}
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/industries" className="block rounded-sm px-2 py-2 hover:bg-muted">
-                          {t("industries")}
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/insights" className="block rounded-sm px-2 py-2 hover:bg-muted">
-                          {t("insights")}
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/careers" className="block rounded-sm px-2 py-2 hover:bg-muted">
-                          {t("careers")}
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/about" className="block rounded-sm px-2 py-2 hover:bg-muted">
-                          {t("about")}
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/contact" className="block rounded-sm px-2 py-2 hover:bg-muted">
-                          {t("contact")}
-                        </a>
-                      </li>
+                      <li><a href="/" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("home")}</a></li>
+                      <li><a href="/services" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("services")}</a></li>
+                      <li><a href="/industries" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("industries")}</a></li>
+                      <li><a href="/insights" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("insights")}</a></li>
+                      <li><a href="/careers" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("careers")}</a></li>
+                      <li><a href="/about" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("about")}</a></li>
+                      <li><a href="/contact" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("contact")}</a></li>
                     </ul>
 
                     <div className="mt-6 mb-3 text-xs font-medium uppercase text-muted-foreground">Legal</div>
                     <ul className="space-y-2">
-                      <li>
-                        <a href="/privacy-policy" className="block rounded-sm px-2 py-2 hover:bg-muted">
-                          Privacy Policy
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/terms" className="block rounded-sm px-2 py-2 hover:bg-muted">
-                          Terms of Use
-                        </a>
-                      </li>
+                      <li><a href="/privacy-policy" className="block rounded-sm px-2 py-2 hover:bg-muted">Privacy Policy</a></li>
+                      <li><a href="/terms" className="block rounded-sm px-2 py-2 hover:bg-muted">Terms of Use</a></li>
                     </ul>
                   </nav>
 
@@ -181,8 +163,13 @@ export function SiteHeader() {
             </div>
           </div>
         </div>
-        {/* Mega menu moved outside glass container */}
-        <MegaMenu open={industriesOpen} />
+        
+        {/* Mega menu stays here and also gets the timer handlers */}
+        <MegaMenu
+          open={industriesOpen}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        />
       </header>
     </>
   )
