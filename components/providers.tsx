@@ -24,6 +24,8 @@ const dictionaries: Record<Locale, Dict> = {
     latest_thinking: "Latest Thinking.",
     services: "What We Do",
     client_impact: "Client Impact",
+    getInTouch: "Get in Touch",
+    seeHowWeWork: "See How We Work",
     contact: "Contact Us",
     insights: "Insights",
     industries: "Industries",

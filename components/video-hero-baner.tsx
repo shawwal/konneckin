@@ -13,13 +13,13 @@ export function VideoHeroBanner() {
       </p>
       <div className="mt-5 flex justify-center gap-3">
         <a href="/contact">
-          <Button size="sm" className="md:size-auto">
-            {t("contact")}
+          <Button size="lg" className="md:size-auto p-2">
+            {t("getInTouch")}
           </Button>
         </a>
         <a href="/insights">
-          <Button size="sm" variant="outline" className="md:size-auto bg-transparent">
-            {t("cta_discover")}
+          <Button size="lg" variant="outline" className="md:size-auto bg-transparent p-2">
+            {t("seeHowWeWork")}
           </Button>
         </a>
       </div>
