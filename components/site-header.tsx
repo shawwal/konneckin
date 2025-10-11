@@ -8,6 +8,7 @@ import { useI18n } from "./providers"
 import { Menu } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import Image from "next/image"
 
 export function SiteHeader() {
   const { t } = useI18n()
@@ -18,17 +19,29 @@ export function SiteHeader() {
       <header className={cn("sticky top-0 z-50 w-full")}>
         <div className="glass backdrop-blur-md">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-            {/* Mobile minimal header */}
-            <div className="flex flex-1 items-center gap-3 md:hidden">
-              <a href="/" className="font-serif text-xl font-bold tracking-tight">
-                konneckin
+            {/* START: === LOGO FIX === */}
+            {/* This single block handles both mobile and desktop, and light/dark modes */}
+            <div className="flex flex-1 items-center">
+              <a href="/">
+                {/* Light Mode Logo */}
+                <Image
+                  src="/konneckin-logo.png"
+                  alt="Konneckin Logo"
+                  width={32}
+                  height={32}
+                  className="h-8 w-auto block dark:hidden"
+                />
+                {/* Dark Mode Logo */}
+                <Image
+                  src="/konneckin-logo-white.png"
+                  alt="Konneckin Logo"
+                  width={32}
+                  height={32}
+                  className="h-8 w-auto hidden dark:block"
+                />
               </a>
             </div>
-            <div className="hidden flex-1 items-center md:flex">
-              <a href="/" className="font-serif text-xl font-bold tracking-tight">
-                konneckin
-              </a>
-            </div>
+            {/* END: === LOGO FIX === */}
 
             {/* Centered nav (desktop) */}
             <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block">
