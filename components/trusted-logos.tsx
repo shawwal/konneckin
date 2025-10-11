@@ -31,7 +31,7 @@ export function TrustedLogos({ isAnimationEnabled = true }) {
     : '';
 
   return (
-    <section className="mx-auto w-full max-w-5xl px-4 py-8 md:py-10">
+    <section className="mx-auto w-full max-w-6xl px-4 py-8 md:py-10">
       <style>{slideKeyframes}</style>
       
       <div className="mx-auto text-center w-fit rounded-full border bg-neutral-100 px-4 py-2 text-sm text-neutral-700 shadow-sm dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300">
