@@ -1,4 +1,4 @@
-import { Linkedin, Twitter } from "lucide-react"
+import { FaInstagram, FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6"
 
 export function SiteFooter() {
   return (
@@ -64,10 +64,16 @@ export function SiteFooter() {
           </ul>
           <div className="mt-4 flex items-center gap-3">
             <a aria-label="LinkedIn" href="#">
-              <Linkedin className="size-5" />
+              <FaLinkedin className="size-5" />
             </a>
             <a aria-label="Twitter" href="#">
-              <Twitter className="size-5" />
+              <FaXTwitter className="size-5" />
+            </a>
+            <a aria-label="Twitter" href="#">
+              <FaInstagram className="size-5" />
+            </a>
+            <a aria-label="Twitter" href="#">
+              <FaYoutube className="size-5" />
             </a>
           </div>
         </div>
