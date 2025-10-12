@@ -41,7 +41,7 @@ export function LatestContentSection() {
 
   return (
     <section className="bg-background py-16 md:py-24">
-      <div className="mx-auto max-w-7xl px-4 lg:px-0">
+      <div className="mx-auto w-full px-4 lg:px-0">
         <div className="text-center">
           <h2 className="font-serif text-3xl font-semibold md:text-4xl">
             Stay ahead with our latest content
@@ -49,7 +49,7 @@ export function LatestContentSection() {
         </div>
 
         <div className="mt-12">
-          <div className="relative flex min-h-[500px] w-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm md:flex-row">
+          <div className="relative flex min-h-[500px] w-full flex-col overflow-hidden border bg-card shadow-sm md:flex-row">
             {/* Background Images Container */}
             <div className="absolute inset-0">
               {contentData.map((item) => (
