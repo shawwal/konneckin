@@ -11,7 +11,7 @@ export function SplitSection() {
       <div className="mx-auto w-full overflow-hidden bg-gray-50 dark:bg-gray-800/50 shadow-sm">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left Panel: Image */}
-          <div className="relative h-64 sm:h-80 lg:h-full">
+          <div className="relative h-64 sm:h-80 lg:min-h-[673px]">
             <img
               className="absolute inset-0 h-full w-full object-cover"
               src="/assets/konneckin-office.webp"

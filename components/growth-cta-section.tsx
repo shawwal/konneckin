@@ -15,7 +15,7 @@ export function GrowthCTASection() {
         <div className="grid grid-cols-1 lg:grid-cols-2">
           
           {/* Left Panel: Content */}
-          <div className="flex flex-col justify-center bg-[#0f4375] p-8 text-white sm:p-12 lg:p-16 min-h-[400px] lg:min-h-[500px]">
+          <div className="flex flex-col justify-center bg-[#0f4375] p-8 text-white sm:p-12 lg:p-16 min-h-[400px] lg:min-h-[673px]">
             <div className="space-y-6">
               <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
                 {t('growthHeadline')}
