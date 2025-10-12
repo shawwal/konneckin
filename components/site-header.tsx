@@ -42,7 +42,7 @@ export function SiteHeader() {
     <>
       <header className={cn("sticky top-0 z-50 w-full")}>
         <div className="glass backdrop-blur-md">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
             <div className="flex flex-1 items-center">
               <a href="/">
                 {/* Light Mode Logo */}
@@ -66,8 +66,8 @@ export function SiteHeader() {
               </a>
             </div>
 
-            {/* Centered nav (desktop) */}
-            <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block">
+            {/* Centered nav (desktop) - UPDATED BREAKPOINT */}
+            <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:block">
               <ul className="flex items-center gap-6 text-sm">
                 <li>
                   <a href="/services" className="hover:underline">
@@ -104,17 +104,20 @@ export function SiteHeader() {
 
             {/* Right controls */}
             <div className="flex flex-1 items-center justify-end gap-2">
-              <div className="hidden md:block">
+              {/* UPDATED BREAKPOINT */}
+              <div className="hidden lg:block">
                 <LanguageSwitcher />
               </div>
               <ThemeToggle />
-              <a href="/contact" className="hidden md:inline-flex">
+              {/* UPDATED BREAKPOINT */}
+              <a href="/contact" className="hidden lg:inline-flex">
                 <Button variant="default">{t("contact")}</Button>
               </a>
 
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button className="md:hidden" variant="ghost" aria-label="Open menu">
+                  {/* UPDATED BREAKPOINT */}
+                  <Button className="lg:hidden" variant="ghost" aria-label="Open menu">
                     <Menu className="size-5" />
                   </Button>
                 </SheetTrigger>
