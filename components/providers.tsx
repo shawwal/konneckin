@@ -1,4 +1,5 @@
 "use client"
+import { dictionaries, Locale } from "@/translations/dictionary"
 import { createContext, useContext, useEffect, useMemo, useState } from "react"
 import type React from "react"
 
@@ -12,89 +13,6 @@ export function useTheme() {
 }
 
 // Simple dictionaries; extendable
-type Locale = "en" | "fr" | "id"
-type Dict = Record<string, string>
-
-const dictionaries: Record<Locale, Dict> = {
-  en: {
-    headline: "Shaping the Future, Together.",
-    subheadline: "We partner with leaders to unlock transformative growth.",
-    videoHeadline: "Your business in Indonesia — Launched with clarity, grown with confidence",
-    videoSubheadline: "Set up your foreign-owned company, secure investor or working permit, and stay compliant — with Konneckin as your trusted local partner from day one.",
-    cta_discover: "Discover Our Impact",
-    latest_thinking: "Latest Thinking.",
-    services: "What We Do",
-    client_impact: "Client Impact",
-    getInTouch: "Get in Touch",
-    seeHowWeWork: "See How We Work",
-    trustedBy: "Trusted by leading companies around the world",
-    businessExpansion: "Business expansion to Indonesia: Opportunities and challenges",
-    indonesiaRapidGrowth: "Indonesia’s rapidly growing market, supported by an expanding middle class and a young, educated workforce, offers immense opportunities for international businesses. Navigating regulations and compliance, however, can be complex.",
-    everythingYouNeed: "Everything you need to launch & grow in Indonesia",
-    splitHeadline: "Built for global entrepreneurs, backed by local expertise",
-    splitSubheadLine: "Konneckin delivers end-to-end company setup and compliance services with unmatched clarity, transparency, and speed — trusted by clients from fast-scaling startups to global brands.",
-    splitCta: "Learn more about us",
-    contact: "Contact Us",
-    insights: "Insights",
-    industries: "Industries",
-    careers: "Careers",
-    about: "About Us",
-    home: "Home",
-    learn_more: "Learn more",
-  },
-  fr: {
-    headline: "Façonner l'avenir, ensemble.",
-    subheadline: "Nous collaborons avec des dirigeants pour libérer une croissance transformatrice.",
-    videoHeadline: "Votre entreprise en Indonésie — Lancée avec clarté, développée en toute confiance.",
-    videoSubheadline: "Créez votre société à capitaux étrangers, obtenez un permis d'investisseur ou de travail, et restez en conformité — avec Konneckin comme partenaire local de confiance dès le premier jour.",
-    cta_discover: "Découvrir notre impact",
-    latest_thinking: "Dernières réflexions.",
-    services: "Nos services",
-    client_impact: "Impact client",
-    getInTouch: "Contactez-nous",
-    seeHowWeWork: "Découvrez comment nous travaillons",
-    trustedBy: "Reconnu par les entreprises leaders à travers le monde",
-    businessExpansion: "Expansion commerciale en Indonésie : Opportunités et défis",
-    indonesiaRapidGrowth: "Le marché indonésien en croissance rapide, soutenu par une classe moyenne en expansion et une main-d'œuvre jeune et qualifiée, offre d'immenses opportunités pour les entreprises internationales. Naviguer dans les réglementations et la conformité peut cependant s'avérer complexe.",
-    everythingYouNeed: "Tout ce dont vous avez besoin pour vous lancer et grandir en Indonésie",
-    splitHeadline: "Conçu pour les entrepreneurs mondiaux, soutenu par une expertise locale",
-    splitSubheadLine: "Konneckin fournit des services complets de création d'entreprise et de conformité avec une clarté, une transparence et une rapidité inégalées — approuvé par des clients allant des startups à forte croissance aux marques mondiales.",
-    splitCta: "En savoir plus sur nous",
-    contact: "Nous contacter",
-    insights: "Analyses",
-    industries: "Secteurs",
-    careers: "Carrières",
-    about: "À propos",
-    home: "Accueil",
-    learn_more: "En savoir plus",
-  },
-  id: {
-    headline: "Membentuk Masa Depan, Bersama-sama.",
-    subheadline: "Kami bermitra dengan para pemimpin untuk mewujudkan pertumbuhan transformatif.",
-    videoHeadline: "Bisnis Anda di Indonesia — Diluncurkan dengan Kejelasan, Dikembangkan dengan Keyakinan.",
-    videoSubheadline: "Dirikan perusahaan penanaman modal asing Anda, amankan izin investor atau kerja, dan tetap patuh pada peraturan — bersama Konneckin sebagai mitra lokal terpercaya Anda sejak hari pertama.",
-    cta_discover: "Temukan Dampak Kami",
-    latest_thinking: "Wawasan Terbaru.",
-    services: "Layanan Kami",
-    client_impact: "Dampak Klien",
-    getInTouch: "Hubungi Kami",
-    seeHowWeWork: "Lihat Cara Kami Bekerja",
-    trustedBy: "Dipercaya oleh perusahaan-perusahaan terkemuka di seluruh dunia",
-    businessExpansion: "Ekspansi bisnis ke Indonesia: Peluang dan tantangan",
-    indonesiaRapidGrowth: "Pasar Indonesia yang berkembang pesat, didukung oleh kelas menengah yang terus tumbuh dan tenaga kerja muda terdidik, menawarkan peluang besar bagi bisnis internasional. Namun, menavigasi peraturan dan kepatuhan bisa menjadi hal yang rumit.",
-    everythingYouNeed: "Semua yang Anda butuhkan untuk memulai & berkembang di Indonesia",
-    splitHeadline: "Dibangun untuk pengusaha global, didukung oleh keahlian lokal",
-    splitSubheadLine: "Konneckin menyediakan layanan pendirian perusahaan dan kepatuhan menyeluruh dengan kejelasan, transparansi, dan kecepatan tak tertandingi — dipercaya oleh klien mulai dari startup yang berkembang pesat hingga merek global.",
-    splitCta: "Pelajari lebih lanjut tentang kami",
-    contact: "Hubungi Kami",
-    insights: "Wawasan",
-    industries: "Industri",
-    careers: "Karier",
-    about: "Tentang Kami",
-    home: "Beranda",
-    learn_more: "Pelajari lebih lanjut",
-  },
-}
 
 const I18nCtx = createContext<{
   locale: Locale
