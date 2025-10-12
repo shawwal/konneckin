@@ -4,6 +4,7 @@ import { ServicesGlassGrid } from "@/components/services-glass-grid"
 import { VideoHeroBanner } from "@/components/video-hero-banner"
 import { SplitSection } from "@/components/split-section"
 import { GrowthCTASection } from "@/components/growth-cta-section"
+import { ThriveSection } from "@/components/thrive-section"
 
 export default function Page() {
   return (
@@ -13,6 +14,7 @@ export default function Page() {
       <InsightFeature />
       <ServicesGlassGrid />
       <SplitSection />
+      <ThriveSection />
       <GrowthCTASection />
     </>
   )
