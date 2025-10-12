@@ -8,7 +8,7 @@ const contentData = [
   {
     id: 1,
     title: 'General overview of corporate law in Indonesia',
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    description: 'An essential guide to understanding the legal framework for establishing and operating a business in Indonesia, covering key regulations, compliance, and investment laws.',
     imageUrl: '/assets/konneckin-people.webp',
     link: '/industries',
   },
