@@ -29,7 +29,7 @@ const contentData = [
   {
     id: 4,
     title: 'All news & insight',
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    description: 'Explore our collection of articles, news, and in-depth analysis covering the latest market trends and business developments.',
     imageUrl: '/assets/a-woman-and-balloon.webp',
     link: '/insights',
   },
