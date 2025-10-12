@@ -9,8 +9,8 @@ export function GrowthCTASection() {
   const { t } = useI18n();
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8">
-      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl shadow-sm">
+    <div className="p-4 sm:p-6 lg:p-0">
+      <div className="relative mx-auto w-full overflow-hidden shadow-sm">
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2">
           
