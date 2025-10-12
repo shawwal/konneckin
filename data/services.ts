@@ -40,15 +40,15 @@ export const items = [
       },
       {
         title: "Product certification & regulatory compliance",
-        description: "Focus on your core business while we handle your taxes, reporting, and financial management with care.",
+        description: "Navigate complex regulations to secure necessary product licenses and certifications (e.g., SNI, Halal, BPOM) for market access.",
       },
       {
         title: "Company regulation",
-        description: "Focus on your core business while we handle your taxes, reporting, and financial management with care.",
+        description: "Draft and register legally compliant internal company regulations as required by Indonesian labor law."
       },
       {
         title: "Tax & accounting solutions",
-        description: "Focus on your core business while we handle your taxes, reporting, and financial management with care.",
+        description: "Stay compliant with expert handling of your corporate taxes, bookkeeping, and financial reporting obligations in Indonesia.",
       },
       // {
       //   title: "Payroll & HR Outsourcing",
