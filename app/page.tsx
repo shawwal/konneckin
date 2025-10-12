@@ -5,6 +5,7 @@ import { VideoHeroBanner } from "@/components/video-hero-banner"
 import { SplitSection } from "@/components/split-section"
 import { GrowthCTASection } from "@/components/growth-cta-section"
 import { ThriveSection } from "@/components/thrive-section"
+import { LatestContentSection } from "@/components/latest-content-section"
 
 export default function Page() {
   return (
@@ -16,6 +17,7 @@ export default function Page() {
       <SplitSection />
       <ThriveSection />
       <GrowthCTASection />
+      <LatestContentSection />
     </>
   )
 }
