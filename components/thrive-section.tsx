@@ -38,37 +38,47 @@ const cardData = [
 function FeatureCard({ item }: any) {
   if (item.type === 'support') {
     return (
-      <div className="relative flex h-full w-full flex-col rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 p-4 shadow-xl dark:from-gray-800 dark:to-gray-900">
-        <div className="flex flex-1 items-stretch justify-center gap-4 p-2 sm:p-4">
-          {item.profiles.slice(0, 2).map((profile: any, index: number) => (
-            <div key={profile.name} className="relative flex min-h-[200px] flex-1 items-center justify-center overflow-hidden rounded-xl bg-neutral-700 shadow-lg">
-              {profile.avatar ? (
-                <img src={profile.avatar} alt={profile.name} className="h-full w-full object-cover" />
-              ) : (
-                <span className="text-4xl font-bold text-gray-400 sm:text-6xl">{profile.initials}</span>
-              )}
-              <div className="absolute bottom-3 left-3 flex items-center gap-2 rounded-full bg-black/60 px-3 py-1 text-xs text-white backdrop-blur-sm sm:text-sm">
-                {index === 0 && <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />}
-                {index === 1 && (
-                  <div className="flex items-center gap-1">
-                    <span className="h-1.5 w-1.5 rounded-full bg-gray-400"/>
-                    <span className="h-1.5 w-1.5 rounded-full bg-gray-400"/>
-                    <span className="h-1.5 w-1.5 rounded-full bg-gray-400"/>
-                  </div>
+      // Added justify-between to push buttons to the bottom
+      <div className="relative flex h-full w-full flex-col justify-between rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 p-4 shadow-xl dark:from-gray-800 dark:to-gray-900">
+        {/* This div wraps the top content (video + text) */}
+        <div>
+          <div className="mb-6">
+            <h3 className="font-serif text-xl font-semibold">{item.title}</h3>
+            <p className="mt-1 text-sm">{item.description}</p>
+          </div>
+          <div className="flex flex-1 items-stretch justify-center gap-4">
+            {item.profiles.slice(0, 2).map((profile: any, index: number) => (
+              <div key={profile.name} className="relative flex min-h-[200px] flex-1 items-center justify-center overflow-hidden rounded-xl bg-neutral-700 shadow-lg">
+                {profile.avatar ? (
+                  <img src={profile.avatar} alt={profile.name} className="h-full w-full object-cover" />
+                ) : (
+                  <span className="text-4xl font-bold text-gray-400 sm:text-6xl">{profile.initials}</span>
                 )}
-                <span className="hidden sm:inline">{profile.name}</span>
-                <span className="inline sm:hidden">{profile.initials}</span>
+                <div className="absolute bottom-3 left-3 flex items-center gap-2 rounded-full bg-black/60 px-3 py-1 text-xs text-white backdrop-blur-sm sm:text-sm">
+                  {index === 0 && <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />}
+                  {index === 1 && (
+                    <div className="flex items-center gap-1">
+                      <span className="h-1.5 w-1.5 rounded-full bg-gray-400" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-gray-400" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-gray-400" />
+                    </div>
+                  )}
+                  <span className="hidden sm:inline">{profile.name}</span>
+                  <span className="inline sm:hidden">{profile.initials}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-        <div className="flex items-center justify-center gap-2 py-2 sm:gap-4 sm:py-4">
+
+        {/* Buttons remain at the bottom */}
+        <div className="flex items-center justify-center gap-2 pt-6 sm:gap-4">
           <button className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-white shadow-md transition-colors hover:bg-neutral-700 sm:h-12 sm:w-12">
             <Mic className="h-5 w-5 sm:h-6 sm:w-6" />
           </button>
           <button className="relative flex h-10 w-10 items-center justify-center rounded-full bg-orange-600 text-white shadow-md transition-colors hover:bg-orange-500 sm:h-12 sm:w-12">
             <Video className="h-5 w-5 sm:h-6 sm:w-6" />
-            <span className="absolute h-0.5 w-6 rotate-45 bg-white opacity-90 sm:w-8"/>
+            <span className="absolute h-0.5 w-6 rotate-45 bg-white opacity-90 sm:w-8" />
           </button>
           <button className="hidden h-12 w-12 items-center justify-center rounded-full bg-neutral-800 text-white shadow-md transition-colors hover:bg-neutral-700 sm:flex">
             <Monitor className="h-6 w-6" />
@@ -123,7 +133,6 @@ function FeatureCard({ item }: any) {
 
   if (item.type === 'trusted') {
     return (
-      // Added h-full to make the card fill its container height
       <div className="relative h-full overflow-hidden rounded-2xl border bg-card p-6 shadow-sm min-h-[300px]">
         <Image src={item.imageUrl} alt={item.title} fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

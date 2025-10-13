@@ -30,7 +30,7 @@ export function SplitSection() {
                 {t('splitSubheadLine')}
               </p>
               <div className="pt-2">
-                <a href="/contact">
+                <a href="/about" aria-label="Learn more about Konneckin">
                   <Button size="lg" className="md:size-auto p-2">
                     {t("splitCta")}
                   </Button>
