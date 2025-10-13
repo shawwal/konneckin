@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 import ExpansionIntro from "@/components/expansion-intro"
 import ChallengesSection from "@/components/challenges-section"
+import WhatWeDoSection from "@/components/what-we-do-section"
+import WhyKonneckinSection from "@/components/why-konneckin-section"
+import RelatedServicesSection from "@/components/related-services"
 
 export const metadata: Metadata = {
   title: "Business expansion services in Indonesia",
@@ -12,6 +15,9 @@ export default async function Page() {
     <section>
       <ExpansionIntro />
       <ChallengesSection />
+      <WhatWeDoSection />
+      <WhyKonneckinSection />
+      <RelatedServicesSection />
     </section>
   )
 }

@@ -2,6 +2,7 @@
 import { Badge } from "@/components/ui/badge"
 import { useI18n } from "./providers"
 import { ArrowRight } from "lucide-react"
+import { link } from "fs"
 
 const items = [
   {
@@ -9,24 +10,28 @@ const items = [
     title: "Market Research",
     description: "Understand consumer behavior, competition, and regulatory trends before entering the Indonesian market.",
     img: "/assets/image-fx-15.webp",
+    link: "/business-expansion",
   },
   {
     tag: "Post-establishment",
     title: "Recruitment service",
     description: "Attract and hire qualified talent to support your business growth with our efficient recruitment solutions.",
     img: "/assets/image-fx-4.webp",
+    link: "/recruitment-service",
   },
   {
     tag: "Expatriate Support",
     title: "KITAP & work permit",
     description: "If you’ve held a KITAS for several consecutive years or are married to an Indonesian national, you may qualify for a KITAP.",
     img: "/assets/image-fx-17.webp",
+    link: "/expatriate-support",
   },
   {
     tag: "Importer of Record",
     title: "IOR Services in Indonesia",
     description: "Ensure full customs compliance and import clearance in Indonesia—without establishing a local legal entity.",
     img: "/assets/image-fx-78.webp",
+    link: "/importer-of-record",
   },
 ]
 
@@ -63,7 +68,7 @@ export function ServicesGlassGrid() {
                   </p>
                   
                   <a 
-                    href="#" // Replace with your actual link
+                    href={it.link} // Replace with your actual link
                     className="mt-4 inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-80"
                     aria-label={`Learn more about ${it.tag}`}
                   >
