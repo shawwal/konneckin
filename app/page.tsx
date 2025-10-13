@@ -13,7 +13,6 @@ export default function Page() {
       <TrustedLogos />
       <SplitSection />
       <ThriveSection />
-
       <GrowthCTASection />
       <ServicesGlassGrid />
       <LatestContentSection />

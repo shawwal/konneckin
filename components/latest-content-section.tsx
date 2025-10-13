@@ -40,7 +40,7 @@ export function LatestContentSection() {
   const [hoveredId, setHoveredId] = useState(contentData[0].id);
 
   return (
-    <section className="bg-background py-16 md:py-24">
+    <section className="bg-background py-0 md:py-0 mt-14">
       <div className="mx-auto w-full px-4 lg:px-0">
         <div className="text-center">
           <h2 className="font-serif text-3xl font-semibold md:text-4xl">
@@ -49,7 +49,7 @@ export function LatestContentSection() {
         </div>
 
         <div className="mt-12">
-          <div className="relative flex min-h-[500px] w-full flex-col overflow-hidden border bg-card shadow-sm md:flex-row">
+          <div className="relative flex min-h-[650px] w-full flex-col overflow-hidden border bg-card shadow-sm md:flex-row">
             {/* Background Images Container */}
             <div className="absolute inset-0">
               {contentData.map((item) => (

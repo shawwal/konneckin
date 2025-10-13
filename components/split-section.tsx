@@ -7,7 +7,7 @@ export function SplitSection() {
   const { t } = useI18n();
 
   return (
-    <div className="p-4 sm:p-6 lg:p-0">
+    <div className="p-0">
       <div className="mx-auto w-full overflow-hidden bg-gray-50 dark:bg-gray-800/50 shadow-sm">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left Panel: Image */}
@@ -23,7 +23,7 @@ export function SplitSection() {
           {/* Right Panel: Content */}
           <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-16">
             <div className="space-y-6">
-              <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
+              <h1 className="text-3xl tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl leading-tight">
                 {t('splitHeadline')}
               </h1>
               <p className="text-base text-gray-600 dark:text-gray-300 sm:text-lg">

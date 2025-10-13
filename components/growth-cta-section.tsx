@@ -9,7 +9,7 @@ export function GrowthCTASection() {
   const { t } = useI18n();
 
   return (
-    <div className="p-4 sm:p-6 lg:p-0">
+    <div className="p-0">
       <div className="relative mx-auto w-full overflow-hidden shadow-sm">
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -17,7 +17,7 @@ export function GrowthCTASection() {
           {/* Left Panel: Content */}
           <div className="flex flex-col justify-center bg-[#0f4375] p-8 text-white sm:p-12 lg:p-16 min-h-[400px] lg:min-h-[673px]">
             <div className="space-y-6">
-              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="text-4xl leading-tight tracking-tight sm:text-5xl lg:text-6xl">
                 {t('growthHeadline')}
               </h1>
               <p className="text-base sm:text-lg text-gray-200 lg:mb-8">

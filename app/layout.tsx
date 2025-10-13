@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Playfair_Display } from "next/font/google"
+import { Poppins, Heebo } from "next/font/google" // Changed import
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Providers } from "@/components/providers"
@@ -9,15 +9,20 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { MobileTabBar } from "@/components/mobile-tab-bar"
 
-const inter = Inter({
+// Changed to Poppins for body/sans-serif text
+const fontSans = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans", // Use a generic variable
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 })
-const playfair = Playfair_Display({
+
+// Changed to Heebo for heading text
+const fontHeading = Heebo({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-heading", // Use a generic variable
   display: "swap",
+  weight: ["400", "500", "700", "900"],
 })
 
 export const metadata: Metadata = {
@@ -93,7 +98,8 @@ export default function RootLayout({
 }>) {
   const isProduction = process.env.NODE_ENV === "production";
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} antialiased`} suppressHydrationWarning>
+    // Updated className with the new font variables
+    <html lang="en" className={`${fontSans.variable} ${fontHeading.variable} antialiased`} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -110,6 +116,7 @@ export default function RootLayout({
           }}
         />
       </head>
+      {/* The `font-sans` class here will now apply Poppins */}
       <body className="font-sans bg-background text-foreground">
         <Suspense fallback={<div>Loading...</div>}>
           <Providers>

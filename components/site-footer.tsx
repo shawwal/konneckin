@@ -2,7 +2,7 @@ import { FaInstagram, FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6"
 
 export function SiteFooter() {
   return (
-    <footer className="hidden md:block mt-12 border-t bg-card">
+    <footer className="hidden md:block border-t bg-card">
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-4 py-10 md:grid-cols-4">
         <div>
           <div className="font-serif text-lg font-semibold">Konneckin</div>
