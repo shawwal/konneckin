@@ -22,7 +22,7 @@ export function TrustedLogos() {
 
       {/* --- UPDATED SECTION --- */}
       {/* The container now uses a lighter dark mode background and a subtle border. */}
-      <div className="mt-10 w-full overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100/80 dark:border-neutral-800 dark:bg-neutral-600">
+      <div className="mt-3 lg:mt-4 w-full overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100/80 dark:border-neutral-800 dark:bg-neutral-600">
         {/* This is now a responsive flex grid, centered and with consistent spacing. */}
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 p-8 md:gap-x-16">
           {logos.map((logo, i) => (

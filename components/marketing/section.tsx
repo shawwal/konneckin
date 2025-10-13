@@ -11,7 +11,7 @@ type SectionProps = {
 export function Section({ as: Comp = "section", title, subtitle, className, children }: SectionProps) {
   return (
     <Comp className={cn("w-full py-10 md:py-16 lg:py-20", className)}>
-      <div className="container mx-auto max-w-5xl px-4 md:px-6">
+      <div className="container mx-auto max-w-7xl px-4 md:px-6">
         {subtitle ? (
           <p className="text-sm tracking-widest text-muted-foreground uppercase mb-2 animate-in fade-in">{subtitle}</p>
         ) : null}

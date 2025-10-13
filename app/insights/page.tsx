@@ -39,7 +39,7 @@ export default function InsightsPage() {
     <Layout>
       <main>
         {/* Hero Section */}
-        <section className="mx-auto max-w-5xl px-4 py-16 text-center md:py-24">
+        <section className="mx-auto max-w-7xl px-4 py-16 text-center md:py-24">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl">
             Stay Ahead of the Curve
           </h1>
@@ -49,7 +49,7 @@ export default function InsightsPage() {
         </section>
 
         {/* Featured Insights Grid */}
-        <section className="mx-auto max-w-5xl px-4 pb-16 md:pb-24">
+        <section className="mx-auto max-w-7xl px-4 pb-16 md:pb-24">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {featuredInsights.map((insight) => (
               <div key={insight.title} className="group flex flex-col overflow-hidden rounded-lg border bg-card">
@@ -84,7 +84,7 @@ export default function InsightsPage() {
 
         {/* Newsletter CTA Section */}
         <section className="bg-muted py-16 md:py-24">
-          <div className="mx-auto max-w-5xl px-4">
+          <div className="mx-auto max-w-7xl px-4">
             <div className="rounded-lg bg-card p-8 text-center shadow-sm md:p-12">
               <Mail className="mx-auto size-12 text-primary" />
               <h2 className="mt-4 font-serif text-3xl md:text-4xl">Get Our Insights Directly</h2>

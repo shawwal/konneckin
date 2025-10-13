@@ -33,7 +33,7 @@ export function ServicesGlassGridBackup() {
   const { t } = useI18n();
   return (
     <section className="bg-muted/30 py-12 md:py-16">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-7xl px-4">
         <h2 className="text-center font-serif text-2xl md:text-4xl">
           {t("everythingYouNeed")}
         </h2>

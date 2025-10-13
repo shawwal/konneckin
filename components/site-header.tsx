@@ -41,7 +41,7 @@ export function SiteHeader() {
   return (
     <>
       <header className={cn("sticky top-0 z-50 w-full")}>
-        <div className="glass backdrop-blur-md">
+        <div className="liquid-glass">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 lg:px-0 py-3">
             <div className="flex flex-1 items-center">
               <a href="/">
@@ -77,8 +77,8 @@ export function SiteHeader() {
                 <li
                   className="relative group"
                   // Apply the timer handlers to the trigger
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
+                  // onMouseEnter={handleMouseEnter}
+                  // onMouseLeave={handleMouseLeave}
                 >
                   <a href="/industries" className="hover:underline">
                     {t("industries")}

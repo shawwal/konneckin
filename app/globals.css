@@ -155,10 +155,12 @@
 /* Glass utility class */
 @layer utilities {
   .glass {
-    /* background: var(--glass-bg);
+    background: var(--glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--color-border); */
+    border: 1px solid var(--color-border);
+  }
+  .liquid-glass {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px) saturate(150%);
     -webkit-backdrop-filter: blur(12px) saturate(150%);

@@ -6,7 +6,7 @@ import { useI18n } from "./providers"
 export function InsightFeature() {
   const { t } = useI18n()
   return (
-    <section className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3 md:py-16 animate-in fade-in slide-in-from-bottom-2 duration-700">
+    <section className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3 md:py-16 animate-in fade-in slide-in-from-bottom-2 duration-700">
       <div className="md:col-span-2">
         <div className="text-xs text-primary">{t("insight")}</div>
         <h2 className="mt-3 font-serif text-2xl leading-snug md:text-5xl">

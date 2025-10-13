@@ -20,7 +20,7 @@ export function MegaMenu({ open, onMouseEnter, onMouseLeave }: MegaMenuProps) {
       onMouseLeave={onMouseLeave}
     >
       <div className="glass">
-        <div className="mx-auto max-w-6xl px-4 py-8">
+        <div className="mx-auto max-w-7xl px-4 py-8">
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
             {[
               ["Consumer", ["Retail", "Travel", "Luxury"]],
