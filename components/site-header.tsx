@@ -41,7 +41,7 @@ export function SiteHeader() {
   return (
     <>
       <header className={cn("sticky top-0 z-50 w-full")}>
-        <div className="liquid-glass">
+        <div className="glass backdrop-blur-md">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 lg:px-0 py-3">
             <div className="flex flex-1 items-center">
               <a href="/">
