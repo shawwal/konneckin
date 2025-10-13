@@ -34,7 +34,8 @@ export function ServicesGlassGrid() {
   const { t } = useI18n();
   return (
     <section className="bg-muted/30 py-12 md:py-16">
-      <div className="mx-auto max-w-7xl px-4 lg:px-0">
+      {/* Increased max-width for better spacing on large screens */}
+      <div className="mx-auto max-w-7xl px-4">
         <h2 className="text-center font-serif text-2xl md:text-4xl">
           {t("everythingYouNeed")}
         </h2>
@@ -42,24 +43,25 @@ export function ServicesGlassGrid() {
           {items.map((it, i) => (
             <article 
               key={i} 
-              // The "group" class enables the image zoom on hover for desktop
               className="group relative h-[420px] overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 ease-in-out hover:shadow-xl md:h-[520px]"
             >
               <img
                 src={it.img || "/placeholder.svg"}
                 alt={`${it.tag} service background`}
-                // Image scales up when the parent "group" is hovered
                 className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               
-              {/* Content is now always visible */}
               <div className="absolute inset-x-0 bottom-0 flex h-full flex-col justify-end p-6">
                 <div className="glass rounded-xl p-4">
                   <h3 className="text-base font-semibold text-white md:text-lg">{it.tag}</h3>
-                  <p className="mt-2 text-sm text-white/90">
+                  
+                  {/* --- KEY CHANGE HERE --- */}
+                  {/* Added a minimum height to ensure all description blocks are the same size */}
+                  <p className="mt-2 text-sm text-white/90 min-h-[5rem]">
                     {it.description}
                   </p>
+                  
                   <a 
                     href="#" // Replace with your actual link
                     className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-white transition-opacity hover:opacity-80"

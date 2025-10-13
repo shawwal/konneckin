@@ -124,7 +124,7 @@ function FeatureCard({ item }: any) {
   if (item.type === 'trusted') {
     return (
       // Added h-full to make the card fill its container height
-      <div className="relative h-full overflow-hidden rounded-2xl border bg-card p-6 shadow-sm">
+      <div className="relative h-full overflow-hidden rounded-2xl border bg-card p-6 shadow-sm min-h-[300px]">
         <Image src={item.imageUrl} alt={item.title} fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         <div className="relative flex h-full flex-col justify-end">
