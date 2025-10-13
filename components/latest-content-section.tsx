@@ -41,7 +41,7 @@ export function LatestContentSection() {
 
   return (
     <section className="bg-background py-0 md:py-0 mt-14">
-      <div className="mx-auto w-full px-4 lg:px-0">
+      <div className="mx-auto w-full px-0">
         <div className="text-center">
           <h2 className="font-serif text-3xl font-semibold md:text-4xl">
             Stay ahead with our latest content
