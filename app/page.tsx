@@ -12,9 +12,9 @@ export default function Page() {
       <VideoHeroBanner />
       <TrustedLogos />
       <SplitSection />
-      <ThriveSection />
-      <GrowthCTASection />
       <ServicesGlassGrid />
+      <GrowthCTASection />
+      <ThriveSection />
       <LatestContentSection />
     </>
   )
