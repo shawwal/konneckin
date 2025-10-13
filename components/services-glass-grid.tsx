@@ -1,8 +1,6 @@
 'use client'
-import { Badge } from "@/components/ui/badge"
 import { useI18n } from "./providers"
 import { ArrowRight } from "lucide-react"
-import { link } from "fs"
 
 const items = [
   {
@@ -17,7 +15,7 @@ const items = [
     title: "Recruitment service",
     description: "Attract and hire qualified talent to support your business growth with our efficient recruitment solutions.",
     img: "/assets/image-fx-4.webp",
-    link: "/recruitment-service",
+    link: "/post-establishment",
   },
   {
     tag: "Expatriate Support",
