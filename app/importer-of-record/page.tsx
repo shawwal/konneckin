@@ -48,7 +48,7 @@ const HeroSection = () => (
 const WhatIsIorSection = () => (
   <section className="py-20">
     <div className="container mx-auto px-6 text-center md:text-left">
-      <div className="md:w-3/4 lg:w-2/3 mx-auto md:mx-0">
+      <div className="md:w-3/4 lg:w-2/3 mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">What is an Importer of Record (IOR)?</h2>
         <p className="text-lg leading-relaxed">
           An Importer of Record (IOR) is the legal party responsible for ensuring imported goods comply with Indonesian laws and regulations, including customs clearance, product classification, tax payments, and proper documentation. Using an IOR service allows foreign companies to import goods into Indonesia without the need to set up a local entity.
@@ -61,9 +61,9 @@ const WhatIsIorSection = () => (
 const WhyUseIorSection = () => (
   <section className="py-20 bg-white dark:bg-gray-800">
     <div className="container mx-auto px-6">
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 mx-auto">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-          Why use an IOR service <span className="text-blue-600 dark:text-blue-400">in Indonesia?</span>
+          Why use an IOR service <span className="text-primary">in Indonesia?</span>
         </h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
