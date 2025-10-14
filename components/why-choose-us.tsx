@@ -7,7 +7,7 @@ export const WhyChooseUsSection = () => {
     <section className="py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Your reliable import partner <span className="text-blue-600 dark:text-blue-400">in Indonesia.</span></h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Your reliable import partner <span className="text-primary">in Indonesia.</span></h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <FeatureCard icon={HiOutlineLightBulb} title="Local expertise" text="We’re based in Jakarta and know the ins and outs of Indonesian regulations." />
