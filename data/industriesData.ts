@@ -1,18 +1,99 @@
-// --- DATA DEFINITIONS ---
-type Industry = { name: string; icon: React.ElementType; description: string; };
-import { FaBuilding, FaLaptopCode, FaShoppingCart, FaStore, FaMedkit, FaFlask, FaBroadcastTower, FaMicrochip, FaCar, FaPlane, FaBullhorn, FaChartLine } from 'react-icons/fa';
+import { ComponentType } from 'react';
+import {
+  FaBuilding, FaLaptopCode, FaShoppingCart, FaStore, FaMedkit, FaFlask,
+  FaBroadcastTower, FaMicrochip, FaCar, FaPlane, FaBullhorn, FaChartLine
+} from 'react-icons/fa';
 
-export const industries: Industry[] = [
-  { name: 'Foreign manufacturers', icon: FaBuilding, description: 'We assist overseas manufacturers in bringing machinery, components, and equipment into Indonesia for production, installation, or testing purposes.' },
-  { name: 'Technology companies', icon: FaLaptopCode, description: 'Our team handles the importation of IT infrastructure, servers, enterprise software hardware, and electronic modules required for operations and development.' },
-  { name: 'E-commerce businesses', icon: FaShoppingCart, description: 'We work with online retailers and international sellers who ship goods directly to Indonesian customers. Our IOR service ensures fast clearance and full compliance with customs.' },
-  { name: 'Online sellers', icon: FaStore, description: 'For cross-border sellers using platforms like Amazon, Shopify, or independent channels, we provide a seamless import process for fulfilling orders in Indonesia.' },
-  { name: 'Medical device companies', icon: FaMedkit, description: 'We manage the import of regulated medical equipment, diagnostic kits, and laboratory tools for hospitals, clinics, and health institutions.' },
-  { name: 'Pharmaceutical suppliers', icon: FaFlask, description: 'We handle temperature-sensitive and restricted pharmaceutical imports with full regulatory compliance and timely delivery.' },
-  { name: 'Telecom companies', icon: FaBroadcastTower, description: 'We support network infrastructure providers by importing modems, routers, switches, and telecommunication devices needed for rollout and upgrades.' },
-  { name: 'Electronic vendors', icon: FaMicrochip, description: 'We facilitate the import of consumer electronics, industrial gadgets, and specialized tools for local distribution or internal use.' },
-  { name: 'Automotive firms', icon: FaCar, description: 'We enable importation of auto parts, heavy tools, and mechanical systems used for servicing, prototyping, or research.' },
-  { name: 'Aerospace businesses', icon: FaPlane, description: 'We assist companies importing precision tools, parts, and components for aviation projects, aerospace engineering, and air shows.' },
-  { name: 'Advertising agencies', icon: FaBullhorn, description: 'We import promotional materials, display kits, and merchandise used for product launches, exhibitions, and branding campaigns.' },
-  { name: 'Marketing firms', icon: FaChartLine, description: 'We support campaign execution by importing point-of-sale displays, printed materials, and event props across major cities in Indonesia.' },
-];
+// Add the 'image' property to the interface
+interface Industry {
+  name: string;
+  icon: ComponentType<{ className?: string }>;
+  description: string;
+  image: string; // <-- New property for the background image URL
+}
+
+interface IndustriesSectionData {
+  title: string;
+  subtitle: string;
+  industries: Industry[];
+}
+
+// Add the image URLs to your data object
+export const iorIndustriesData: IndustriesSectionData = {
+  title: "Industries We Serve",
+  subtitle: "We support a diverse range of industries with tailored Importer of Record (IOR) services. Our expertise helps foreign companies comply with Indonesian import regulations and ensure smooth delivery for specialized goods.",
+  industries: [
+    {
+      name: 'Foreign manufacturers',
+      icon: FaBuilding,
+      description: 'We assist overseas manufacturers...',
+      image: '/assets/manufacturers-1.webp'
+    },
+    {
+      name: 'Technology companies',
+      icon: FaLaptopCode,
+      description: 'Our team handles the importation of IT infrastructure...',
+      image: '/assets/technology-1.webp'
+    },
+    {
+      name: 'E-commerce businesses',
+      icon: FaShoppingCart,
+      description: 'We work with online retailers and international sellers...',
+      image: '/assets/ecommerce-1.webp'
+    },
+    {
+      name: 'Online sellers',
+      icon: FaStore,
+      description: 'For cross-border sellers using platforms like Amazon...',
+      image: '/assets/online-sellers-1.webp'
+    },
+    {
+      name: 'Medical device companies',
+      icon: FaMedkit,
+      description: 'We manage the import of regulated medical equipment...',
+      image: '/assets/medical-1.webp'
+    },
+    {
+      name: 'Pharmaceutical suppliers',
+      icon: FaFlask,
+      description: 'We handle temperature-sensitive and restricted pharmaceutical imports...',
+      image: '/assets/pharmaceutical-1.webp'
+    },
+    {
+      name: 'Telecom companies',
+      icon: FaBroadcastTower,
+      description: 'We support network infrastructure providers...',
+      image: '/assets/telecom-1.webp'
+    },
+    {
+      name: 'Electronic vendors',
+      icon: FaMicrochip,
+      description: 'We facilitate the import of consumer electronics...',
+      image: '/assets/electronic-1.webp'
+    },
+    {
+      name: 'Automotive firms',
+      icon: FaCar,
+      description: 'We enable importation of auto parts, heavy tools...',
+      image: '/assets/automotive-1.webp'
+    },
+    {
+      name: 'Aerospace businesses',
+      icon: FaPlane,
+      description: 'We assist companies importing precision tools...',
+      image: '/assets/aerospace-1.webp'
+    },
+    {
+      name: 'Advertising agencies',
+      icon: FaBullhorn,
+      description: 'We import promotional materials, display kits...',
+      image: '/assets/advertising-1.webp'
+    },
+    {
+      name: 'Marketing firms',
+      icon: FaChartLine,
+      description: 'We support campaign execution by importing point-of-sale displays...',
+      image: '/assets/marketing-1.webp'
+    },
+  ]
+};

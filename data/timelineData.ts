@@ -1,7 +1,7 @@
 export const gettingStartedData = {
   title: "Getting started is simple.",
   subtitle: "We handle the complex parts so you don’t have to.",
-  imageUrl: "https://konneckin.com/wp-content/uploads/2025/08/ChatGPT-Image-Jun-14-2025-at-05_03_33-PM.webp",
+  imageUrl: "/assets/getting-started.webp",
   imageAlt: "Simple Process",
   steps: [
     { title: "Consultation", text: "We learn about your shipment, assess compliance needs, and recommend the best approach." },

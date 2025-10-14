@@ -75,7 +75,7 @@ export default function IndustryCoverage() {
             </div>
             <div className="flex justify-center">
               <img
-                src="https://konneckin.com/wp-content/uploads/2025/08/ChatGPT-Image-Jun-14-2025-at-05_03_33-PM.webp"
+                src="/assets/getting-started.webp"
                 alt="Industry collaboration visual"
                 className="rounded-2xl object-cover w-full max-w-md lg:max-w-none"
               />
