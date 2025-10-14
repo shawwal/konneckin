@@ -18,7 +18,7 @@ export default function ContactPage() {
     <Layout>
       <main>
         {/* Hero Section with consistent styling */}
-        <section className="mx-auto max-w-7xl px-4 py-16 text-center md:py-24 animate-in fade-in slide-in-from-bottom-2 duration-700">
+        <section className="mx-auto container px-4 py-16 text-center md:py-24 animate-in fade-in slide-in-from-bottom-2 duration-700">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl">
             Let's Build Together
           </h1>
@@ -28,7 +28,7 @@ export default function ContactPage() {
         </section>
 
         {/* Detailed Contact Section with a two-column layout */}
-        <section className="mx-auto max-w-7xl px-4 pb-16 md:pb-24">
+        <section className="mx-auto container px-4 pb-16 md:pb-24">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
             
             {/* Left Column: Contact Form */}

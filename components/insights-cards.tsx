@@ -23,7 +23,7 @@ const items = [
 
 export function InsightsCards() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12 md:py-16" aria-labelledby="insights-heading">
+    <section className="mx-auto container px-4 py-12 md:py-16" aria-labelledby="insights-heading">
       <h2 id="insights-heading" className="font-serif text-2xl md:text-3xl">
         Latest Thinking.
       </h2>

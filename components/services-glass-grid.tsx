@@ -38,7 +38,7 @@ export function ServicesGlassGrid() {
   return (
     <section className="bg-muted/30 py-12 md:py-16">
       {/* Increased max-width for better spacing on large screens */}
-      <div className="mx-auto max-w-7xl px-4 lg:px-0">
+      <div className="mx-auto container px-4 lg:px-0">
         <h2 className="text-center font-serif text-2xl md:text-4xl">
           {t("everythingYouNeed")}
         </h2>

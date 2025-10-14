@@ -11,7 +11,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="mx-auto max-w-7xl px-4 py-16 text-center md:py-24">
+      <section className="mx-auto container px-4 py-16 text-center md:py-24">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl">
           Your End-to-End Partner for Growth in Indonesia
         </h1>
@@ -22,7 +22,7 @@ export default function ServicesPage() {
 
       {/* Core Services Section */}
       <section className="bg-muted py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="mx-auto container px-4">
           <div className="text-center">
             <h2 className="font-serif text-3xl md:text-4xl">Our Core Services</h2>
             <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
@@ -75,7 +75,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="mx-auto max-w-7xl px-4 py-16 md:py-24">
+      <section className="mx-auto container px-4 py-16 md:py-24">
         <div className="rounded-lg bg-primary p-8 text-center text-primary-foreground md:p-12">
           <h2 className="font-serif text-3xl md:text-4xl">Ready to Grow Your Business?</h2>
           <p className="mx-auto mt-4 max-w-2xl">

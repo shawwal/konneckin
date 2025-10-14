@@ -6,7 +6,7 @@ import { useI18n } from "./providers"
 export function VideoHeroBanner() {
   const { t } = useI18n()
   return (
-    <section className="mx-auto max-w-7xl px-4 lg:px-0 pt-10 md:pt-16 animate-in fade-in slide-in-from-bottom-2 duration-700">
+    <section className="mx-auto container px-4 lg:px-0 pt-10 md:pt-16 animate-in fade-in slide-in-from-bottom-2 duration-700">
       <h1 className="text-center font-serif text-3xl leading-tight md:text-4xl">{t("videoHeadline")}</h1>
       <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-muted-foreground md:text-base">
         {t("videoSubheadline")}

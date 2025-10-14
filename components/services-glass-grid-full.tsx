@@ -8,7 +8,7 @@ export function ServicesGlassGridFull() {
   const { t } = useI18n();
   return (
     <section className="bg-muted/30 py-12 md:py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 lg:px-0">
+      <div className="mx-auto container px-4 lg:px-0">
         <h2 className="text-center font-serif text-3xl md:text-4xl">
           {t("everythingYouNeed")}
         </h2>

@@ -60,7 +60,7 @@ const IndustryCard = ({ title, description }: { title: string; description: stri
 export default function IndustryCoverage() {
   return (
     <div className="bg-white dark:bg-black">
-      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <main className="mx-auto container px-4 sm:px-6 lg:px-8">
 
         {/* --- Hero Section --- */}
         <section className="py-16 sm:py-24" style={{ background: 'linear-gradient(158deg, #EFF7FF 0%, #FFFFFF 100%)' }}>

@@ -153,7 +153,7 @@ export function ThriveSection() {
 
   return (
     <section className="bg-muted/50 py-16 md:py-24">
-      <div className="mx-auto max-w-7xl px-4 lg:px-0">
+      <div className="mx-auto container px-4 lg:px-0">
         <div className="text-center">
           <h2 className="font-serif text-3xl font-semibold md:text-4xl">
             Thrive in the Indonesia market

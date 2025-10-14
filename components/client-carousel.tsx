@@ -31,7 +31,7 @@ export function ClientCarousel() {
     el.scrollBy({ left: dir * el.clientWidth * 0.9, behavior: "smooth" })
   }
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12 md:py-16" aria-labelledby="impact-heading">
+    <section className="mx-auto container px-4 py-12 md:py-16" aria-labelledby="impact-heading">
       <div className="flex items-center justify-between">
         <h2 id="impact-heading" className="font-serif text-2xl md:text-3xl">
           Client Impact

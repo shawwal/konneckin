@@ -33,7 +33,7 @@ export default function AboutPage() {
     <Layout>
       <main>
         {/* Hero Section */}
-        <section className="mx-auto max-w-7xl px-4 py-16 text-center md:py-24 animate-in fade-in slide-in-from-bottom-2 duration-700">
+        <section className="mx-auto container px-4 py-16 text-center md:py-24 animate-in fade-in slide-in-from-bottom-2 duration-700">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl">
             Your Strategic Partner in Indonesia
           </h1>
@@ -43,7 +43,7 @@ export default function AboutPage() {
         </section>
 
         {/* Mission/Story Section */}
-        <section className="mx-auto max-w-7xl px-4 pb-16 md:pb-24">
+        <section className="mx-auto container px-4 pb-16 md:pb-24">
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div className="order-last md:order-first">
               <h2 className="font-serif text-3xl md:text-4xl">Our Mission</h2>
@@ -68,7 +68,7 @@ export default function AboutPage() {
 
         {/* Core Values Section */}
         <section className="bg-muted py-16 md:py-24">
-          <div className="mx-auto max-w-7xl px-4">
+          <div className="mx-auto container px-4">
             <div className="text-center">
               <h2 className="font-serif text-3xl md:text-4xl">Our Guiding Principles</h2>
               <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
@@ -89,7 +89,7 @@ export default function AboutPage() {
 
         {/* CTA Section */}
         <section className="py-16 md:py-24">
-          <div className="mx-auto max-w-7xl px-4 text-center">
+          <div className="mx-auto container px-4 text-center">
             <h2 className="font-serif text-3xl md:text-4xl">Ready to Start Your Journey?</h2>
             <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
               Let's discuss how we can help you achieve your business objectives in Indonesia.

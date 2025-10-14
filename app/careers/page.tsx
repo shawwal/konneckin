@@ -5,7 +5,7 @@ export default function CareersPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="mx-auto max-w-7xl px-4 py-16 text-center md:py-24">
+      <section className="mx-auto container px-4 py-16 text-center md:py-24">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl">
           Build the Future With Us
         </h1>
@@ -24,7 +24,7 @@ export default function CareersPage() {
 
       {/* Why Join Us Section */}
       <section className="bg-muted py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="mx-auto container px-4">
           <h2 className="text-center font-serif text-3xl md:text-4xl">
             Why Join Konneckin?
           </h2>
@@ -67,7 +67,7 @@ export default function CareersPage() {
       </section>
 
       {/* Open Positions Section */}
-      <section id="open-positions" className="mx-auto max-w-7xl px-4 py-16 md:py-24">
+      <section id="open-positions" className="mx-auto container px-4 py-16 md:py-24">
         <div className="text-center">
           <h2 className="font-serif text-3xl md:text-4xl">Current Openings</h2>
           <p className="mt-2 text-muted-foreground">

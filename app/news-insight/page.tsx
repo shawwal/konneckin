@@ -11,7 +11,7 @@ export default async function Page() {
   const html = await fetchExternalContent(pageSources["news-insight"])
   return (
     <main>
-      <div className="container mx-auto max-w-7xl px-4 py-10 md:py-16 lg:py-20">
+      <div className="container mx-auto container px-4 py-10 md:py-16 lg:py-20">
         <RichContent html={html} />
       </div>
     </main>
