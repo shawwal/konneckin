@@ -1,13 +1,14 @@
 import { FC, useState, ComponentType } from 'react';
 
-// 1. Update the Industry interface to include the image property
+// Interface for a single industry
 interface Industry {
   name: string;
-  icon: ComponentType<{ className?: string }>;
   description: string;
-  image: string; // <-- Image URL
+  image: string; // URL for the background image
+  icon: ComponentType<{ className?: string }>;
 }
 
+// Props for the main section component
 interface IndustriesSectionProps {
   title: string;
   subtitle: string;
@@ -15,57 +16,83 @@ interface IndustriesSectionProps {
 }
 
 export const IndustriesSection: FC<IndustriesSectionProps> = ({ title, subtitle, industries }) => {
+  // Set the first industry as active by default, or find "Advertising agencies" to match screenshot
+  const initialIndustry = industries.find(i => i.name === 'Advertising agencies') || industries[0];
   const [activeIndustry, setActiveIndustry] = useState<string | null>(
-    industries.length > 0 ? industries[0].name : null
+    initialIndustry ? initialIndustry.name : null
   );
 
+  // Find the full data object for the currently active industry
   const activeIndustryData = industries.find(ind => ind.name === activeIndustry);
 
+  // Don't render if there's no data
   if (!industries || industries.length === 0) {
     return null;
   }
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{title}</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">{subtitle}</p>
-        </div>
-        <div className="flex flex-col lg:flex-row gap-10">
-          {/* Left side: Buttons */}
-          <div className="lg:w-1/3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-2">
-            {industries.map(({ name, icon: Icon }) => (
-              <button
-                key={name}
-                onClick={() => setActiveIndustry(name)}
-                className={`p-3 rounded-lg text-left text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
-                  activeIndustry === name
-                    ? 'bg-primary text-white shadow-lg'
-                    : 'bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700'
-                }`}
-              >
-                <Icon className={`w-5 h-5 ${activeIndustry === name ? 'text-white' : 'text-primary'}`} />
-                <span>{name}</span>
-              </button>
-            ))}
+    <section className="py-16 sm:py-20 dark:bg-gray-900">
+      <div className="container mx-auto px-4 sm:px-6">
+        {/* Main layout container.
+          - Stacks vertically on mobile (flex-col).
+          - Becomes a two-column layout on large screens (lg:flex-row).
+        */}
+        <div className="flex flex-col lg:flex-row lg:gap-12">
+
+          {/* ========== LEFT COLUMN ========== */}
+          {/* Contains header text and the button grid */}
+          <div className="lg:w-1/2 flex flex-col mb-8 lg:mb-0">
+            {/* Section Header */}
+            <div className="mb-8">
+              <h2 className="text-3xl tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                {title}
+              </h2>
+              <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                {subtitle}
+              </p>
+            </div>
+
+            {/* Industry Selection Buttons */}
+            <div className="grid grid-cols-2 gap-3">
+              {industries.map(({ name, icon: Icon }) => ( // <-- Destructure the icon here
+                <button
+                  key={name}
+                  onClick={() => setActiveIndustry(name)}
+                  // Added 'flex items-center gap-3' for icon alignment
+                  className={`w-full p-4 rounded-md text-left text-sm font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-500 flex items-center gap-3 ${activeIndustry === name
+                      ? 'bg-slate-800 text-white shadow-lg'
+                      : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700'
+                    }`}
+                >
+                  {/* Icon Component Rendered Here */}
+                  <Icon className={`w-5 h-5 flex-shrink-0 ${activeIndustry === name ? 'text-white' : 'text-slate-500'}`} />
+                  <span>{name}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Right side: Content with background image */}
-          <div className="lg:w-2/3">
+          {/* ========== RIGHT COLUMN ========== */}
+          {/* Contains the image and its overlay content */}
+          <div className="lg:w-1/2">
             {activeIndustryData && (
               <div
-                className="relative min-h-[400px] p-8 rounded-lg shadow-lg flex flex-col justify-end text-white overflow-hidden bg-cover bg-center transition-all duration-500"
-                style={{ backgroundImage: `url(${activeIndustryData.image})` }} // <-- Set the background image here
+                className="relative min-h-[500px] w-full h-full rounded-lg shadow-lg flex items-end p-4 sm:p-6 bg-cover bg-center transition-all duration-500"
+                style={{ backgroundImage: `url(${activeIndustryData.image})` }}
               >
-                {/* Background overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                {/* Gradient overlay for text readability, applied from the bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent rounded-lg"></div>
 
-                {/* Content, positioned above the overlay */}
-                <div className="relative z-10 backdrop-brightness-50 p-4 rounded-lg">
-                  <h3 className="text-3xl font-bold mb-3">{activeIndustryData.name}</h3>
-                  <p className="text-lg mb-6 max-w-2xl">{activeIndustryData.description}</p>
-                  <a href="#contact" className="font-semibold bg-primary hover:bg-blue-700 text-white py-2 px-5 rounded-lg transition-colors">
+                {/* Content Box */}
+                <div className="relative w-full bg-black/40 backdrop-blur-sm p-6 rounded-md border border-white/20">
+                  <h3 className="text-2xl font-bold text-white mb-2">{activeIndustryData.name}</h3>
+                  <p className="text-base text-gray-200 mb-6 max-w-xl">
+                    {activeIndustryData.description}
+                  </p>
+                  <a
+                    href="#contact"
+                    className="inline-block font-semibold text-white py-2 px-5 rounded-md border border-white hover:bg-white hover:text-black transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  >
                     Contact us
                   </a>
                 </div>

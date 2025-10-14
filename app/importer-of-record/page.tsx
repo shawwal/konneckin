@@ -56,6 +56,7 @@ const ImporterOfRecordPage: React.FC = () => {
         title={iorBenefitsData.title}
         highlightedText={iorBenefitsData.highlightedText}
         items={iorBenefitsData.items}
+        imageUrl={iorBenefitsData.imageUrl}
       />
       <ServicesSection
         title={iorServiceData.title}

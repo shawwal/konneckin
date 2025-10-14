@@ -42,7 +42,7 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({ title, subtitle, imag
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
-            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">{title}</h2>
+            <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 dark:text-white mb-4">{title}</h2>
             <p className="text-xl lg:text-2xl  mb-8">{subtitle}</p>
             <img src={imageUrl} alt={imageAlt} />
           </div>

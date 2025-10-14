@@ -10,7 +10,7 @@ const FaqSection = ({ faqData }: any) => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="lg:w-1/3">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Frequently asked questions</h2>
+            <h2 className="text-4xl font-semibold text-gray-900 dark:text-white mb-4">Frequently asked questions</h2>
             <p className="text-lg mb-6">Can’t find what you are looking for?</p>
             <a href="/contact" className="inline-block mb-4" aria-label="Contact us">
               <Button>Contact us</Button>
