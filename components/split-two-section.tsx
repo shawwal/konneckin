@@ -45,7 +45,7 @@ export function SplitTwoSection({
   const contentPanel = (
     <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-16">
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl leading-tight">
+        <h1 className="text-3xl tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl leading-tight">
           {title}
         </h1>
         <p className="text-base text-gray-600 dark:text-gray-300 sm:text-lg">

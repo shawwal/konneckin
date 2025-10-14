@@ -11,6 +11,8 @@ import { faqImportData } from '@/data/faqImport';
 import { iorBenefitsData } from '@/data/benefitsData';
 import { gettingStartedData } from '@/data/timelineData';
 import { industries } from '@/data/industriesData';
+import ServicesSection from '@/components/services-section';
+import { iorServiceData } from '@/data/iorServiceData';
 
 const HeroSection = () => (
   <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
@@ -94,6 +96,11 @@ const ImporterOfRecordPage: React.FC = () => {
         title={iorBenefitsData.title}
         highlightedText={iorBenefitsData.highlightedText}
         items={iorBenefitsData.items}
+      />
+      <ServicesSection
+        title={iorServiceData.title}
+        subtitle={iorServiceData.subtitle}
+        services={iorServiceData.services}
       />
       <IndustriesSection />
       <TimelineSection
