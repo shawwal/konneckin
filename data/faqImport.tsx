@@ -1,0 +1,9 @@
+type FaqItem = { question: string; answer: string; };
+
+export const faqImportData: FaqItem[] = [
+  { question: 'What is an Importer of Record (IOR), and why do I need one in Indonesia?', answer: 'An Importer of Record (IOR) is the legal entity responsible for ensuring that your goods comply with all Indonesian customs regulations. If your company is not registered in Indonesia, you legally cannot act as the importer. Konneckin, as your IOR, bridges this gap and allows you to import legally without setting up a local entity.' },
+  { question: 'Can I import to Indonesia without having a local company?', answer: 'Yes. Using Konneckin as your Importer of Record, you can legally bring goods into Indonesia without registering a PT PMA or a Representative Office. This is ideal for market testing, short-term projects, or companies that want to avoid the cost of local incorporation.' },
+  { question: 'What kind of goods can I import using your IOR service?', answer: 'We support the import of most commercial goods, including electronics, IT equipment, medical devices, marketing materials, industrial tools, and more. For restricted items (such as pharmaceuticals or defense equipment), special licenses may be required, and we can assist with those as well.' },
+  { question: 'Do you offer Delivered Duty Paid (DDP) import service?', answer: 'Yes. Our IOR service includes full DDP handling—we manage duties, taxes, permits, and customs clearance so your goods arrive at their destination ready to use, with zero input needed from your side in Indonesia.' },
+  { question: 'How long does the IOR process take?', answer: 'The average processing time ranges from 3 to 5 business days, depending on the type of goods, required licenses, and port of entry. For repeat shipments, the timeline is often faster as documentation is already in place.' },
+];
