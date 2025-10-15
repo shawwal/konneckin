@@ -1,20 +1,15 @@
-import type { Metadata } from "next"
-import { RichContent } from "@/components/marketing/rich-content"
-import { fetchExternalContent } from "@/lib/external-content"
-import { pageSources } from "@/lib/page-sources"
+import type { Metadata } from "next";
+import RecruitmentClient from "@/components/recruitment-client"; // Adjust path
 
+// Export the metadata for SEO
 export const metadata: Metadata = {
-  title: "Hiring top talent in Indonesia made simple",
-  description: "Source, screen, and secure the right candidates — locally and regionally.",
-}
+  title: "Recruitment & Executive Search in Indonesia",
+  description: "Find and hire the top-tier talent you need to build, scale, and lead your business in Indonesia. We specialize in executive, managerial, and specialist roles.",
+};
 
-export default async function Page() {
-  const html = await fetchExternalContent(pageSources["recruitment-service"])
+// Render the Client Component
+export default function Page() {
   return (
-    <main>
-      <div className="container mx-auto container px-4 py-10 md:py-16 lg:py-20">
-        <RichContent html={html} />
-      </div>
-    </main>
-  )
+    <RecruitmentClient />
+  );
 }
