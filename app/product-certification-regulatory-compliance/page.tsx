@@ -1,20 +1,15 @@
-import type { Metadata } from "next"
-import { RichContent } from "@/components/marketing/rich-content"
-import { fetchExternalContent } from "@/lib/external-content"
-import { pageSources } from "@/lib/page-sources"
+import type { Metadata } from "next";
+import ProductCertificationClient from "@/components/product-certification-client"; // Adjust path
 
+// 1. Export the metadata object
 export const metadata: Metadata = {
-  title: "Product certification & regulatory compliance",
-  description: "Get your products certified and compliant — fast, legally, and with zero stress.",
-}
+  title: "Product Certification & Regulatory Compliance",
+  description: "Get your products certified and compliant with BPOM, SNI, and more in Indonesia—fast, legally, and with zero stress.",
+};
 
-export default async function Page() {
-  const html = await fetchExternalContent(pageSources["product-certification-regulatory-compliance"])
+// 2. Render the client component
+export default function ProductCertificationPage() {
   return (
-    <main>
-      <div className="container mx-auto container px-4 py-10 md:py-16 lg:py-20">
-        <RichContent html={html} />
-      </div>
-    </main>
-  )
+    <ProductCertificationClient />
+  );
 }
