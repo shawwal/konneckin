@@ -1,160 +1,116 @@
-// import type { Metadata } from "next"
+'use client';
 
-// export const metadata: Metadata = {
-//   title: "Post-establishment services",
-//   description: "Professional, compliant, and reliable support for your business in Indonesia.",
-// }
-
-'use client'
-import { Check } from 'lucide-react';
-import Image from 'next/image';
-
-// --- Page Specific Data ---
-const postEstablishmentCardData = [
-  {
-    type: 'support',
-    title: 'Corporate Secretarial Services',
-    description: 'Stay compliant with annual reporting, director changes, and shareholder resolutions. We manage all your corporate housekeeping.',
-    imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop',
-  },
-  {
-    type: 'process',
-    title: 'Accounting & Tax Compliance',
-    description: "From monthly bookkeeping and payroll to annual tax filings, we ensure your finances are always in perfect order and fully compliant.",
-  },
-  {
-    type: 'trusted',
-    title: 'Business License Management',
-    description: 'We monitor and manage renewals for your essential business licenses, ensuring your operations are never interrupted.',
-    imageUrl: 'https://plus.unsplash.com/premium_photo-1661497281000-b5ecb39a2114?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470',
-  },
-];
-
-
-// --- Reusable Feature Card Component (Adapted from your ThriveSection) ---
-function FeatureCard({ item }: any) {
-  if (item.type === 'support') {
-    return (
-      <div className="relative h-full overflow-hidden rounded-2xl border bg-card p-6 shadow-sm min-h-[300px]">
-        <Image src={item.imageUrl} alt={item.title} fill className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-        <div className="relative flex h-full flex-col justify-end">
-          <h3 className="font-serif text-2xl font-semibold text-white">{item.title}</h3>
-          <p className="mt-2 text-white/90">{item.description}</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (item.type === 'process') {
-    return (
-      <div className="flex h-full flex-col justify-between rounded-2xl border bg-card p-6 shadow-sm">
-        <div className="rounded-lg border bg-muted/50 p-3">
-          <div className="flex items-center space-x-2 text-sm">
-            <div className="rounded bg-background px-3 py-1.5 text-foreground shadow-sm">Reporting</div>
-            <div className="text-muted-foreground">Filings</div>
-            <div className="text-muted-foreground">Compliance</div>
-          </div>
-          <div className="mt-4 space-y-2">
-            <div className="flex items-start space-x-2">
-              <div className="mt-1 flex h-4 w-4 items-center justify-center rounded-sm border border-primary bg-primary">
-                <Check className="h-3 w-3 text-primary-foreground" />
-              </div>
-              <div>
-                <div className="h-3 w-28 rounded-sm bg-muted-foreground/30"></div>
-                <div className="mt-1.5 h-2 w-20 rounded-sm bg-muted-foreground/20"></div>
-              </div>
-            </div>
-            <div className="flex items-start space-x-2">
-              <div className="mt-1 flex h-4 w-4 items-center justify-center rounded-sm border border-primary bg-primary">
-                <Check className="h-3 w-3 text-primary-foreground" />
-              </div>
-              <div>
-                <div className="h-3 w-32 rounded-sm bg-muted-foreground/30"></div>
-                <div className="mt-1.5 h-2 w-24 rounded-sm bg-muted-foreground/20"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="mt-6">
-          <h3 className="font-serif text-2xl font-semibold">{item.title}</h3>
-          <p className="mt-2 text-muted-foreground">{item.description}</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (item.type === 'trusted') {
-    return (
-      <div className="relative h-full overflow-hidden rounded-2xl border bg-card p-6 shadow-sm min-h-[300px]">
-        <Image src={item.imageUrl} alt={item.title} fill className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        <div className="relative flex h-full flex-col justify-end">
-          <h3 className="font-serif text-2xl font-semibold text-white">{item.title}</h3>
-          <p className="mt-2 text-white/90">{item.description}</p>
-        </div>
-      </div>
-    );
-  }
-
-  return null;
-}
+import React from 'react';
+import FaqSection from '@/components/faq-section'; // Adjust path if needed
+import {
+  postEstablishmentServices,
+  whyItMattersData,
+  faqPostEstablishmentData
+} from '@/data/postEstablishmentData'; // Adjust path if needed
 
 // --- Main Page Component ---
 export default function PostEstablishmentPage() {
-  const trustedCard = postEstablishmentCardData.find(item => item.type === 'trusted');
-  const otherCards = postEstablishmentCardData.filter(item => item.type !== 'trusted');
-
   return (
     <>
-      {/* Hero Section (Adapted from your SplitSection) */}
-      <div className="bg-white dark:bg-gray-900">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="relative flex flex-col justify-center p-8 sm:p-12 lg:p-16">
-            <div className="space-y-6 max-w-xl">
-              <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl leading-tight">
-                Seamless Operations, Post-Establishment
+      {/* ========== 1. Hero Section ========== */}
+      <section className="bg-white dark:bg-slate-900">
+        <div className="container mx-auto px-4 sm:px-6 py-20 sm:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* --- Text Content --- */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-tight">
+                Stay Compliant and Thrive After Company Setup
               </h1>
-              <p className="text-base text-gray-600 dark:text-gray-300 sm:text-lg">
-                Focus on your growth while we handle the complexities of Indonesian compliance, accounting, and corporate secretarial duties. Our support ensures your business runs smoothly long after setup is complete.
+              <p className="mt-6 text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0">
+                Your business is registered. Now the real work begins. We provide ongoing operational, financial, and corporate support to ensure you remain compliant and can focus on growth.
               </p>
-            </div>
-          </div>
-          <div className="relative h-80 lg:min-h-[500px]">
-            <img
-              className="absolute inset-0 h-full w-full object-cover"
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2684&auto=format&fit=crop"
-              alt="Professional team collaborating in a modern office"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Features Section (Adapted from your ThriveSection) */}
-      <section className="bg-muted/50 py-16 md:py-24">
-        <div className="mx-auto container px-4 lg:px-0">
-          <div className="text-center">
-            <h2 className="font-serif text-3xl font-semibold md:text-4xl">
-              Your Comprehensive Post-Establishment Partner
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              We provide end-to-end support to ensure your business remains compliant, efficient, and focused on its core objectives.
-            </p>
-          </div>
-          <div className="mt-12 grid grid-cols-1 gap-4 lg:grid-cols-2">
-            <div className="flex flex-col gap-4">
-              {otherCards.map((item) => (
-                <FeatureCard key={item.type} item={item} />
-              ))}
-            </div>
-            {trustedCard && (
-              <div>
-                <FeatureCard item={trustedCard} />
+              <div className="mt-10">
+                <a href="#services" className="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300">
+                  Explore Our Services
+                </a>
               </div>
-            )}
+            </div>
+            {/* --- Image --- */}
+            <div className="flex items-center justify-center">
+              <img
+                className="rounded-2xl object-cover h-[400px] w-full max-w-md lg:h-[500px] shadow-2xl"
+                src="/assets/office-setup.webp"
+                alt="Team collaborating in a modern office"
+              />
+            </div>
           </div>
         </div>
       </section>
+
+      {/* ========== 2. Core Services Section ========== */}
+      <section id="services" className="py-20 sm:py-28 bg-slate-50 dark:bg-black">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">
+              Ongoing Operational Support
+            </h2>
+            <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
+              We manage the essential administrative tasks so your business runs smoothly and stays compliant.
+            </p>
+          </div>
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {postEstablishmentServices.map((service) => (
+              <div key={service.title} className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 rounded-full h-12 w-12 flex items-center justify-center">
+                  <service.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-5 text-xl font-semibold text-slate-900 dark:text-white">{service.title}</h3>
+                <p className="mt-2 text-slate-600 dark:text-slate-400">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========== 3. Why It Matters Section ========== */}
+      <section className="py-20 sm:py-28 bg-white dark:bg-slate-900">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* --- Image --- */}
+            <div className="flex items-center justify-center order-last lg:order-first">
+              <img
+                className="rounded-2xl object-cover h-[400px] w-full max-w-md lg:h-[500px] shadow-2xl"
+                src="/assets/woman-smile.webp"
+                alt="Business professional smiling confidently"
+              />
+            </div>
+            {/* --- Text Content --- */}
+            <div className="max-w-xl">
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">
+                Why Ongoing Compliance is Non-Negotiable
+              </h2>
+              <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
+                In Indonesia, company registration is just the beginning. Maintaining strict corporate and financial compliance is crucial for long-term success and avoiding legal trouble.
+              </p>
+              <div className="mt-8 space-y-6">
+                {whyItMattersData.map(item => (
+                  <div key={item.title} className="flex items-start">
+                    <div className="bg-green-100 dark:bg-green-900/50 rounded-full h-8 w-8 flex-shrink-0 flex items-center justify-center">
+                      <item.icon className="h-5 w-5 text-green-600 dark:text-green-400" />
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">{item.title}</h3>
+                      <p className="mt-1 text-slate-600 dark:text-slate-400">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== 4. FAQ Section ========== */}
+      <FaqSection
+        faqData={faqPostEstablishmentData}
+        title="Post-Establishment Questions"
+        subtitle="Answers to common questions about maintaining your company in Indonesia."
+      />
     </>
   );
 }
