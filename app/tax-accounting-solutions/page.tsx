@@ -1,20 +1,15 @@
-import type { Metadata } from "next"
-import { RichContent } from "@/components/marketing/rich-content"
-import { fetchExternalContent } from "@/lib/external-content"
-import { pageSources } from "@/lib/page-sources"
+import type { Metadata } from "next";
+import TaxAccountingClient from "@/components/tax-accounting-client"; // Adjust path
 
+// Export the metadata for SEO
 export const metadata: Metadata = {
-  title: "Comprehensive tax and accounting support",
-  description: "Professional tax and accounting services tailored to your business in Indonesia.",
-}
+  title: "Tax & Accounting Solutions in Indonesia",
+  description: "Reliable, end-to-end accounting, tax reporting, and social security (BPJS) management to keep your business compliant and thriving in Indonesia.",
+};
 
-export default async function Page() {
-  const html = await fetchExternalContent(pageSources["tax-accounting-solutions"])
+// Render the Client Component
+export default function Page() {
   return (
-    <main>
-      <div className="container mx-auto container px-4 py-10 md:py-16 lg:py-20">
-        <RichContent html={html} />
-      </div>
-    </main>
-  )
+    <TaxAccountingClient />
+  );
 }

@@ -1,21 +1,15 @@
-import type { Metadata } from "next"
-import { RichContent } from "@/components/marketing/rich-content"
-import { fetchExternalContent } from "@/lib/external-content"
-import { pageSources } from "@/lib/page-sources"
+import type { Metadata } from "next";
+import BusinessMatchmakingClient from "@/components/business-matchmaking-client"; // Adjust path
 
+// Export the metadata for SEO
 export const metadata: Metadata = {
-  title: "Business matchmaking service in Indonesia",
-  description:
-    "Connecting international businesses with the right partners in Indonesia — fast, strategic, and reliable.",
-}
+  title: "Business Matchmaking in Indonesia",
+  description: "Find your perfect business partner in Indonesia. We connect you with vetted distributors, suppliers, and joint venture allies to accelerate your growth.",
+};
 
-export default async function Page() {
-  const html = await fetchExternalContent(pageSources["business-matchmaking"])
+// Render the Client Component
+export default function Page() {
   return (
-    <main>
-      <div className="container mx-auto container px-4 py-10 md:py-16 lg:py-20">
-        <RichContent html={html} />
-      </div>
-    </main>
-  )
+    <BusinessMatchmakingClient />
+  );
 }
