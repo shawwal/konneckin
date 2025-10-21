@@ -9,7 +9,7 @@ type ProcessStep = {
 
 interface ProcessSectionProps {
   title: React.ReactNode;
-  description: React.ReactNode;
+  description?: React.ReactNode;
   steps: ProcessStep[];
   className?: string; // For additional styling on the section wrapper
 }
