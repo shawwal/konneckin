@@ -49,7 +49,7 @@ export default function BusinessExpansionPage() {
           </>
         }
         // NOTE: The image URL was not in the provided HTML. Please replace this path.
-        imageUrl="/assets/marketing-1.webp"
+        imageUrl="/assets/professional-marketing-team.webp"
         imageAlt="A professional team collaborating in a modern office setting"
         accordionItems={accordionData}
         ctaText="See how we can help you grow"
