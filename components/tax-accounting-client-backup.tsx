@@ -5,59 +5,42 @@ import FaqSection from '@/components/faq-section'; // Adjust path
 import {
   taxServices,
   whyChooseUsData,
-  financialComplianceRisks,
-  taxAndAccountingServices,
-  faqTaxAndAccountingData,
-  taxAndAccountingBenefits
-} from '@/data/taxAccountingData';
-import { SplitTwoSection } from './split-two-section';
-import { RiskShowcaseSection } from './risk-showcase';
-import { AccordionWithImage } from './accordion-with-image';
-import { ExpertiseSection } from './expertise-section';
+  faqTaxAccountingData
+} from '@/data/taxAccountingData'; // Adjust path
 
-const HeroSection = () => (
-  <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
-    <div className="container mx-auto">
-      <SplitTwoSection
-        title="Comprehensive tax and accounting support"
-        subtitle="Get professional tax and accounting services tailored to your unique business needs in Indonesia."
-        ctaText="Get a free consultation"
-        ctaHref="#services"
-        imageUrl="/assets/people-walking.webp"
-        imageAlt="People Walking"
-        imageOnLeft={false}
-        containerClassName="lg:rounded-2xl"
-      />
-    </div>
-  </section>
-);
-
-export default function TaxAccountingClient() {
+export default function TaxAccountingClientBackup() {
   return (
     <>
-      <HeroSection />
+      {/* ========== 1. Hero Section ========== */}
+      <section className="bg-white dark:bg-slate-900">
+        <div className="container mx-auto px-4 sm:px-6 py-20 sm:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* --- Image --- */}
+            <div className="flex items-center justify-center order-last lg:order-first">
+              <img
+                className="rounded-2xl object-cover h-[400px] w-full max-w-md lg:h-[500px] shadow-2xl"
+                src="/assets/people-walking.webp"
+                alt="Professional working on financial documents with a calculator"
+              />
+            </div>
+            {/* --- Text Content --- */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-tight">
+                Stress-Free Tax & Accounting Solutions
+              </h1>
+              <p className="mt-6 text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0">
+                Stay compliant and focus on your growth. We provide reliable, end-to-end accounting, tax, and social security (BPJS) reporting for your business in Indonesia.
+              </p>
+              <div className="mt-10">
+                <a href="#services" className="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300">
+                  Explore Our Services
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <RiskShowcaseSection
-        title="Overcoming investment and corporate hurdles in Indonesia"
-        subtitle="For investors and companies operating in Indonesia, navigating the local landscape comes with distinct challenges."
-        risks={financialComplianceRisks}
-      />
-
-      <AccordionWithImage
-        title={
-          <>
-            <span className="text-blue-900 dark:text-primary">
-              Every number tells a story.
-            </span>
-            {' '}We help you make sure it’s accurate, compliant, and ready for Indonesia’s tax landscape.
-          </>
-        }
-        imageUrl="/assets/man-on-a-boat.webp"
-        imageAlt="A long spinning staircase"
-        accordionItems={taxAndAccountingServices}
-        ctaText="See how we can help you grow"
-        ctaHref="/contact" // Assuming the button should link to a contact section
-      />
       {/* ========== 2. Core Services Section ========== */}
       <section id="services" className="py-20 sm:py-28 bg-slate-50 dark:bg-black">
         <div className="container mx-auto px-4 sm:px-6">
@@ -123,20 +106,9 @@ export default function TaxAccountingClient() {
         </div>
       </section>
 
-      <ExpertiseSection
-        title={
-          <>
-            Organize. Report.{' '}
-            <span className="text-primary">Thrive. </span>
-          </>
-        }
-        featureItems={taxAndAccountingBenefits}
-      />
-
-
       {/* ========== 4. FAQ Section ========== */}
       <FaqSection
-        faqData={faqTaxAndAccountingData}
+        faqData={faqTaxAccountingData}
         title="Tax & Accounting FAQs"
         subtitle="Your questions about financial compliance in Indonesia, answered."
       />

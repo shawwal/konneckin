@@ -1,4 +1,4 @@
-import { Calculator, BookOpen, UserCheck, Landmark, ShieldCheck, Clock, TrendingUp } from 'lucide-react';
+import { Calculator, BookOpen, UserCheck, Landmark, ShieldCheck, Clock, TrendingUp, Scale, DatabaseZap, TrendingDown, ShieldAlert, Zap, FileCheck2 } from 'lucide-react';
 
 // --- Type Definitions ---
 type ServiceItem = {
@@ -17,6 +17,138 @@ type FaqItem = {
   question: string;
   answer: string;
 };
+
+
+// --- Type Definition ---
+interface RiskItem {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+// --- Type Definition ---
+interface AccordionItem {
+  title: string;
+  content: string;
+  linkText?: string;
+  linkHref?: string;
+}
+
+// --- Type Definition ---
+interface FeatureItem {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+// --- Data Export ---
+export const taxAndAccountingBenefits: FeatureItem[] = [
+  {
+    icon: Zap,
+    title: 'Set up fast',
+    description: 'Get your EFIN and VAT registration done quickly with minimal paperwork.',
+  },
+  {
+    icon: FileCheck2,
+    title: 'Report with confidence',
+    description: 'Submit monthly and annual tax reports accurately and on time—always.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Stay compliant',
+    description: 'We keep your business fully aligned with Indonesian tax laws and investment reporting requirements.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Focus on growth',
+    description: 'Let us handle the tax and accounting complexity so you can focus on growing your business.',
+  },
+];
+
+
+// --- Data Export ---
+export const faqTaxAndAccountingData: FaqItem[] = [
+  {
+    question: 'Do I need to register an EFIN for my company in Indonesia?',
+    answer: 'Yes, EFIN (Electronic Filing Identification Number) registration is required for companies in Indonesia to submit tax reports online. Konneckin can help you register your EFIN quickly and correctly to ensure smooth tax reporting.',
+  },
+  {
+    question: 'How long does the VAT registration process take in Indonesia?',
+    answer: 'VAT registration in Indonesia typically takes between 7 to 14 working days, depending on document readiness and tax office processing time. Konneckin ensures timely submission and clear guidance throughout the process.',
+  },
+  {
+    question: 'Can Konneckin handle monthly and annual tax reporting for foreign-owned companies (PMA)?',
+    answer: 'Yes, we provide comprehensive tax reporting services for both local and foreign-owned companies (PMA). Our team is experienced in managing tax compliance for international businesses operating in Indonesia.',
+  },
+  {
+    question: 'What tax reports must my company submit in Indonesia?',
+    answer: 'Your company must submit monthly tax reports, annual corporate income tax reports, and investment reports (for foreign-owned entities). Konneckin manages all these reports accurately and ensures compliance with Indonesian tax regulations.',
+  },
+  {
+    question: 'How can Konneckin help ensure my company’s tax compliance in Indonesia?',
+    answer: 'We provide end-to-end tax and accounting services, from EFIN registration, monthly tax reporting, VAT registration, to annual reporting and investment submissions. Our expert team ensures your company always meets Indonesian tax deadlines and regulatory standards.',
+  },
+  {
+    question: 'Is my company’s financial data safe with Konneckin?',
+    answer: 'Yes, we prioritize strict data confidentiality and apply secure financial data management practices. Your tax records and financial information are handled with the highest level of security and integrity.',
+  },
+  {
+    question: 'What happens if my company misses a tax deadline in Indonesia?',
+    answer: 'Missing tax deadlines can result in penalties and interest charges. Konneckin helps you avoid this by providing timely reminders, precise calculations, and on-time tax submissions to keep your business fully compliant.',
+  },
+];
+
+
+export const taxAndAccountingServices: AccordionItem[] = [
+  {
+    title: 'EFIN registration',
+    content: 'We handle your EFIN registration process swiftly, ensuring you can start submitting tax reports without delays.',
+    // linkText: 'Learn more',
+    // linkHref: 'https://konneckin.com/bujka-registration-in-indonesia/',
+  },
+  {
+    title: 'Monthly tax and accounting reporting',
+    content: 'We manage your monthly tax calculations and financial reports with precision and timeliness, keeping your business fully compliant.',
+  },
+  {
+    title: 'VAT registration',
+    content: 'We assist you with VAT registration and ensure you meet all requirements to operate smoothly in Indonesia.',
+  },
+  {
+    title: 'Annual tax reporting',
+    content: 'We prepare and submit your annual tax reports accurately, helping you fulfill Indonesia’s tax obligations and avoid penalties.',
+  },
+  {
+    title: 'Investment report',
+    content: 'We provide accurate and timely investment reporting to meet regulatory requirements for both local and foreign-owned companies.',
+  },
+];
+
+
+// --- Data Export ---
+export const financialComplianceRisks: RiskItem[] = [
+  {
+    icon: Scale,
+    title: 'Complex regulatory labyrinth',
+    description: "You face the constant challenge of understanding and complying with Indonesia's evolving tax laws, investment regulations, and corporate governance requirements.",
+  },
+  {
+    icon: DatabaseZap,
+    title: 'Data discrepancies and lack of transparency',
+    description: 'Gaining a clear, accurate, and real-time financial picture is difficult due to fragmented data, inconsistent reporting, or a lack of transparent financial processes.',
+  },
+  {
+    icon: TrendingDown,
+    title: 'Inefficient capital allocation',
+    description: 'Without precise financial insights and robust compliance, you struggle to optimize capital allocation, assess investment risks, and maximize returns within the Indonesian market.',
+  },
+  {
+    icon: ShieldAlert,
+    title: 'Operational bottlenecks and compliance risk',
+    description: 'Your focus shifts from strategic growth to managing tedious administrative tasks, ensuring audit readiness, and mitigating the ever-present risk of penalties from non-compliance.',
+  },
+];
+
 
 // --- Page Data ---
 export const taxServices: ServiceItem[] = [
