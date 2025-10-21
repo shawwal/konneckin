@@ -3,7 +3,7 @@ import BusinessMatchmakingClient from "@/components/business-matchmaking-client"
 
 // Export the metadata for SEO
 export const metadata: Metadata = {
-  title: "Business Matchmaking in Indonesia",
+  title: "Business matchmaking service in Indonesia",
   description: "Find your perfect business partner in Indonesia. We connect you with vetted distributors, suppliers, and joint venture allies to accelerate your growth.",
 };
 

@@ -5,18 +5,8 @@ import { ChevronDown } from 'lucide-react';
 export interface AccordionItemProps {
   title: string;
   content: string;
-  linkText: string;
-  linkHref: string;
-}
-
-interface AccordionWithImageProps {
-  title: React.ReactNode;
-  imageUrl: string;
-  imageAlt: string;
-  accordionItems: AccordionItemProps[];
-  ctaText: string;
-  ctaHref: string;
-  containerClassName?: string;
+  linkText?: string;
+  linkHref?: string;
 }
 
 // --- Accordion Item Sub-component ---
@@ -40,28 +30,29 @@ export const AccordionItem = ({
         >
           <span>{item.title}</span>
           <ChevronDown
-            className={`h-5 w-5 shrink-0 transition-transform duration-200 ${
-              isOpen ? 'rotate-180' : ''
-            }`}
+            className={`h-5 w-5 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''
+              }`}
           />
         </button>
       </h2>
       <div
-        className={`grid transition-all duration-300 ease-in-out ${
-          isOpen
+        className={`grid transition-all duration-300 ease-in-out ${isOpen
             ? 'grid-rows-[1fr] opacity-100'
             : 'grid-rows-[0fr] opacity-0'
-        }`}
+          }`}
       >
         <div className="overflow-hidden">
           <div className="pb-5 pr-4">
             <p className="text-gray-600 dark:text-gray-400">{item.content}</p>
-            <a
-              href={item.linkHref}
-              className="mt-2 inline-block text-sm font-semibold text-blue-900 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400"
-            >
-              {item.linkText} &rarr;
-            </a>
+
+            {item.linkText && (
+              <a
+                href={item.linkHref}
+                className="mt-2 inline-block text-sm font-semibold text-blue-900 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400"
+              >
+                {item.linkText} &rarr;
+              </a>
+            )}
           </div>
         </div>
       </div>

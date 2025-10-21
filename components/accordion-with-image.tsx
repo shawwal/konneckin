@@ -7,8 +7,8 @@ interface AccordionWithImageProps {
   imageUrl: string;
   imageAlt: string;
   accordionItems: AccordionItemProps[];
-  ctaText: string;
-  ctaHref: string;
+  ctaText?: string;
+  ctaHref?: string;
   containerClassName?: string;
 }
 
@@ -34,7 +34,7 @@ export function AccordionWithImage({
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-10">
-          <h2 className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+          <h2 className="text-3xl tracking-tight text-gray-900 dark:text-white sm:text-4xl">
             {title}
           </h2>
         </div>
@@ -72,12 +72,14 @@ export function AccordionWithImage({
               ))}
             </div>
 
-            <div className="mt-8">
-              <a href={ctaHref}>
-                {/* Variant 'outline' is assumed for the button style in the image */}
-                <Button variant="default" size="lg">{ctaText}</Button>
-              </a>
-            </div>
+            {ctaText && (
+              <div className="mt-8">
+                <a href={ctaHref}>
+                  {/* Variant 'outline' is assumed for the button style in the image */}
+                  <Button variant="default" size="lg">{ctaText}</Button>
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>

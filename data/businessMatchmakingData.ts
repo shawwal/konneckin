@@ -1,4 +1,4 @@
-import { Handshake, Building, Package, UserSearch, Target, ShieldCheck, Network } from 'lucide-react';
+import { Handshake, Building, Package, UserSearch, Building2, Map, Rocket, Gem, ShieldAlert, Globe, Telescope, Hourglass } from 'lucide-react';
 
 // --- Type Definitions ---
 type ServiceItem = {
@@ -6,6 +6,20 @@ type ServiceItem = {
   title: string;
   description: string;
 };
+
+interface AccordionItem {
+  title: string;
+  content: string;
+  // linkText and linkHref are optional as they are not in the source HTML
+  linkText?: string;
+  linkHref?: string;
+}
+
+interface RiskItem {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
 
 type ProcessStep = {
   step: string;
@@ -65,21 +79,116 @@ export const matchmakingProcess: ProcessStep[] = [
   },
 ];
 
-export const faqBusinessMatchmakingData: FaqItem[] = [
+// --- Type Definition ---
+
+
+// --- Data Export ---
+export const marketRisks: RiskItem[] = [
   {
-    question: 'How do you ensure the partners you recommend are reliable?',
-    answer: 'Our process involves a multi-stage vetting procedure. We verify the company\'s legal standing, assess their track record and reputation in the market, and conduct initial interviews to ensure they align with your strategic objectives and values. We only introduce partners that meet our strict credibility criteria.',
+    icon: ShieldAlert,
+    title: 'Unvetted or unreliable partners',
+    description: 'Without an established network, companies may end up working with agents or vendors who lack credibility, experience, or proper licenses—resulting in delays, poor service, or legal issues.',
   },
   {
-    question: 'Is a local partner necessary to do business in Indonesia?',
-    answer: 'While not always legally mandatory (for 100% foreign-owned sectors), having a strong local partner is often a significant strategic advantage. They provide invaluable local knowledge, an established network, and help navigate cultural and bureaucratic complexities, greatly accelerating your path to success.',
+    icon: Globe,
+    title: 'Lack of local market understanding',
+    description: 'Many foreign businesses misjudge local culture, communication styles, and business etiquette, which can create friction and damage relationships with potential partners.',
   },
   {
-    question: 'How long does the business matchmaking process take?',
-    answer: 'The timeline typically ranges from 4 to 8 weeks, depending on the specificity and complexity of your partner requirements. A search for a highly specialized distributor, for example, may take longer than sourcing a general business partner.',
+    icon: Telescope,
+    title: 'Misaligned goals and expectations',
+    description: 'Collaborating with the wrong partner often leads to mismatched strategies, unmet KPIs, and diluted brand presence in the local market.',
   },
   {
-    question: 'Is the introduction process confidential?',
-    answer: 'Absolutely. Confidentiality is paramount in our process. We do not disclose your company’s identity to potential partners without your explicit consent. Initial discussions are often handled on a no-name basis to protect your strategic interests.',
+    icon: Hourglass,
+    title: 'Time-consuming and costly',
+    description: 'Identifying the right partner without guidance can take months and significant investment, often with little return.',
   },
 ];
+
+export const matchmakingProcessData: AccordionItem[] = [
+  {
+    title: 'Partner identification and sourcing',
+    content: 'We conduct thorough market research to identify and select the best-fit business partners, suppliers, distributors, or investors aligned with your company’s goals.',
+  },
+  {
+    title: 'B2B meeting coordination',
+    content: 'We organize and facilitate business-to-business meetings, either face-to-face or virtual, ensuring productive and efficient interactions.',
+  },
+  {
+    title: 'Negotiation support',
+    content: 'Our team provides expert assistance during negotiation processes to help secure favorable agreements and build lasting partnerships.',
+  },
+  {
+    title: 'Due diligence and partner evaluation',
+    content: 'We perform in-depth analysis and verification to assess the credibility and compatibility of prospective partners.',
+  },
+  {
+    title: 'Market entry and expansion strategy',
+    content: 'We develop tailored strategies to support your business’s successful expansion in the Indonesian market through strategic collaborations.',
+  },
+  {
+    title: 'Comprehensive support services',
+    content: 'Including assistance with licensing, legal consultation, and administrative processes essential for partnership establishment.',
+  },
+];
+
+export const matchmakingClients = [
+  {
+    icon: Building2,
+    title: 'Foreign companies',
+    description: 'Seeking to enter or expand in the Indonesian market.',
+  },
+  {
+    icon: Map,
+    title: 'Local businesses',
+    description: 'Aiming to find reliable suppliers, distributors, or strategic partners.',
+  },
+  {
+    icon: Rocket,
+    title: 'Startups',
+    description: 'Looking for industry collaborations and growth opportunities.',
+  },
+  {
+    icon: Gem,
+    title: 'Investors',
+    description: 'Searching for promising business ventures and partnerships in Indonesia.',
+  },
+];
+
+// --- Data Export ---
+export const faqBusinessMatchmakingData: FaqItem[] = [
+  {
+    question: 'What is business matchmaking, and how can it help my company in Indonesia?',
+    answer: 'Business matchmaking is a professional service that connects your company with the right business partners, such as suppliers, distributors, or investors in Indonesia. It helps reduce market entry risks, save time, and accelerate business growth by introducing you to pre-qualified, reliable local partners.',
+  },
+  {
+    question: 'Who can benefit from Konneckin’s business matchmaking services?',
+    answer: 'Our services are ideal for foreign companies entering the Indonesian market, local businesses seeking strategic partners, startups looking for industry collaborations, and investors exploring business opportunities in Indonesia.',
+  },
+  {
+    question: 'How do you identify and match potential partners?',
+    answer: 'We use a tailored approach based on your business goals, industry, and partnership requirements. Our team conducts in-depth research, evaluates compatibility, and performs due diligence to ensure the right match with credible and suitable local businesses.',
+  },
+  {
+    question: 'How long does the business matchmaking process usually take?',
+    answer: 'The timeframe varies depending on your specific requirements and the industry, but on average, the process takes between 2 to 6 weeks. We prioritize quality over speed to ensure long-term, strategic partnerships.',
+  },
+  {
+    question: 'Do you assist with negotiations and agreements?',
+    answer: 'Yes. As part of our end-to-end support, we assist with scheduling meetings, interpreting cultural and business norms, and guiding you through negotiation and agreement phases to help ensure smooth communication and alignment.',
+  },
+  {
+    question: 'Can Konneckin help with legal and licensing processes after matchmaking?',
+    answer: 'Absolutely. In addition to our business matchmaking service, we provide full support for business registration, licensing, and visa arrangements—ensuring your new partnerships can operate legally and efficiently in Indonesia.',
+  },
+  {
+    question: 'Are the partners you recommend already verified?',
+    answer: 'Yes. Every potential partner we introduce is thoroughly screened through our internal evaluation process. This includes background checks, operational assessments, and reference verification to ensure they meet our standards of trust and professionalism.',
+  },
+  {
+    question: 'What industries do you specialize in for matchmaking?',
+    answer: 'We serve a wide range of industries including manufacturing, retail, technology, FMCG, healthcare, renewable energy, and professional services. If you\'re looking for business partners in Indonesia, we likely have the right connections for your sector.',
+  },
+];
+

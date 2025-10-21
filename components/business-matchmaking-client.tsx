@@ -5,41 +5,42 @@ import FaqSection from '@/components/faq-section'; // Adjust path
 import {
   matchmakingServices,
   matchmakingProcess,
-  faqBusinessMatchmakingData
+  faqBusinessMatchmakingData,
+  matchmakingClients,
+  matchmakingProcessData,
+  marketRisks
 } from '@/data/businessMatchmakingData'; // Adjust path
+import { ExpertiseSection } from './expertise-section';
+import { AccordionWithImage } from './accordion-with-image';
+import { RiskShowcaseSection } from './risk-showcase';
+import { SplitTwoSection } from './split-two-section';
+
+const HeroSection = () => (
+  <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
+    <div className="container mx-auto">
+      <SplitTwoSection
+        title="Business matchmaking service in Indonesia"
+        subtitle="Connecting international businesses with the right partners in Indonesia — fast, strategic, and reliable."
+        ctaText="Get a free consultation"
+        ctaHref="/contact"
+        imageUrl="/assets/business-handshake.webp"
+        imageAlt="Two business professionals shaking hands"
+        imageOnLeft={false}
+        containerClassName="lg:rounded-2xl"
+      />
+    </div>
+  </section>
+);
 
 export default function BusinessMatchmakingClient() {
   return (
     <>
-      {/* ========== 1. Hero Section ========== */}
-      <section className="bg-slate-50 dark:bg-black">
-        <div className="container mx-auto px-4 sm:px-6 py-20 sm:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* --- Text Content --- */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-tight">
-                Find Your Perfect Business Partner in Indonesia
-              </h1>
-              <p className="mt-6 text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0">
-                Navigate the Indonesian market with a trusted local ally. We connect you with vetted, high-quality partners—from distributors to joint venture allies—to accelerate your growth.
-              </p>
-              <div className="mt-10">
-                <a href="#process" className="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300">
-                  Find My Partner
-                </a>
-              </div>
-            </div>
-            {/* --- Image --- */}
-            <div className="flex items-center justify-center">
-              <img
-                className="rounded-2xl object-cover h-[400px] w-full max-w-md lg:h-[500px] shadow-2xl"
-                src="/assets/business-handshake.webp"
-                alt="Two business professionals shaking hands"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
+      <RiskShowcaseSection
+        title="The hidden risks of expanding without the right local partners"
+        subtitle="Many foreign companies struggle to navigate complex local dynamics alone, leading to missed opportunities and wasted resources."
+        risks={marketRisks}
+      />
 
       {/* ========== 2. Core Services Section ========== */}
       <section id="services" className="py-20 sm:py-28 bg-white dark:bg-slate-900">
@@ -92,6 +93,32 @@ export default function BusinessMatchmakingClient() {
           </div>
         </div>
       </section>
+
+      <AccordionWithImage
+        title={
+          <>
+            <span className="text-blue-900 dark:text-primary">
+              Find the right partners, suppliers, and investors in Indonesia
+            </span>
+            {' '}— matched by professionals who understand your business goals.
+          </>
+        }
+        // NOTE: The image URL was not in the provided HTML. Please replace this path.
+        imageUrl="/assets/room-with-windows.webp"
+        imageAlt="A long road room with many windows"
+        accordionItems={matchmakingProcessData}
+        ctaText="See how we can help you grow"
+        ctaHref="/contact" // Assuming the button should link to a contact section
+      />
+
+      <ExpertiseSection
+        title={
+          <>
+            Who needs our business matchmaking services?
+          </>
+        }
+        featureItems={matchmakingClients}
+      />
 
       {/* ========== 4. FAQ Section ========== */}
       <FaqSection
