@@ -1,4 +1,4 @@
-import { Users, Search, UserCheck, FileText,  UserX, Clock, Puzzle, FileWarning} from 'lucide-react';
+import { Users, Search, UserCheck, FileText,  UserX, Clock, Puzzle, FileWarning, BrainCircuit, Network, DraftingCompass, Gauge, Trophy} from 'lucide-react';
 
 // --- Type Definitions ---
 type ServiceItem = {
@@ -29,6 +29,86 @@ interface AccordionItem {
   content: string;
 }
 
+// --- Data Export ---
+export const faqRecruitment: FaqItem[] = [
+  {
+    question: 'How long does the recruitment process typically take?',
+    answer: 'The recruitment timeline varies depending on the position and the talent availability. Typically, for mid-level positions, the process takes 2-4 weeks, while executive search may take 4-8 weeks. We always strive to provide high-quality candidates within the shortest possible time frame.',
+  },
+  {
+    question: 'Do you offer a guarantee period for candidates?',
+    answer: 'Yes, we provide a candidate replacement guarantee if the hired candidate leaves or is terminated within the agreed probation period. The guarantee period typically ranges from 1 to 3 months, depending on the agreement.',
+  },
+  {
+    question: 'Can Konneckin handle confidential hiring?',
+    answer: 'Absolutely. We have extensive experience managing confidential recruitment processes. We ensure strict privacy and professionalism when sourcing and communicating with candidates for sensitive roles.',
+  },
+  {
+    question: 'What is your recruitment fee structure?',
+    answer: 'Our recruitment fees are typically based on a percentage of the candidate’s annual gross salary. We offer flexible fee structures depending on the hiring volume, position level, and partnership terms. Please contact us for a customized quotation.',
+  },
+  {
+    question: 'Do you support mass hiring or project-based recruitment?',
+    answer: 'Yes, we have a dedicated team that can handle mass recruitment and project-based hiring efficiently. We are experienced in delivering large-scale hiring solutions within tight deadlines, tailored to your business needs.',
+  },
+  {
+    question: 'Can you help with temporary or contract staffing?',
+    answer: 'Yes, we offer temporary and contract staffing services for businesses needing short-term placements, project-based hires, or maternity leave coverage. This allows companies to maintain operational flexibility without long-term commitments.',
+  },
+  {
+    question: 'Do you assist with expatriate hiring?',
+    answer: 'Yes, we can fully support expatriate hiring, including the processing of work permits (KITAS), visa applications, and onboarding coordination for foreign professionals relocating to Indonesia.',
+  },
+  {
+    question: 'What is your sourcing strategy for finding top talent?',
+    answer: 'We utilize a multi-channel sourcing strategy, including our proprietary candidate database, targeted headhunting, professional networks, and job portals. We also leverage passive candidate outreach to attract hard-to-find talent.',
+  },
+  {
+    question: 'Can you help with employer branding to attract better candidates?',
+    answer: 'Yes, we provide employer branding advisory to help position your company as an attractive workplace. This includes optimizing job postings, enhancing candidate communication, and promoting your company’s unique values to the market.',
+  },
+];
+
+// --- Type Definition ---
+interface StrengthItem {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+// --- Data Export ---
+export const recruitmentStrengths: StrengthItem[] = [
+  {
+    icon: BrainCircuit,
+    title: 'Deep industry expertise',
+    description: 'Our consultants have in-depth knowledge across various sectors, enabling us to deliver highly relevant talent for each industry.',
+  },
+  {
+    icon: Network,
+    title: 'Extensive talent network',
+    description: 'We leverage a strong, diverse, and continuously growing candidate pool.',
+  },
+  {
+    icon: DraftingCompass,
+    title: 'Custom-built recruitment strategies',
+    description: 'We design tailored hiring solutions that align with each client’s business goals, culture, and timelines.',
+  },
+  {
+    icon: Gauge,
+    title: 'Speed without compromising quality',
+    description: 'Our streamlined recruitment process significantly reduces time-to-hire while maintaining high standards in candidate selection.',
+  },
+  {
+    icon: UserCheck,
+    title: 'Post-placement support and commitment',
+    description: 'We provide continuous support even after candidate onboarding to ensure successful integration and long-term retention.',
+  },
+  {
+    icon: Trophy,
+    title: 'Proven success with leading companies',
+    description: 'We are trusted by established organizations to manage critical hiring needs and deliver consistent, high-impact results.',
+  },
+];
 // --- Data Export ---
 export const recruitmentSteps: ProcessStep[] = [
   {

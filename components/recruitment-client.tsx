@@ -8,13 +8,17 @@ import {
   faqRecruitmentData,
   hiringRisks,
   hiringServicesAccordionData,
-  recruitmentSteps
+  recruitmentSteps,
+  faqRecruitment,
+  recruitmentStrengths
 } from '@/data/recruitmentData'; // Adjust path
 import { SplitTwoSection } from './split-two-section';
 import { RiskShowcaseSection } from './risk-showcase';
 import { AccordionWithImage } from './accordion-with-image';
 import { postSetupServicesData } from '@/data/postEstablishmentData';
 import { ProcessSection } from './process-section';
+import { ExpertiseSection } from './expertise-section';
+import { expertiseItems } from '@/data/businessExpansionData';
 
 const HeroSection = () => (
   <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
@@ -86,17 +90,22 @@ export default function RecruitmentClient() {
           </div>
         </div>
       </section>
-
-      {/* ========== 3. Hiring Process Section (New Component) ========== */}
       <ProcessSection
         title="Find the right talent to power your business growth."
         description="We identify and analyze the talent landscape to provide strategic insights on the availability, quality, and competitiveness of potential candidates."
         steps={recruitmentSteps}
       />
-
-      {/* ========== 4. FAQ Section ========== */}
+      <ExpertiseSection
+        title={
+          <>
+            Attract. Assess.{' '}
+            <span className="text-primary">Achieve.</span>
+          </>
+        }
+        featureItems={recruitmentStrengths}
+      />
       <FaqSection
-        faqData={faqRecruitmentData}
+        faqData={faqRecruitment}
         title="Recruitment FAQs"
         subtitle="Your questions about finding and hiring talent in Indonesia, answered."
       />
