@@ -1,8 +1,3 @@
-// import type { Metadata } from "next"
-// export const metadata: Metadata = {
-//   title: "Expatriate support",
-//   description: "Visas and permits for Indonesia—compliant, reliable, and stress-free.",
-// }
 'use client'
 import FaqSection from '@/components/faq-section';
 import PitfallsSection from '@/components/pitfalls-section';

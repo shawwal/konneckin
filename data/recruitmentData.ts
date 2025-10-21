@@ -1,4 +1,4 @@
-import { Users, Search, UserCheck, FileText, Briefcase, FileSearch, CheckCircle, Rocket } from 'lucide-react';
+import { Users, Search, UserCheck, FileText,  UserX, Clock, Puzzle, FileWarning} from 'lucide-react';
 
 // --- Type Definitions ---
 type ServiceItem = {
@@ -17,6 +17,99 @@ type FaqItem = {
   question: string;
   answer: string;
 };
+interface RiskItem {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+// --- Type Definition ---
+interface AccordionItem {
+  title: string;
+  content: string;
+}
+
+// --- Data Export ---
+export const recruitmentSteps: ProcessStep[] = [
+  {
+    step: '01',
+    title: 'Talent mapping',
+    description: 'We identify and analyze the talent landscape to provide strategic insights on the availability, quality, and competitiveness of potential candidates.',
+  },
+  {
+    step: '02',
+    title: 'Talent sourcing',
+    description: 'We actively reach out to the right talent through targeted search, leveraging both active and passive candidate networks.',
+  },
+  {
+    step: '03',
+    title: 'Candidate screening & assessment',
+    description: 'We conduct comprehensive evaluations to ensure candidates meet the required skills, experience, and cultural fit for the organization.',
+  },
+  {
+    step: '04',
+    title: 'Offer management',
+    description: 'We facilitate smooth offer negotiations to align expectations between clients and candidates, ensuring a positive acceptance rate.',
+  },
+  {
+    step: '05',
+    title: 'After-service: Replacement guarantee & Onboarding monitoring',
+    description: 'We offer a replacement guarantee to provide peace of mind, ensuring clients have the right talent in place without additional risk.',
+  },
+];
+
+// --- Data Export ---
+export const hiringServicesAccordionData: AccordionItem[] = [
+  {
+    title: 'Executive search',
+    content: 'We connect you with senior leaders and specialist talent who can drive strategic growth in Indonesia.',
+  },
+  {
+    title: 'Mass hiring & workforce scaling',
+    content: 'Quickly build operational teams across multiple locations — ideal for manufacturing, logistics, or customer service sectors.',
+  },
+  {
+    title: 'Recruitment process outsourcing (RPO)',
+    content: 'Let us manage your hiring end-to-end, from job postings to onboarding — so you can focus on your business.',
+  },
+  {
+    title: 'Local & regional talent sourcing',
+    content: 'Find qualified local professionals across Indonesia and Southeast Asia through our trusted recruitment network.',
+  },
+  {
+    title: 'Expat recruitment & compliance',
+    content: 'We help you hire foreign professionals while ensuring full visa and labor law compliance.',
+  },
+  {
+    title: 'Project-based & contract hiring',
+    content: 'Get flexible staffing solutions for short-term projects, freelance roles, or seasonal needs — fast and hassle-free.',
+  },
+];
+
+// --- Data Export ---
+export const hiringRisks: RiskItem[] = [
+  {
+    icon: UserX,
+    title: 'Limited access to qualified talent',
+    description: 'The best candidates aren’t always visible on job portals. Without trusted local networks, companies miss out on high-quality professionals or face inflated agency fees.',
+  },
+  {
+    icon: Clock,
+    title: 'Slow and inconsistent hiring process',
+    description: 'Delays in screening, poor interview-to-hire conversion, and unreliable communication from applicants can extend the timeline by weeks—costing time and productivity.',
+  },
+  {
+    icon: Puzzle,
+    title: 'Lack of cultural and behavioral fit',
+    description: 'Even when candidates meet the technical requirements, misalignment in communication style, work ethic, or business culture can lead to failed hires and high turnover.',
+  },
+  {
+    icon: FileWarning,
+    title: 'Unclear hiring compliance and contracts',
+    description: 'Foreign companies often face uncertainty around employment contracts, probation rules, and what’s legally required under Indonesian labor law.',
+  },
+];
+
 
 // --- Page Data ---
 export const recruitmentServices: ServiceItem[] = [

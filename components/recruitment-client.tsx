@@ -5,41 +5,60 @@ import FaqSection from '@/components/faq-section'; // Adjust path
 import {
   recruitmentServices,
   recruitmentProcess,
-  faqRecruitmentData
+  faqRecruitmentData,
+  hiringRisks,
+  hiringServicesAccordionData,
+  recruitmentSteps
 } from '@/data/recruitmentData'; // Adjust path
+import { SplitTwoSection } from './split-two-section';
+import { RiskShowcaseSection } from './risk-showcase';
+import { AccordionWithImage } from './accordion-with-image';
+import { postSetupServicesData } from '@/data/postEstablishmentData';
+import { ProcessSection } from './process-section';
+
+const HeroSection = () => (
+  <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
+    <div className="container mx-auto">
+      <SplitTwoSection
+        title="Hiring top talent in Indonesia made simple"
+        subtitle="We help you source, screen, and secure the right candidates locally and regionally."
+        ctaText="Get a free consultation"
+        ctaHref="/contact"
+        imageUrl="/assets/recruitment-team.webp"
+        imageAlt="woman listening to music and drink coffee"
+        imageOnLeft={false}
+        containerClassName="lg:rounded-2xl"
+      />
+    </div>
+  </section>
+);
 
 export default function RecruitmentClient() {
   return (
     <>
-      {/* ========== 1. Hero Section ========== */}
-      <section className="bg-slate-900 text-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh] py-20 lg:py-0">
-            {/* --- Text Content --- */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight leading-tight">
-                Building Your A-Team in Indonesia
-              </h1>
-              <p className="mt-6 text-lg lg:text-xl text-slate-300 max-w-xl mx-auto lg:mx-0">
-                Finding the right talent is your biggest competitive advantage. We connect you with the top-tier professionals you need to build, scale, and lead your business in Indonesia.
-              </p>
-              <div className="mt-10">
-                <a href="#process" className="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300">
-                  Find Your Next Hire
-                </a>
-              </div>
-            </div>
-            {/* --- Image --- */}
-            <div className="flex items-center justify-center">
-              <img
-                className="rounded-2xl object-cover h-[400px] w-full max-w-md lg:h-[500px] shadow-2xl"
-                src="/assets/recruitment-team.webp"
-                alt="A diverse team of professionals in a meeting"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
+
+      <RiskShowcaseSection
+        title="Hiring in Indonesia isn’t easy. Here’s what companies struggle with."
+        subtitle="Finding the right talent in Indonesia can be a major roadblock—especially for foreign companies unfamiliar with the local hiring landscape. These are the most common pain points we hear from clients:"
+        risks={hiringRisks}
+      />
+
+      <AccordionWithImage
+        title={
+          <>
+            <span className="text-blue-900 dark:text-primary">
+              Helping you hire with
+            </span>
+            {' '}confidence and speed.
+          </>
+        }
+        imageUrl="/assets/people-working.webp"
+        imageAlt="people working"
+        accordionItems={hiringServicesAccordionData}
+        ctaText="See how we can help you grow"
+        ctaHref="/contact" // Assuming the button should link to a contact section
+      />
 
       {/* ========== 2. Core Services Section ========== */}
       <section id="services" className="py-20 sm:py-28 bg-white dark:bg-black">
@@ -69,39 +88,11 @@ export default function RecruitmentClient() {
       </section>
 
       {/* ========== 3. Hiring Process Section (New Component) ========== */}
-      <section id="process" className="py-20 sm:py-28 bg-slate-50 dark:bg-slate-900">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">
-              Our Proven Hiring Process
-            </h2>
-            <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-              We follow a structured, transparent process designed to deliver the best candidates efficiently.
-            </p>
-          </div>
-          <div className="relative mt-16 max-w-4xl mx-auto">
-            {/* The vertical line */}
-            <div className="absolute left-4 top-4 h-full w-0.5 bg-slate-200 dark:bg-slate-700 lg:left-1/2 lg:-translate-x-1/2"></div>
-
-            <div className="space-y-12">
-              {recruitmentProcess.map((step, index) => (
-                <div key={step.step} className="relative flex items-start lg:grid lg:grid-cols-2 lg:gap-12">
-                  {/* Circle Indicator */}
-                  <div className="absolute left-4 top-4 -translate-x-1/2 h-8 w-8 bg-white dark:bg-slate-800 rounded-full border-2 border-slate-200 dark:border-slate-700 flex items-center justify-center lg:left-1/2">
-                    <span className="text-sm font-bold text-primary">{step.step}</span>
-                  </div>
-
-                  {/* Content */}
-                  <div className={`pl-12 lg:pl-0 ${index % 2 === 0 ? 'lg:col-start-1 lg:text-right' : 'lg:col-start-2'}`}>
-                    <h3 className="mt-2 text-xl font-semibold text-slate-900 dark:text-white">{step.title}</h3>
-                    <p className="mt-2 text-slate-600 dark:text-slate-400">{step.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProcessSection
+        title="Find the right talent to power your business growth."
+        description="We identify and analyze the talent landscape to provide strategic insights on the availability, quality, and competitiveness of potential candidates."
+        steps={recruitmentSteps}
+      />
 
       {/* ========== 4. FAQ Section ========== */}
       <FaqSection
