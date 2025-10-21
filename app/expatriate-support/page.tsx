@@ -6,6 +6,7 @@
 'use client'
 import FaqSection from '@/components/faq-section';
 import PitfallsSection from '@/components/pitfalls-section';
+import { SplitTwoSection } from '@/components/split-two-section';
 import { Button } from '@/components/ui/button';
 import { faqExpatriateData } from '@/data/faqExpatriateData';
 import { Check, CheckCircle, ArrowRight, ShieldCheck, Handshake, FileText, Home } from 'lucide-react';
@@ -158,6 +159,23 @@ function FeatureCard({ item }: any) {
   return null;
 }
 
+const HeroSection = () => (
+  <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
+    <div className="container mx-auto">
+      <SplitTwoSection
+        title="Moving to Indonesia? Let’s make it effortless."
+        subtitle="Whether you're just planning to arrive, already living here, or ready to settle permanently, Konneckin supports your visa and permit journey with full compliance and peace of mind."
+        ctaText="Get a free consultation"
+        ctaHref="/contact"
+        imageUrl="/assets/city-skyline.webp"
+        imageAlt="vibrant city skyline"
+        imageOnLeft={false}
+        containerClassName="lg:rounded-2xl"
+      />
+    </div>
+  </section>
+);
+
 // --- Main Page Component ---
 export default function ExpatriateSupportPage() {
   const trustedCard = expatriateSupportCardData.find(item => item.type === 'trusted');
@@ -166,28 +184,7 @@ export default function ExpatriateSupportPage() {
   return (
     <>
       {/* Hero Section (Adapted from your SplitSection) */}
-      <div className="bg-white dark:bg-gray-900">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="relative flex flex-col justify-center p-8 sm:p-12 lg:p-16">
-            <div className="space-y-6 max-w-xl">
-              <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl leading-tight">
-                Moving to Indonesia? Let’s make it effortless.
-              </h1>
-              <p className="text-base text-gray-600 dark:text-gray-300 sm:text-lg">
-                Whether you're just planning to arrive, already living here, or ready to settle permanently, Konneckin supports your visa and permit journey with full compliance and peace of mind.
-              </p>
-              <Button size="lg">Get a free consultation</Button>
-            </div>
-          </div>
-          <div className="relative h-80 lg:min-h-[500px]">
-            <img
-              className="absolute inset-0 h-full w-full object-cover"
-              src="/assets/city-skyline.webp"
-              alt="Person looking over a vibrant city skyline"
-            />
-          </div>
-        </div>
-      </div>
+      <HeroSection />
 
       <PitfallsSection />
 
