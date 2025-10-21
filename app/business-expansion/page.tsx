@@ -5,15 +5,12 @@ import FaqSection from '@/components/faq-section'; // Adjust path if needed
 import {
   whyPartnerData,
   faqBusinessExpansionData,
-  marketChallenges,
   expertiseItems
 } from '@/data/businessExpansionData'; // Adjust path if needed
 import { SplitTwoSection } from '@/components/split-two-section';
-import { Accordion } from '@radix-ui/react-accordion';
 import { AccordionWithImage } from '@/components/accordion-with-image';
-import { accordionData } from '@/data/bussinessAccorditionData';
+import { accordionData } from '@/data/businessAccordionData';
 import { ExpertiseSection } from '@/components/expertise-section';
-
 
 const HeroSection = () => (
   <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
