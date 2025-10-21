@@ -76,12 +76,12 @@ export const mainServices = [
       {
         title: 'Visa & Immigration',
         description: 'Secure work and stay permits hassle-free.',
-        href: '/visa-immigration',
+        // href: '/visa-immigration',
       },
       {
         title: 'Relocation Services',
         description: 'Find housing, schools, and settle in.',
-        href: '/relocation-services',
+        // href: '/relocation-services',
       },
     ],
   },
@@ -95,7 +95,7 @@ export const mainServices = [
       {
         title: 'Customs Clearance',
         description: 'Efficient and compliant customs processing.',
-        href: '/customs-clearance',
+        // href: '/customs-clearance',
       },
     ],
   },
