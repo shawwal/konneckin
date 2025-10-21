@@ -1,4 +1,4 @@
-import { Lightbulb, Users, LineChart, Target, FileSearch, Presentation, BarChart, CheckCircle } from 'lucide-react';
+import { Lightbulb, Users, LineChart, Target, FileSearch, Presentation, BarChart, CheckCircle,  Swords, FileWarning } from 'lucide-react';
 
 // --- Type Definitions ---
 type ServiceItem = {
@@ -17,6 +17,69 @@ type FaqItem = {
   question: string;
   answer: string;
 };
+interface MarketResearchRisk {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+interface AccordionItem {
+  title: string;
+  content: string;
+}
+
+// --- Data Export ---
+export const marketResearchAccordionData: AccordionItem[] = [
+  {
+    title: 'Industry overview',
+    content: 'Understand the market size, trends, growth potential, and key dynamics in your target sector.',
+  },
+  {
+    title: 'Customer profiling',
+    content: 'Identify your ideal customer segments, purchasing behavior, and cultural preferences.',
+  },
+  {
+    title: 'Competitor analysis',
+    content: 'See how you compare to existing players, and uncover what they\'re doing right—and wrong.',
+  },
+  {
+    title: 'Pricing benchmarking',
+    content: 'Understand the price range customers are willing to pay, and what competitors charge.',
+  },
+  {
+    title: 'Regulatory scan',
+    content: 'Know the licenses, permits, and compliance issues before entering the market.',
+  },
+  {
+    title: 'Market feasibility study',
+    content: 'Get a full report assessing whether your business model fits the Indonesian market.',
+  },
+];
+
+
+// --- Data Export ---
+export const marketResearchRisks: MarketResearchRisk[] = [
+  {
+    icon: Target,
+    title: 'Misguided targeting',
+    description: 'Entering a segment that looks promising—until you realize your actual customers are somewhere else.',
+  },
+  {
+    icon: Users,
+    title: 'Ignoring local behavior',
+    description: 'Assuming consumers in Indonesia behave like they do in other markets. Spoiler: they don’t.',
+  },
+  {
+    icon: Swords,
+    title: 'Overlooking the competition',
+    description: 'You set your price, launch your service, then realize five local players already dominate the space.',
+  },
+  {
+    icon: FileWarning,
+    title: 'Missing regulatory red flags',
+    description: 'Failure to understand regulatory nuance can lead to costly mistakes or even business shutdown.',
+  },
+];
+
 
 // --- Page Data ---
 export const researchServices: ServiceItem[] = [
@@ -81,5 +144,44 @@ export const faqMarketResearchData: FaqItem[] = [
   {
     question: 'What kind of deliverables can I expect from the research?',
     answer: 'You will receive a comprehensive, professionally written report that includes an executive summary, detailed analysis of findings, data visualizations (charts and graphs), and a set of clear, actionable recommendations to support your strategic decision-making.',
+  },
+];
+
+export const faqMarketResearch: FaqItem[] = [
+  {
+    question: 'Why should I conduct market research before investing in Indonesia?',
+    answer: 'Indonesia’s diverse market and regulatory environment make local insights crucial. Market research reduces risks and helps tailor your strategy for long-term success.',
+  },
+  {
+    question: 'What types of market research does Konneckin offer?',
+    answer: 'We provide industry analysis, feasibility studies, competitor mapping, consumer behavior insights, pricing strategy, and regulatory reviews—customized for the Indonesian market.',
+  },
+  {
+    question: 'How can I identify the right customer segment in Indonesia?',
+    answer: 'Our data-driven research helps define your ideal target audience based on demographics, buying patterns, and market demand across different regions.',
+  },
+  {
+    question: 'Does Konneckin help validate business ideas?',
+    answer: 'Yes. We evaluate market size, competition, operational feasibility, and legal framework to support informed investment decisions.',
+  },
+  {
+    question: 'What sectors in Indonesia show strong growth potential?',
+    answer: 'Tech, food & beverage, manufacturing, renewable energy, and fintech are thriving. Konneckin offers sector-specific insights to guide your entry.',
+  },
+  {
+    question: 'What challenges do foreign investors commonly face in Indonesia?',
+    answer: 'Key challenges include navigating regulations, cultural adaptation, and local competition. Our research highlights risks and provides practical solutions.',
+  },
+  {
+    question: 'How up-to-date is the market data provided?',
+    answer: 'We combine real-time primary research with reliable secondary sources to deliver accurate and actionable insights.',
+  },
+  {
+    question: 'Can I request research for a specific or niche market?',
+    answer: 'Yes. We deliver tailored reports for niche sectors such as halal products, digital health, education, and sustainability.',
+  },
+  {
+    question: 'Do you provide insights beyond Jakarta?',
+    answer: 'Absolutely. We cover key regions like Surabaya, Bali, Medan, Batam, and emerging secondary cities with growing investor interest.',
   },
 ];

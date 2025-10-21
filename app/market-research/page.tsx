@@ -3,8 +3,8 @@ import MarketResearchClient from "@/components/market-research-client"; // Adjus
 
 // Export the metadata for SEO
 export const metadata: Metadata = {
-  title: "Market Research in Indonesia",
-  description: "Enter the Indonesian market with confidence. Get in-depth data and local insights to build a successful and sustainable entry strategy.",
+  title: "Market research for strategic growth",
+  description: "Making business decisions without the right insights can lead to costly mistakes and missed opportunities.",
 };
 
 // Render the Client Component
