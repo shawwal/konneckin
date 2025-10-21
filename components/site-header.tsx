@@ -19,22 +19,22 @@ import Image from "next/image"
 
 export function SiteHeader() {
   const { t } = useI18n()
-  const [industriesOpen, setIndustriesOpen] = useState(false)
-  // Ref to hold the timer ID
+  const [servicesMenuOpen, setServicesMenuOpen] = useState(false)
+  // Ref to hold the timer ID for hover intent
   const closeTimer = useRef<NodeJS.Timeout | null>(null)
 
   // When mouse enters either the link OR the menu, cancel any pending close actions
-  const handleMouseEnter = () => {
+  const handleServicesMouseEnter = () => {
     if (closeTimer.current) {
       clearTimeout(closeTimer.current)
     }
-    setIndustriesOpen(true)
+    setServicesMenuOpen(true)
   }
 
   // When mouse leaves either the link OR the menu, start a timer to close it
-  const handleMouseLeave = () => {
+  const handleServicesMouseLeave = () => {
     closeTimer.current = setTimeout(() => {
-      setIndustriesOpen(false)
+      setServicesMenuOpen(false)
     }, 200) // 200ms grace period
   }
 
@@ -66,20 +66,19 @@ export function SiteHeader() {
               </a>
             </div>
 
-            {/* Centered nav (desktop) - UPDATED BREAKPOINT */}
+            {/* Centered nav (desktop) */}
             <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:block">
               <ul className="flex items-center gap-6 text-sm">
-                <li>
+                <li
+                  className="relative"
+                  onMouseEnter={handleServicesMouseEnter}
+                  onMouseLeave={handleServicesMouseLeave}
+                >
                   <a href="/services" className="hover:underline">
                     {t("services")}
                   </a>
                 </li>
-                <li
-                  className="relative group"
-                  // Apply the timer handlers to the trigger
-                  // onMouseEnter={handleMouseEnter}
-                  // onMouseLeave={handleMouseLeave}
-                >
+                <li>
                   <a href="/industries" className="hover:underline">
                     {t("industries")}
                   </a>
@@ -104,19 +103,16 @@ export function SiteHeader() {
 
             {/* Right controls */}
             <div className="flex flex-1 items-center justify-end gap-2">
-              {/* UPDATED BREAKPOINT */}
               <div className="hidden lg:block">
-                <LanguageSwitcher />
+                {/* <LanguageSwitcher /> */}
               </div>
               <ThemeToggle />
-              {/* UPDATED BREAKPOINT */}
               <a href="/contact" className="hidden lg:inline-flex">
                 <Button variant="default">{t("contact")}</Button>
               </a>
 
               <Sheet>
                 <SheetTrigger asChild>
-                  {/* UPDATED BREAKPOINT */}
                   <Button className="lg:hidden" variant="ghost" aria-label="Open menu">
                     <Menu className="size-5" />
                   </Button>
@@ -155,7 +151,7 @@ export function SiteHeader() {
 
                   <div className="mt-auto px-4 py-4">
                     <div className="flex items-center justify-between">
-                      <LanguageSwitcher />
+                      {/* <LanguageSwitcher /> */}
                       <a href="/contact">
                         <Button size="sm">{t("contact")}</Button>
                       </a>
@@ -167,11 +163,11 @@ export function SiteHeader() {
           </div>
         </div>
         
-        {/* Mega menu stays here and also gets the timer handlers */}
+        {/* Mega menu is now controlled by the services link hover state */}
         <MegaMenu
-          open={industriesOpen}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          open={servicesMenuOpen}
+          onMouseEnter={handleServicesMouseEnter}
+          onMouseLeave={handleServicesMouseLeave}
         />
       </header>
     </>
