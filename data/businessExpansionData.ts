@@ -1,4 +1,12 @@
-import { PackageCheck, Users, Building2, Network, ShieldCheck, TrendingUp, Target, Scale, Handshake, Banknote, Languages } from 'lucide-react';
+import { PackageCheck, Users, Building2, Network, ShieldCheck, TrendingUp, Target, Scale, Handshake, Banknote, Languages, Map, Rocket, Gem  } from 'lucide-react';
+
+// Define the type for a single feature item
+export interface FeatureItem {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
 
 type ServiceItem = {
   icon: React.ElementType;
@@ -86,6 +94,30 @@ export const whyPartnerData: WhyItem[] = [
     description: 'By handling the complexities, we free you up to focus on strategic initiatives and sustainable growth.'
   }
 ];
+// Export the data array
+export const expertiseItems: FeatureItem[] = [
+  {
+    icon: Building2,
+    title: 'Local expertise',
+    description: "Our team blends grassroots market insights with deep local knowledge, guiding your business through Indonesia's unique regulatory landscape.",
+  },
+  {
+    icon: Map,
+    title: 'Personalized approach',
+    description: 'Every client matters. We provide tailored, hands-on support, ensuring your business gets the attention and care it deserves.',
+  },
+  {
+    icon: Rocket,
+    title: 'Agility & efficiency',
+    description: 'We act fast, navigating bureaucratic complexities with speed and precision — so your business stays on track.',
+  },
+  {
+    icon: Gem,
+    title: 'Long-term partnership',
+    description: 'Your success is our priority. As owner-led professionals, we are committed to building lasting partnerships that grow alongside your business.',
+  },
+];
+
 
 export const faqBusinessExpansionData: FaqItem[] = [
   {

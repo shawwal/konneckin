@@ -5,12 +5,14 @@ import FaqSection from '@/components/faq-section'; // Adjust path if needed
 import {
   whyPartnerData,
   faqBusinessExpansionData,
-  marketChallenges
+  marketChallenges,
+  expertiseItems
 } from '@/data/businessExpansionData'; // Adjust path if needed
 import { SplitTwoSection } from '@/components/split-two-section';
 import { Accordion } from '@radix-ui/react-accordion';
 import { AccordionWithImage } from '@/components/accordion-with-image';
 import { accordionData } from '@/data/bussinessAccorditionData';
+import { ExpertiseSection } from '@/components/expertise-section';
 
 
 const HeroSection = () => (
@@ -43,7 +45,7 @@ export default function BusinessExpansionPage() {
           // Using a fragment to potentially style the two parts of the title differently
           <>
             Accelerate your expansion in Indonesia through a proven framework that combines{' '}
-            <span className="text-blue-600">
+            <span className="text-blue-900 dark:text-primary">
               compliance, local insight, and strategic partnerships.
             </span>
           </>
@@ -56,7 +58,17 @@ export default function BusinessExpansionPage() {
         ctaHref="/contact" // Assuming the button should link to a contact section
       />
 
-      {/* ========== 3. Why Partner With Us Section ========== */}
+
+      <ExpertiseSection
+        title={
+          <>
+            Entering new markets requires the{' '}
+            <span className="text-blue-800">right expertise</span>
+          </>
+        }
+        featureItems={expertiseItems}
+      />
+
       <section className="py-20 sm:py-28 bg-slate-50 dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -80,7 +92,7 @@ export default function BusinessExpansionPage() {
                 {whyPartnerData.map(item => (
                   <div key={item.title} className="flex items-start">
                     <div className="bg-blue-100 dark:bg-blue-900/50 rounded-full h-8 w-8 flex-shrink-0 flex items-center justify-center">
-                      <item.icon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                      <item.icon className="h-5 w-5 text-blue-900 dark:text-blue-400" />
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">{item.title}</h3>

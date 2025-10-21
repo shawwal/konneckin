@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button'; // Assuming you have a Button component
+import React from 'react';
 import { ChevronDown } from 'lucide-react';
 
 // --- Type Definitions for Props ---
@@ -59,7 +58,7 @@ export const AccordionItem = ({
             <p className="text-gray-600 dark:text-gray-400">{item.content}</p>
             <a
               href={item.linkHref}
-              className="mt-2 inline-block text-sm font-semibold text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400"
+              className="mt-2 inline-block text-sm font-semibold text-blue-900 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400"
             >
               {item.linkText} &rarr;
             </a>
