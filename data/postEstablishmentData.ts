@@ -1,4 +1,4 @@
-import { BookUser, Calculator, Mailbox, Landmark, UserCheck, ShieldAlert, TrendingUp, CheckCircle, FileWarning, TimerOff, Spline, Loader } from 'lucide-react';
+import { BookUser, Calculator, Mailbox, Landmark, UserCheck, ShieldAlert, TrendingUp, CheckCircle, FileWarning, TimerOff, Spline, Loader, Building2, Library, Globe, HeartHandshake } from 'lucide-react';
 
 type ServiceItem = {
   icon: React.ElementType;
@@ -29,6 +29,36 @@ export interface AccordionItem {
   linkText: string;
   linkHref: string;
 }
+
+export interface FeatureItem {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+// --- Data Export ---
+export const whyChooseUsItems: FeatureItem[] = [
+  {
+    icon: Building2,
+    title: 'Local expertise',
+    description: 'We provide in-depth knowledge of Indonesian regulations to help your business stay compliant and competitive.',
+  },
+  {
+    icon: Library,
+    title: 'Comprehensive solutions',
+    description: 'From company setup to ongoing support, we offer integrated services tailored to your business needs.',
+  },
+  {
+    icon: Globe,
+    title: 'Global trust',
+    description: 'Trusted by global companies for our reliable support and seamless project delivery across industries.',
+  },
+  {
+    icon: HeartHandshake,
+    title: 'Dedicated support',
+    description: 'Our team is committed to providing timely assistance and personalized solutions for every client.',
+  },
+];
 
 // --- Data Export ---
 export const postSetupServicesData: AccordionItem[] = [

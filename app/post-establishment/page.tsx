@@ -7,13 +7,13 @@ import {
   whyItMattersData,
   faqPostEstablishmentData,
   postSetupRisks,
-  postSetupServicesData
+  postSetupServicesData,
+  whyChooseUsItems
 } from '@/data/postEstablishmentData'; // Adjust path if needed
 import { SplitTwoSection } from '@/components/split-two-section';
 import { RiskShowcaseSection } from '@/components/risk-showcase';
 import { AccordionWithImage } from '@/components/accordion-with-image';
-import { marketResearchAccordionData } from '@/data/marketResearchData';
-
+import { ExpertiseSection } from '@/components/expertise-section';
 
 const HeroSection = () => (
   <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
@@ -58,6 +58,16 @@ export default function PostEstablishmentPage() {
         accordionItems={postSetupServicesData}
         ctaText="See how we can help you grow"
         ctaHref="/contact" // Assuming the button should link to a contact section
+      />
+
+      <ExpertiseSection
+        title={
+          <>
+            Expert support for ongoing {' '}
+            <span className="text-primary">business success</span>
+          </>
+        }
+        featureItems={whyChooseUsItems}
       />
       {/* ========== 2. Core Services Section ========== */}
       <section id="services" className="py-20 sm:py-28 bg-slate-50 dark:bg-black">
