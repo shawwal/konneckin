@@ -1,4 +1,4 @@
-import { PackageCheck, Users, Building2, Network, ShieldCheck, TrendingUp, Target } from 'lucide-react';
+import { PackageCheck, Users, Building2, Network, ShieldCheck, TrendingUp, Target, Scale, Handshake, Banknote, Languages } from 'lucide-react';
 
 type ServiceItem = {
   icon: React.ElementType;
@@ -16,6 +16,35 @@ type FaqItem = {
   question: string;
   answer: string;
 };
+
+type ChallengeItem = {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+};
+
+export const marketChallenges: ChallengeItem[] = [
+  {
+    icon: Scale,
+    title: 'Complex regulations',
+    description: "Navigating Indonesia's legal and bureaucratic landscape can be overwhelming and time-consuming. Without proper guidance, the process can lead to costly delays.",
+  },
+  {
+    icon: Handshake,
+    title: 'Difficult partner selection',
+    description: 'Finding reliable local partners is challenging without trusted local connections. Partnering with the wrong company may risk your business stability.',
+  },
+  {
+    icon: Banknote,
+    title: 'Uncertain costs',
+    description: 'Unexpected expenses, hidden fees, and lack of transparent pricing can disrupt your expansion plans and affect your budget.',
+  },
+  {
+    icon: Languages,
+    title: 'Cultural & language barriers',
+    description: 'Language gaps and cultural misunderstandings can easily lead to misaligned expectations and missed opportunities in the local market.',
+  },
+];
 
 export const expansionServices: ServiceItem[] = [
   {
