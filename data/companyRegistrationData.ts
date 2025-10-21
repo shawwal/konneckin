@@ -1,5 +1,4 @@
-// Define the type for a single opportunity item
-import { Building2, Briefcase, Store, HardHat } from 'lucide-react';
+import { Building2, Briefcase, Store, HardHat, Layers, Gavel, BadgeCheck } from 'lucide-react';
 
 export interface OpportunityItem {
   title: string;
@@ -19,6 +18,16 @@ export interface TableData {
   rows: { [key: string]: string }[];
 }
 
+export interface ProcessStepItem {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
 
 // Export the data array
 export const opportunityItems: OpportunityItem[] = [
@@ -140,4 +149,47 @@ export const comparisonTableData: TableData = {
     }
   ]
 };
+
+export const processSteps: ProcessStepItem[] = [
+  {
+    icon: Layers,
+    title: 'Gathering information',
+    description: 'To start a business in Indonesia, please share your planned activities. We’ll recommend the right legal entity, business classification (KBLI), and required documents for company registration.',
+  },
+  {
+    icon: Briefcase,
+    title: 'Submitting the application',
+    description: 'After collecting the necessary informations, we will proceed with submitting your company registration to the relevant Indonesian authorities.',
+  },
+  {
+    icon: Gavel,
+    title: 'Ratifying the Articles of Association (AoA)',
+    description: 'The Articles of Association (AoA) define your company’s core structure and must be notarized and ratified for legal recognition in Indonesia.',
+  },
+  {
+    icon: BadgeCheck,
+    title: 'Securing the Business Identification Number',
+    description: 'With a valid NIB (Business Identification Number), your company can legally operate in Indonesia, register for taxation, and apply for the required business licenses.',
+  },
+];
+
+export const faqCompanyRegistrationData: FaqItem[] = [
+  {
+    question: 'What is the main difference between a PT PMA and a Representative Office (KPPA)?',
+    answer: 'A PT PMA is a foreign-owned limited liability company that can conduct commercial activities and generate revenue. In contrast, a Representative Office (KPPA) is not a separate legal entity and is limited to non-commercial activities like market research and liaison. It cannot generate revenue.',
+  },
+  {
+    question: 'What is KBLI and why is it important for my company registration?',
+    answer: 'KBLI (Klasifikasi Baku Lapangan Usaha Indonesia) is the Indonesian Standard Industrial Classification. Choosing the correct KBLI code is critical as it determines the licenses you need, foreign ownership limitations, and your company\'s legal scope of operations.',
+  },
+  {
+    question: 'Is there a minimum investment requirement for a PT PMA?',
+    answer: 'Yes, the Indonesian government requires a minimum investment plan of IDR 10 billion for a PT PMA. Out of this, a minimum of IDR 2.5 billion must be paid-up capital. This requirement does not apply to Representative Offices.',
+  },
+  {
+    question: 'What is a Business Identification Number (NIB) and why do I need it?',
+    answer: 'The NIB is your company\'s primary identity in Indonesia. It is mandatory for applying for other business licenses, import licenses, and registering for social security (BPJS) and tax obligations. It is fundamental for legally operating your business.',
+  },
+];
+
 

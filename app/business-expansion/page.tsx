@@ -60,7 +60,7 @@ export default function BusinessExpansionPage() {
         title={
           <>
             Entering new markets requires the{' '}
-            <span className="text-blue-800">right expertise</span>
+            <span className="text-primary">right expertise</span>
           </>
         }
         featureItems={expertiseItems}

@@ -9,6 +9,7 @@ interface FeatureItemProps {
 
 interface ExpertiseSectionProps {
   title: React.ReactNode;
+  subTitle?: React.ReactNode;
   featureItems: FeatureItemProps[];
   containerClassName?: string;
 }
@@ -39,6 +40,7 @@ const FeatureCard = ({ icon: Icon, title, description, index }: FeatureItemProps
 // --- Main Component ---
 export function ExpertiseSection({
   title,
+  subTitle,
   featureItems,
   containerClassName = '',
 }: ExpertiseSectionProps) {
@@ -54,6 +56,11 @@ export function ExpertiseSection({
             <h2 className="text-4xl tracking-tight text-gray-700 dark:text-white sm:text-5xl leading-tight">
               {title}
             </h2>
+            {subTitle && (
+              <div className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                {subTitle}
+              </div>
+            )}
           </div>
 
           {/* --- Feature Cards Panel --- */}
