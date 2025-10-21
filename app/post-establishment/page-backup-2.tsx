@@ -5,60 +5,43 @@ import FaqSection from '@/components/faq-section'; // Adjust path if needed
 import {
   postEstablishmentServices,
   whyItMattersData,
-  faqPostEstablishmentData,
-  postSetupRisks,
-  postSetupServicesData
+  faqPostEstablishmentData
 } from '@/data/postEstablishmentData'; // Adjust path if needed
-import { SplitTwoSection } from '@/components/split-two-section';
-import { RiskShowcaseSection } from '@/components/risk-showcase';
-import { AccordionWithImage } from '@/components/accordion-with-image';
-import { marketResearchAccordionData } from '@/data/marketResearchData';
-
-
-const HeroSection = () => (
-  <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
-    <div className="container mx-auto">
-      <SplitTwoSection
-        title="Post-establishment services"
-        subtitle="Professional, compliant, and reliable support for your business in Indonesia"
-        ctaText="Get a free consultation"
-        ctaHref="/contact"
-        imageUrl="/assets/man-seeing-building.webp"
-        imageAlt="Man seeing building"
-        imageOnLeft={false}
-        containerClassName="lg:rounded-2xl"
-      />
-    </div>
-  </section>
-);
 
 // --- Main Page Component ---
 export default function PostEstablishmentPage() {
   return (
     <>
-      <HeroSection />
+      {/* ========== 1. Hero Section ========== */}
+      <section className="bg-white dark:bg-slate-900">
+        <div className="container mx-auto px-4 sm:px-6 py-20 sm:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* --- Text Content --- */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-tight">
+                Stay Compliant and Thrive After Company Setup
+              </h1>
+              <p className="mt-6 text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0">
+                Your business is registered. Now the real work begins. We provide ongoing operational, financial, and corporate support to ensure you remain compliant and can focus on growth.
+              </p>
+              <div className="mt-10">
+                <a href="#services" className="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300">
+                  Explore Our Services
+                </a>
+              </div>
+            </div>
+            {/* --- Image --- */}
+            <div className="flex items-center justify-center">
+              <img
+                className="rounded-2xl object-cover h-[400px] w-full max-w-md lg:h-[500px] shadow-2xl"
+                src="/assets/office-setup.webp"
+                alt="Team collaborating in a modern office"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <RiskShowcaseSection
-        title="Your company is registered—now what?"
-        subtitle="Without reliable post-establishment support, companies face critical gaps that delay operations, reduce efficiency, and increase legal risk."
-        risks={postSetupRisks}
-      />
-
-      <AccordionWithImage
-        title={
-          <>
-            <span className="text-blue-900 dark:text-primary">
-              Secure your business operations and
-            </span>
-            {' '}corporate compliance in Indonesia.
-          </>
-        }
-        imageUrl="/assets/white-staircase.webp"
-        imageAlt="A long spinning staircase"
-        accordionItems={postSetupServicesData}
-        ctaText="See how we can help you grow"
-        ctaHref="/contact" // Assuming the button should link to a contact section
-      />
       {/* ========== 2. Core Services Section ========== */}
       <section id="services" className="py-20 sm:py-28 bg-slate-50 dark:bg-black">
         <div className="container mx-auto px-4 sm:px-6">

@@ -1,4 +1,4 @@
-import { BookUser, Calculator, Mailbox, Landmark, UserCheck, ShieldAlert, TrendingUp, CheckCircle } from 'lucide-react';
+import { BookUser, Calculator, Mailbox, Landmark, UserCheck, ShieldAlert, TrendingUp, CheckCircle, FileWarning, TimerOff, Spline, Loader } from 'lucide-react';
 
 type ServiceItem = {
   icon: React.ElementType;
@@ -16,6 +16,78 @@ type FaqItem = {
   question: string;
   answer: string;
 };
+
+export interface RiskItem {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+export interface AccordionItem {
+  title: string;
+  content: string;
+  linkText: string;
+  linkHref: string;
+}
+
+// --- Data Export ---
+export const postSetupServicesData: AccordionItem[] = [
+  {
+    title: 'Recruitment service',
+    content: 'Attract and hire qualified talent to support your business growth with our efficient recruitment solutions.',
+    linkText: 'Learn more',
+    linkHref: '/recruitment-service/',
+  },
+  {
+    title: 'Payroll management',
+    content: 'Ensure accurate and timely payroll processing, BPJS contributions, and statutory compliance for your workforce.',
+    linkText: 'Learn more',
+    linkHref: '/payroll-management/',
+  },
+  {
+    title: 'Tax & accounting solutions',
+    content: 'Focus on your core business while we handle your taxes, reporting, and financial management with care.',
+    linkText: 'Learn more',
+    linkHref: '/tax-accounting-solutions/',
+  },
+  {
+    title: 'Product certification & regulatory compliance',
+    content: 'We handle product registration (e.g., BPOM), certifications, and ongoing regulatory compliance to ensure your operations are always legally sound.',
+    linkText: 'Learn more',
+    linkHref: '/product-certification-regulatory-compliance/',
+  },
+  {
+    title: 'Company regulation',
+    content: 'We assist in drafting and registering your mandatory Company Regulation (Peraturan Perusahaan) to ensure HR policies align with Indonesian labor laws.',
+    linkText: 'Learn more',
+    linkHref: '/company-regulation/',
+  },
+];
+
+// --- Data Export ---
+export const postSetupRisks: RiskItem[] = [
+  {
+    icon: FileWarning,
+    title: 'Unclear compliance obligations',
+    description: 'After the company is set up, many founders are left guessing which reports, taxes, or licenses need to be handled next—often resulting in missed deadlines or penalties.',
+  },
+  {
+    icon: TimerOff,
+    title: 'Delayed operational readiness',
+    description: 'Companies often struggle to open bank accounts, hire staff, or sign contracts due to missing post-establishment steps such as NPWP, BPJS registration, or OSS updates.',
+  },
+  {
+    icon: Spline,
+    title: 'Scattered communication',
+    description: 'Navigating different government systems, tax offices, and payroll platforms without guidance creates confusion and slows down internal processes.',
+  },
+  {
+    icon: Loader,
+    title: 'Internal resource overload',
+    description: 'Foreign founders or admin teams often try to handle everything themselves—compliance, payroll, tax reporting—leading to burnout and costly errors.',
+  },
+];
+
 
 export const postEstablishmentServices: ServiceItem[] = [
   {

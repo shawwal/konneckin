@@ -34,7 +34,6 @@ export default function MarketResearchClient() {
   return (
     <>
       <HeroSection />
-
       <RiskShowcaseSection
         title="Without the right insights, you’re expanding blindly"
         risks={marketResearchRisks}
