@@ -5,72 +5,42 @@ import FaqSection from '@/components/faq-section'; // Adjust path if needed
 import {
   certificationsData,
   whyPartnerData,
-  faqProductCertificationData,
-  productCertificationRisks,
-  faqProductCertification,
-  productCertificationServices,
-  productCertificationBenefits
+  faqProductCertificationData
 } from '@/data/productCertificationData'; // Adjust path if needed
-import { SplitTwoSection } from './split-two-section';
-import { payrollBenefits, payrollRisks, payrollServicesAccordionData } from '@/data/payrollData';
-import { RiskShowcaseSection } from './risk-showcase';
-import { AccordionWithImage } from './accordion-with-image';
-import { ExpertiseSection } from './expertise-section';
-
-const HeroSection = () => (
-  <section className="bg-white dark:bg-gray-900 py-10 md:py-12">
-    <div className="container mx-auto">
-      <SplitTwoSection
-        title="Product Certification & Regulatory Compliance"
-        subtitle="Get your products certified and compliant — fast, legally, and with zero stress."
-        ctaText="Get a free consultation"
-        ctaHref="#services"
-        imageUrl="/assets/woman-scientist.webp"
-        imageAlt="Scientist working in a modern laboratory"
-        imageOnLeft={false}
-        containerClassName="lg:rounded-2xl"
-      />
-    </div>
-  </section>
-);
 
 // --- Main Page Component ---
-export default function ProductCertificationClient() {
+export default function ProductCertificationClientBackup() {
   return (
     <>
-      <HeroSection />
-
-      <RiskShowcaseSection
-        title="Common Challenges in Product Certification & Regulatory Compliance"
-        subtitle="Entering the Indonesian market means facing a maze of regulations and strict government standards. For many businesses, the certification process is time-consuming, confusing, and full of roadblocks."
-        risks={productCertificationRisks}
-      />
-
-      <AccordionWithImage
-        title={
-          <>
-            <span className="text-blue-900 dark:text-primary">
-              Behind every successful product is a certificate
-            </span>
-            <br />of trust, legality, and compliance.
-          </>
-        }
-        imageUrl="/assets/man-with-paintings.webp"
-        imageAlt="A man with painting"
-        accordionItems={productCertificationServices}
-        ctaText="See how we can help you grow"
-        ctaHref="/contact" // Assuming the button should link to a contact section
-      />
-
-      <ExpertiseSection
-        title={
-          <>
-            Certify. Comply.
-            <span className="text-primary"> Launch.</span>
-          </>
-        }
-        featureItems={productCertificationBenefits}
-      />
+      {/* ========== 1. Hero Section ========== */}
+      <section className="bg-slate-50 dark:bg-black">
+        <div className="container mx-auto px-4 sm:px-6 py-20 sm:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* --- Text Content --- */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-tight">
+                Product Certification & Regulatory Compliance
+              </h1>
+              <p className="mt-6 text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0">
+                From BPOM to SNI, we navigate Indonesia’s complex product registration requirements to get your goods to market—faster.
+              </p>
+              <div className="mt-10">
+                <a href="#services" className="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300">
+                  Get My Products Certified
+                </a>
+              </div>
+            </div>
+            {/* --- Image --- */}
+            <div className="flex items-center justify-center">
+              <img
+                className="rounded-2xl object-cover h-[400px] w-full max-w-md lg:h-[500px] shadow-2xl"
+                src="/assets/woman-scientist.webp"
+                alt="Scientist working in a modern laboratory"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ========== 2. "Don't Let Red Tape..." Intro Section (New Component) ========== */}
       <section className="py-20 sm:py-24 bg-white dark:bg-slate-900">
@@ -154,7 +124,7 @@ export default function ProductCertificationClient() {
 
       {/* ========== 5. FAQ Section ========== */}
       <FaqSection
-        faqData={faqProductCertification}
+        faqData={faqProductCertificationData}
         title="Product Certification FAQs"
         subtitle="Your questions about product registration and compliance in Indonesia, answered."
       />
