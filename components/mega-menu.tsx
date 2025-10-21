@@ -1,7 +1,8 @@
 "use client"
+import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { ArrowRight } from "lucide-react"
-import { mainServices, subServices, featuredLinks } from "@/data/servicesMenuData" // Adjust the import path as needed
+import { mainServices, featuredLinks } from "@/data/servicesMenuData" // Adjust the import path as needed
 
 type MegaMenuProps = {
   open: boolean
@@ -11,6 +12,9 @@ type MegaMenuProps = {
 }
 
 export function MegaMenu({ open, onMouseEnter, onMouseLeave }: MegaMenuProps) {
+  const defaultService = mainServices.find((s) => s.highlighted) || mainServices[0]
+  const [activeService, setActiveService] = useState(defaultService)
+
   return (
     <div
       className={cn("absolute left-0 right-0 top-full z-40", open ? "block" : "hidden")}
@@ -28,9 +32,12 @@ export function MegaMenu({ open, onMouseEnter, onMouseLeave }: MegaMenuProps) {
                 <a
                   key={item.title}
                   href={item.href}
+                  onMouseEnter={() => setActiveService(item)}
                   className={cn(
                     "group flex items-start space-x-4 p-3 rounded-lg transition-colors",
-                    item.highlighted
+                    
+                    // FIX: Use activeService.title to determine the highlight
+                    activeService.title === item.title
                       ? "bg-blue-50 dark:bg-blue-900/50"
                       : "hover:bg-gray-100 dark:hover:bg-gray-800"
                   )}
@@ -42,9 +49,7 @@ export function MegaMenu({ open, onMouseEnter, onMouseLeave }: MegaMenuProps) {
                     <p className="font-semibold text-gray-900 dark:text-white">{item.title}</p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">{item.description}</p>
                   </div>
-                  {item.highlighted && (
-                    <ArrowRight className="h-5 w-5 text-primary dark:text-blue-400 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  )}
+                  <ArrowRight className="h-5 w-5 text-primary dark:text-blue-400 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               ))}
             </div>
@@ -54,7 +59,7 @@ export function MegaMenu({ open, onMouseEnter, onMouseLeave }: MegaMenuProps) {
 
             {/* Sub Services Column */}
             <div className="md:col-span-2 space-y-2">
-              {subServices.map((item) => (
+              {activeService.subServices?.map((item) => (
                 <a key={item.title} href={item.href} className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                   <p className="font-semibold text-gray-900 dark:text-white">{item.title}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{item.description}</p>
