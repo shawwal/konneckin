@@ -27,7 +27,7 @@ const fontHeading = Heebo({
 
 export const metadata: Metadata = {
   // Set the base URL for resolving images and other assets
-  metadataBase: new URL('https://konneckin.shawwals.com'), // <-- IMPORTANT: REPLACE WITH YOUR DOMAIN
+  metadataBase: new URL('https://konneckin.com'), // <-- IMPORTANT: REPLACE WITH YOUR DOMAIN
 
   // Title & Description
   title: {
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: 'Konneckin | Shaping the Future, Together.',
     description: 'Expert strategy, digital, and sustainability consulting.',
     // url: 'https://www.konneckin.com', 
-    url: 'https://konneckin.shawwals.com', // <-- IMPORTANT: REPLACE WITH YOUR DOMAIN
+    url: 'https://konneckin.com', // <-- IMPORTANT: REPLACE WITH YOUR DOMAIN
     siteName: 'Konneckin',
     images: [
       {
