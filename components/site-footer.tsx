@@ -63,13 +63,13 @@ export function SiteFooter() {
             </li>
           </ul>
           <div className="mt-4 flex items-center gap-3">
-            <a aria-label="LinkedIn" href="#">
+            <a aria-label="LinkedIn" target="_blank" href="https://linkedin.com/company/konneckin">
               <FaLinkedin className="size-5" />
             </a>
             <a aria-label="Twitter" href="#">
               <FaXTwitter className="size-5" />
             </a>
-            <a aria-label="Twitter" href="#">
+            <a aria-label="Twitter" target="_blank" href="https://www.instagram.com/konneckinofficial">
               <FaInstagram className="size-5" />
             </a>
             <a aria-label="Twitter" href="#">
