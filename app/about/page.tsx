@@ -7,6 +7,15 @@ import Image from "next/image"
 export const metadata: Metadata = {
   title: "About Us",
   description: "Learn about our mission, values, and the team dedicated to helping you succeed in the Indonesian market.",
+  openGraph: {
+    title: 'About Us | Konneckin',
+    description: 'Learn about Konneckin, our mission, our values, and the expert team.',
+    url: 'https://www.konneckin.com/about',
+  },
+  twitter: {
+    title: 'About Us | Konneckin',
+    description: 'Learn about Konneckin, our mission, our values, and the expert team.',
+  }
 }
 
 // Data for the core values section, similar to the insights data structure

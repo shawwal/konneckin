@@ -3,8 +3,17 @@ import { ArrowRight, BriefcaseBusiness, FileText, GanttChart, Users } from "luci
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Our Services",
-  description: "Comprehensive solutions for market entry, corporate compliance, immigration, and business process outsourcing to help you succeed in Indonesia.",
+title: 'Our Consulting Services', // Becomes "Our Consulting Services | Konneckin"
+  description: 'Explore Konneckin\'s full range of services, including business expansion, market research, and digital transformation.',
+  openGraph: {
+    title: 'Our Consulting Services | Konneckin',
+    description: 'Explore Konneckin\'s full range of services.',
+    url: 'https://www.konneckin.com/services',
+  },
+  twitter: {
+    title: 'Our Consulting Services | Konneckin',
+    description: 'Explore Konneckin\'s full range of services.',
+  }
 }
 
 export default function ServicesPage() {
