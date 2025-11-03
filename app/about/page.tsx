@@ -11,10 +11,19 @@ export const metadata: Metadata = {
     title: 'About Us | Konneckin',
     description: 'Learn about Konneckin, our mission, our values, and the expert team.',
     url: 'https://www.konneckin.com/about',
+    images: [
+      {
+        url: '/og-image.png', // <-- IMPORTANT: IMAGE PATH
+        width: 1200,
+        height: 630,
+        alt: 'Konneckin - Shaping the Future, Together.',
+      },
+    ],
   },
   twitter: {
     title: 'About Us | Konneckin',
     description: 'Learn about Konneckin, our mission, our values, and the expert team.',
+    images: ['/og-image.png'],
   }
 }
 

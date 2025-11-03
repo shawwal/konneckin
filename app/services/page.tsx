@@ -3,16 +3,25 @@ import { ArrowRight, BriefcaseBusiness, FileText, GanttChart, Users } from "luci
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-title: 'Our Consulting Services', // Becomes "Our Consulting Services | Konneckin"
+  title: 'Our Consulting Services', // Becomes "Our Consulting Services | Konneckin"
   description: 'Explore Konneckin\'s full range of services, including business expansion, market research, and digital transformation.',
   openGraph: {
     title: 'Our Consulting Services | Konneckin',
     description: 'Explore Konneckin\'s full range of services.',
     url: 'https://www.konneckin.com/services',
+    images: [
+      {
+        url: '/og-image.png', // <-- IMPORTANT: IMAGE PATH
+        width: 1200,
+        height: 630,
+        alt: 'Konneckin - Shaping the Future, Together.',
+      },
+    ],
   },
   twitter: {
     title: 'Our Consulting Services | Konneckin',
     description: 'Explore Konneckin\'s full range of services.',
+    images: ['/og-image.png'],
   }
 }
 

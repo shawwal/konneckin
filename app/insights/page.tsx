@@ -1,13 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Layout } from "@/components/layout"
 import { ArrowRight, Mail } from "lucide-react"
-import type { Metadata } from "next"
 import Image from "next/image"
-
-export const metadata: Metadata = {
-  title: "Insights",
-  description: "Explore our latest analysis on Indonesian market trends, regulatory changes, and operational strategies to stay ahead.",
-}
 
 // Placeholder data for articles using an online service
 const featuredInsights = [

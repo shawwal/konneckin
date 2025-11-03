@@ -1,11 +1,5 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Cpu, Factory, HeartPulse, ShoppingCart } from "lucide-react"
-import type { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "Industries We Serve",
-  description: "Navigate Indonesia's key sectors with our deep industry expertise in consumer products, healthcare, industrials, and technology.",
-}
 
 export default function IndustriesPage() {
   return (

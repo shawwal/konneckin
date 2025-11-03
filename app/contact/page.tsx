@@ -4,13 +4,6 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Layout } from "@/components/layout"
 import { Mail, Building } from "lucide-react"
-import type { Metadata } from "next"
-
-// Metadata following the pattern from the Insights page
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Get in touch to discuss your goals in Indonesia. We're here to help you navigate the market and succeed.",
-}
 
 export default function ContactPage() {
   return (
