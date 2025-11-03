@@ -27,24 +27,37 @@ const fontHeading = Heebo({
 
 export const metadata: Metadata = {
   // Set the base URL for resolving images and other assets
-  metadataBase: new URL('https://konneckin.com'), // <-- IMPORTANT: REPLACE WITH YOUR DOMAIN
+  metadataBase: new URL('https://konneckin.com'),
+
+  // --- START: IMPROVED SECTION ---
 
   // Title & Description
   title: {
-    default: 'Konneckin | Shaping the Future, Together.',
-    template: '%s | Konneckin', // For sub-pages: "Services | Konneckin"
+    default: 'Konneckin | Market Entry & Business Expansion Services', // More descriptive
+    template: '%s | Konneckin', 
   },
-  description: 'Konneckin provides expert strategy, digital, and sustainability consulting to help businesses navigate complexity and shape a better future.',
+  description: 'Konneckin simplifies your business expansion. We provide expert market entry services, including company registration, market research, payroll, and tax solutions.',
   
   // SEO & Keywords
-  keywords: ['consulting', 'strategy', 'digital transformation', 'sustainability', 'business growth', 'innovation'],
+  keywords: [
+    'market entry services', 
+    'business expansion', 
+    'company registration', 
+    'consulting firm', 
+    'payroll management', 
+    'tax accounting', 
+    'market research'
+  ],
+
+  // --- END: IMPROVED SECTION ---
+
   creator: 'Konneckin',
   publisher: 'Konneckin',
   
-  // For Search Engine Crawlers - PREVENTS INDEXING
+  // For Search Engine Crawlers - This allows indexing
   robots: {
     index: true,
-    follow: true, // Prevents crawlers from following links from this page
+    follow: true, 
     googleBot: {
       index: true,
       follow: true,
@@ -58,37 +71,37 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
 
-  // Web App Manifest for PWAs
-  // manifest: '/site.webmanifest',
+  // --- START: IMPROVED OPEN GRAPH & TWITTER ---
 
-  // Open Graph (for social media sharing on Facebook, LinkedIn, etc.)
+  // Open Graph (for social media sharing)
   openGraph: {
-    title: 'Konneckin | Shaping the Future, Together.',
-    description: 'Expert strategy, digital, and sustainability consulting.',
-    // url: 'https://www.konneckin.com', 
-    url: 'https://konneckin.com', // <-- IMPORTANT: REPLACE WITH YOUR DOMAIN
+    title: 'Konneckin | Market Entry & Business Expansion Services', // Consistent title
+    description: 'Konneckin simplifies business expansion with expert services in market entry, company registration, payroll, and tax solutions.', // Consistent description
+    url: 'https://konneckin.com', 
     siteName: 'Konneckin',
     images: [
       {
-        url: '/og-image.png', // <-- IMPORTANT: IMAGE PATH
+        url: '/og-image.png', 
         width: 1200,
         height: 630,
-        alt: 'Konneckin - Shaping the Future, Together.',
+        alt: 'Konneckin - Market Entry & Business Expansion Services', // Descriptive alt text
       },
     ],
     locale: 'en_US',
     type: 'website',
   },
 
-  // Twitter Card (for sharing on Twitter)
+  // Twitter Card
   twitter: {
     card: 'summary_large_image',
-    title: 'Konneckin | Shaping the Future, Together.',
-    description: 'Expert strategy, digital, and sustainability consulting.',
-    site: '@konneckin', // <-- IMPORTANT: REPLACE WITH YOUR TWITTER HANDLE
-    creator: '@konneckin', // <-- IMPORTANT: REPLACE WITH YOUR TWITTER HANDLE
-    images: ['/og-image.png'], // <-- IMPORTANT: IMAGE PATH
+    title: 'Konneckin | Market Entry & Business Expansion Services', // Consistent title
+    description: 'Konneckin simplifies business expansion with expert services in market entry, company registration, payroll, and tax solutions.', // Consistent description
+    site: '@konneckin', 
+    creator: '@konneckin', 
+    images: ['/og-image.png'], 
   },
+
+  // --- END: IMPROVED OPEN GRAPH & TWITTER ---
 }
 
 export default function RootLayout({
