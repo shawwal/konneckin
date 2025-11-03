@@ -43,11 +43,11 @@ export const metadata: Metadata = {
   
   // For Search Engine Crawlers - PREVENTS INDEXING
   robots: {
-    index: false,
-    follow: false, // Prevents crawlers from following links from this page
+    index: true,
+    follow: true, // Prevents crawlers from following links from this page
     googleBot: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   },
 
