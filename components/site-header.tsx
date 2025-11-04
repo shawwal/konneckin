@@ -16,6 +16,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import Image from "next/image"
+import Link from "next/link"
 
 export function SiteHeader() {
   const { t } = useI18n()
@@ -44,7 +45,7 @@ export function SiteHeader() {
         <div className="glass backdrop-blur-md">
           <div className="mx-auto flex container items-center justify-between px-4 lg:px-0 py-3">
             <div className="flex flex-1 items-center">
-              <a href="/">
+              <Link href="/">
                 {/* Light Mode Logo */}
                 <Image
                   src="/konneckin-logo.png"
@@ -52,6 +53,11 @@ export function SiteHeader() {
                   width={752}
                   height={98}
                   className="block h-8 w-auto dark:hidden"
+                  style={{
+                    width: 'auto',
+                    height: '2rem',
+                    aspectRatio: '752/98'
+                  }}
                   priority
                 />
                 {/* Dark Mode Logo */}
@@ -61,9 +67,14 @@ export function SiteHeader() {
                   width={752}
                   height={98}
                   className="hidden h-8 w-auto dark:block"
+                  style={{
+                    width: 'auto',
+                    height: '2rem',
+                    aspectRatio: '752/98'
+                  }}
                   priority
                 />
-              </a>
+              </Link>
             </div>
 
             {/* Centered nav (desktop) */}
@@ -74,29 +85,29 @@ export function SiteHeader() {
                   onMouseEnter={handleServicesMouseEnter}
                   onMouseLeave={handleServicesMouseLeave}
                 >
-                  <a href="/services" className="hover:underline">
+                  <Link href="/services" className="hover:underline">
                     {t("services")}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/industries" className="hover:underline">
+                  <Link href="/industries" className="hover:underline">
                     {t("industries")}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/insights" className="hover:underline">
+                  <Link href="/insights" className="hover:underline">
                     {t("insights")}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/careers" className="hover:underline">
+                  <Link href="/careers" className="hover:underline">
                     {t("careers")}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/about" className="hover:underline">
+                  <Link href="/about" className="hover:underline">
                     {t("about")}
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -122,7 +133,7 @@ export function SiteHeader() {
                     <SheetTitle>Menu</SheetTitle>
                     <SheetDescription>Main navigation menu for the website.</SheetDescription>
                   </SheetHeader>
-                  
+
                   <div className="p-4">
                     <div className="font-serif text-lg font-semibold">konneckin</div>
                     <div className="mt-2 text-sm text-muted-foreground">
@@ -133,28 +144,28 @@ export function SiteHeader() {
                   <nav className="px-4">
                     <div className="mb-3 text-xs font-medium uppercase text-muted-foreground">Main</div>
                     <ul className="space-y-2">
-                      <li><a href="/" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("home")}</a></li>
-                      <li><a href="/services" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("services")}</a></li>
-                      <li><a href="/industries" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("industries")}</a></li>
-                      <li><a href="/insights" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("insights")}</a></li>
-                      <li><a href="/careers" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("careers")}</a></li>
-                      <li><a href="/about" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("about")}</a></li>
-                      <li><a href="/contact" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("contact")}</a></li>
+                      <li><Link href="/" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("home")}</Link></li>
+                      <li><Link href="/services" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("services")}</Link></li>
+                      <li><Link href="/industries" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("industries")}</Link></li>
+                      <li><Link href="/insights" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("insights")}</Link></li>
+                      <li><Link href="/careers" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("careers")}</Link></li>
+                      <li><Link href="/about" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("about")}</Link></li>
+                      <li><Link href="/contact" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("contact")}</Link></li>
                     </ul>
 
                     <div className="mt-6 mb-3 text-xs font-medium uppercase text-muted-foreground">Legal</div>
                     <ul className="space-y-2">
-                      <li><a href="/privacy-policy" className="block rounded-sm px-2 py-2 hover:bg-muted">Privacy Policy</a></li>
-                      <li><a href="/terms" className="block rounded-sm px-2 py-2 hover:bg-muted">Terms of Use</a></li>
+                      <li><Link href="/privacy-policy" className="block rounded-sm px-2 py-2 hover:bg-muted">Privacy Policy</Link></li>
+                      <li><Link href="/terms" className="block rounded-sm px-2 py-2 hover:bg-muted">Terms of Use</Link></li>
                     </ul>
                   </nav>
 
                   <div className="mt-auto px-4 py-4">
                     <div className="flex items-center justify-between">
                       {/* <LanguageSwitcher /> */}
-                      <a href="/contact">
+                      <Link href="/contact">
                         <Button size="sm">{t("contact")}</Button>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </SheetContent>
@@ -162,7 +173,7 @@ export function SiteHeader() {
             </div>
           </div>
         </div>
-        
+
         {/* Mega menu is now controlled by the services link hover state */}
         <MegaMenu
           open={servicesMenuOpen}

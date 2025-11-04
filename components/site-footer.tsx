@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { FaInstagram, FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6"
 
 export function SiteFooter() {
@@ -12,19 +13,19 @@ export function SiteFooter() {
           <div className="font-medium">Company</div>
           <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
             <li>
-              <a href="/about" className="hover:underline">
+              <Link href="/about" className="hover:underline">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/careers" className="hover:underline">
+              <Link href="/careers" className="hover:underline">
                 Careers
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:underline">
+              <Link href="/contact" className="hover:underline">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -32,19 +33,19 @@ export function SiteFooter() {
           <div className="font-medium">Insights</div>
           <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
             <li>
-              <a href="/insights" className="hover:underline">
+              <Link href="/insights" className="hover:underline">
                 Strategy
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/insights" className="hover:underline">
+              <Link href="/insights" className="hover:underline">
                 Sustainability
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/insights" className="hover:underline">
+              <Link href="/insights" className="hover:underline">
                 Digital
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -52,27 +53,27 @@ export function SiteFooter() {
           <div className="font-medium">Legal</div>
           <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
             <li>
-              <a href="/privacy-policy" className="hover:underline">
+              <Link href="/privacy-policy" className="hover:underline">
                 Privacy Policy
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/terms" className="hover:underline">
+              <Link href="/terms" className="hover:underline">
                 Terms of Use
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="mt-4 flex items-center gap-3">
-            <a aria-label="LinkedIn" target="_blank" href="https://linkedin.com/company/konneckin">
+            <a aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/company/konneckin">
               <FaLinkedin className="size-5" />
             </a>
             <a aria-label="Twitter" href="#">
               <FaXTwitter className="size-5" />
             </a>
-            <a aria-label="Twitter" target="_blank" href="https://www.instagram.com/konneckinofficial">
+            <a aria-label="Instagram" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/konneckinofficial">
               <FaInstagram className="size-5" />
             </a>
-            <a aria-label="Twitter" href="#">
+            <a aria-label="YouTube" href="#">
               <FaYoutube className="size-5" />
             </a>
           </div>
