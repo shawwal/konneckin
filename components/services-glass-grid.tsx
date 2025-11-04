@@ -1,32 +1,33 @@
 'use client'
+import Link from "next/link" // <-- IMPORT NEXT.JS LINK
 import { useI18n } from "./providers"
 import { ArrowRight } from "lucide-react"
 
 const items = [
   {
     tag: "Business Expansion",
-    title: "Market Research",
+    title: "Market Research", // This 'title' isn't used in the component, but kept for context
     description: "Understand consumer behavior, competition, and regulatory trends before entering the Indonesian market.",
     img: "/assets/image-fx-15.webp",
     link: "/business-expansion",
   },
   {
     tag: "Post-establishment",
-    title: "Recruitment service",
+    title: "Recruitment service", // This 'title' isn't used in the component, but kept for context
     description: "Attract and hire qualified talent to support your business growth with our efficient recruitment solutions.",
     img: "/assets/image-fx-4.webp",
     link: "/post-establishment",
   },
   {
     tag: "Expatriate Support",
-    title: "KITAP & work permit",
+    title: "KITAP & work permit", // This 'title' isn't used in the component, but kept for context
     description: "If you’ve held a KITAS for several consecutive years or are married to an Indonesian national, you may qualify for a KITAP.",
     img: "/assets/image-fx-17.webp",
     link: "/expatriate-support",
   },
   {
     tag: "Importer of Record",
-    title: "IOR Services in Indonesia",
+    title: "IOR Services in Indonesia", // This 'title' isn't used in the component, but kept for context
     description: "Ensure full customs compliance and import clearance in Indonesia—without establishing a local legal entity.",
     img: "/assets/image-fx-78.webp",
     link: "/importer-of-record",
@@ -59,19 +60,19 @@ export function ServicesGlassGrid() {
                 <div className="glass rounded-xl p-4">
                   <h3 className="text-base font-semibold md:text-lg">{it.tag}</h3>
                   
-                  {/* --- KEY CHANGE HERE --- */}
                   {/* Added a minimum height to ensure all description blocks are the same size */}
                   <p className="mt-2 text-sm min-h-[5rem]">
                     {it.description}
                   </p>
                   
-                  <a 
-                    href={it.link} // Replace with your actual link
+                  {/* --- CORRECTED LINK HERE --- */}
+                  <Link 
+                    href={it.link} 
                     className="mt-4 inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-80"
-                    aria-label={`Learn more about ${it.tag}`}
+                    aria-label={`Learn more about Konneckin's ${it.tag} services`} // More specific aria-label
                   >
                     Learn More <ArrowRight className="h-4 w-4" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </article>

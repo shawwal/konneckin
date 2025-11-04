@@ -71,25 +71,29 @@ function FeatureCard({ item }: any) {
           </div>
         </div>
 
-        {/* Buttons remain at the bottom */}
+        {/* --- FIX IS HERE --- */}
+        {/* Changed all <button> tags to <div aria-hidden="true">
+            This removes them from the accessibility tree, fixing the error.
+        */}
         <div className="flex items-center justify-center gap-2 pt-6 sm:gap-4">
-          <button className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-white shadow-md transition-colors hover:bg-neutral-700 sm:h-12 sm:w-12">
+          <div aria-hidden="true" className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-white shadow-md transition-colors hover:bg-neutral-700 sm:h-12 sm:w-12">
             <Mic className="h-5 w-5 sm:h-6 sm:w-6" />
-          </button>
-          <button className="relative flex h-10 w-10 items-center justify-center rounded-full bg-orange-600 text-white shadow-md transition-colors hover:bg-orange-500 sm:h-12 sm:w-12">
+          </div>
+          <div aria-hidden="true" className="relative flex h-10 w-10 items-center justify-center rounded-full bg-orange-600 text-white shadow-md transition-colors hover:bg-orange-500 sm:h-12 sm:w-12">
             <Video className="h-5 w-5 sm:h-6 sm:w-6" />
             <span className="absolute h-0.5 w-6 rotate-45 bg-white opacity-90 sm:w-8" />
-          </button>
-          <button className="hidden h-12 w-12 items-center justify-center rounded-full bg-neutral-800 text-white shadow-md transition-colors hover:bg-neutral-700 sm:flex">
+          </div>
+          <div aria-hidden="true" className="hidden h-12 w-12 items-center justify-center rounded-full bg-neutral-800 text-white shadow-md transition-colors hover:bg-neutral-700 sm:flex">
             <Monitor className="h-6 w-6" />
-          </button>
-          <button className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-white shadow-md transition-colors hover:bg-neutral-700 sm:h-12 sm:w-12">
+          </div>
+          <div aria-hidden="true" className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-white shadow-md transition-colors hover:bg-neutral-700 sm:h-12 sm:w-12">
             <MessageSquare className="h-5 w-5 sm:h-6 sm:w-6" />
-          </button>
-          <button className="ml-2 flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition-colors hover:bg-red-500 sm:h-14 sm:w-14">
+          </div>
+          <div aria-hidden="true" className="ml-2 flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition-colors hover:bg-red-500 sm:h-14 sm:w-14">
             <PhoneOff className="h-6 w-6 sm:h-7 sm:w-7" />
-          </button>
+          </div>
         </div>
+        {/* --- END FIX --- */}
       </div>
     );
   }
