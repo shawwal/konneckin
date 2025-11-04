@@ -1,36 +1,40 @@
 'use client'
-import Link from "next/link" // <-- IMPORT NEXT.JS LINK
+import Link from "next/link"
 import { useI18n } from "./providers"
 import { ArrowRight } from "lucide-react"
 
 const items = [
   {
     tag: "Business Expansion",
-    title: "Market Research", // This 'title' isn't used in the component, but kept for context
+    title: "Market Research",
     description: "Understand consumer behavior, competition, and regulatory trends before entering the Indonesian market.",
     img: "/assets/image-fx-15.webp",
     link: "/business-expansion",
+    linkText: "Explore business expansion services",
   },
   {
     tag: "Post-establishment",
-    title: "Recruitment service", // This 'title' isn't used in the component, but kept for context
+    title: "Recruitment service",
     description: "Attract and hire qualified talent to support your business growth with our efficient recruitment solutions.",
     img: "/assets/image-fx-4.webp",
     link: "/post-establishment",
+    linkText: "Explore post-establishment services",
   },
   {
     tag: "Expatriate Support",
-    title: "KITAP & work permit", // This 'title' isn't used in the component, but kept for context
-    description: "If you’ve held a KITAS for several consecutive years or are married to an Indonesian national, you may qualify for a KITAP.",
+    title: "KITAP & work permit",
+    description: "If you've held a KITAS for several consecutive years or are married to an Indonesian national, you may qualify for a KITAP.",
     img: "/assets/image-fx-17.webp",
     link: "/expatriate-support",
+    linkText: "Explore expatriate support services",
   },
   {
     tag: "Importer of Record",
-    title: "IOR Services in Indonesia", // This 'title' isn't used in the component, but kept for context
+    title: "IOR Services in Indonesia",
     description: "Ensure full customs compliance and import clearance in Indonesia—without establishing a local legal entity.",
     img: "/assets/image-fx-78.webp",
     link: "/importer-of-record",
+    linkText: "Explore importer of record services",
   },
 ]
 
@@ -38,7 +42,6 @@ export function ServicesGlassGrid() {
   const { t } = useI18n();
   return (
     <section className="bg-muted/30 py-12 md:py-16">
-      {/* Increased max-width for better spacing on large screens */}
       <div className="mx-auto container px-4 lg:px-0">
         <h2 className="text-center font-serif text-2xl md:text-4xl">
           {t("everythingYouNeed")}
@@ -51,7 +54,7 @@ export function ServicesGlassGrid() {
             >
               <img
                 src={it.img || "/placeholder.svg"}
-                alt={`${it.tag} service background`}
+                alt=""
                 className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -60,18 +63,16 @@ export function ServicesGlassGrid() {
                 <div className="glass rounded-xl p-4">
                   <h3 className="text-base font-semibold md:text-lg">{it.tag}</h3>
                   
-                  {/* Added a minimum height to ensure all description blocks are the same size */}
                   <p className="mt-2 text-sm min-h-[5rem]">
                     {it.description}
                   </p>
                   
-                  {/* --- CORRECTED LINK HERE --- */}
                   <Link 
                     href={it.link} 
                     className="mt-4 inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-80"
-                    aria-label={`Learn more about Konneckin's ${it.tag} services`} // More specific aria-label
                   >
-                    Learn More <ArrowRight className="h-4 w-4" />
+                    {it.linkText}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 </div>
               </div>
