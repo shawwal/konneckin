@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react';
+import Link from 'next/link'; // <-- 1. IMPORT NEXT.JS LINK
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils'; // Assuming you have a utility for classnames
 
@@ -89,12 +90,17 @@ export function LatestContentSection() {
                     <p className="mt-3 text-sm text-white/80">
                       {item.description}
                     </p>
-                    <a
+                    
+                    {/* --- FIX IS HERE --- */}
+                    <Link
                       href={item.link}
                       className="mt-4 inline-flex items-center text-sm font-semibold text-white hover:underline"
+                      aria-label={`Learn more about: ${item.title}`} // 3. ADD ARIA-LABEL
                     >
                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
+                    </Link>
+                    {/* --- END FIX --- */}
+                    
                   </div>
                 </div>
               </div>
@@ -105,4 +111,3 @@ export function LatestContentSection() {
     </section>
   );
 }
-
