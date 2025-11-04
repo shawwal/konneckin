@@ -35,7 +35,7 @@ export function VideoHeroBanner() {
           <source src="/konneckin-introduction-video.webm" type="video/webm" />
           <track
             kind="captions"
-            src="/captions/konneckin-introduction-en.vtt"
+            // src="/captions/konneckin-introduction-en.vtt"
             srcLang="en"
             label="English"
             default
