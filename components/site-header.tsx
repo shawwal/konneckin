@@ -23,6 +23,7 @@ export function SiteHeader() {
   const { t } = useI18n()
   const pathname = usePathname()
   const [servicesMenuOpen, setServicesMenuOpen] = useState(false)
+  const [sheetOpen, setSheetOpen] = useState(false)
   // Ref to hold the timer ID for hover intent
   const closeTimer = useRef<NodeJS.Timeout | null>(null)
 
@@ -46,6 +47,10 @@ export function SiteHeader() {
       return pathname === "/"
     }
     return pathname.startsWith(href)
+  }
+
+  const handleLinkClick = () => {
+    setSheetOpen(false)
   }
 
   return (
@@ -161,7 +166,7 @@ export function SiteHeader() {
                 <Button variant="default">{t("contact")}</Button>
               </Link>
 
-              <Sheet>
+              <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
                 <SheetTrigger asChild>
                   <Button className="lg:hidden" variant="ghost" aria-label="Open menu">
                     <Menu className="size-5" />
@@ -186,6 +191,7 @@ export function SiteHeader() {
                       <li>
                         <Link 
                           href="/" 
+                          onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
                             isActive("/") ? "bg-primary/10 text-primary font-medium" : ""
@@ -197,6 +203,7 @@ export function SiteHeader() {
                       <li>
                         <Link 
                           href="/services" 
+                          onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
                             isActive("/services") ? "bg-primary/10 text-primary font-medium" : ""
@@ -208,6 +215,7 @@ export function SiteHeader() {
                       <li>
                         <Link 
                           href="/industries" 
+                          onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
                             isActive("/industries") ? "bg-primary/10 text-primary font-medium" : ""
@@ -219,6 +227,7 @@ export function SiteHeader() {
                       <li>
                         <Link 
                           href="/insights" 
+                          onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
                             isActive("/insights") ? "bg-primary/10 text-primary font-medium" : ""
@@ -230,6 +239,7 @@ export function SiteHeader() {
                       <li>
                         <Link 
                           href="/careers" 
+                          onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
                             isActive("/careers") ? "bg-primary/10 text-primary font-medium" : ""
@@ -241,6 +251,7 @@ export function SiteHeader() {
                       <li>
                         <Link 
                           href="/about" 
+                          onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
                             isActive("/about") ? "bg-primary/10 text-primary font-medium" : ""
@@ -252,6 +263,7 @@ export function SiteHeader() {
                       <li>
                         <Link 
                           href="/contact" 
+                          onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
                             isActive("/contact") ? "bg-primary/10 text-primary font-medium" : ""
@@ -267,6 +279,7 @@ export function SiteHeader() {
                       <li>
                         <Link 
                           href="/privacy-policy" 
+                          onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
                             isActive("/privacy-policy") ? "bg-primary/10 text-primary font-medium" : ""
@@ -278,6 +291,7 @@ export function SiteHeader() {
                       <li>
                         <Link 
                           href="/terms" 
+                          onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
                             isActive("/terms") ? "bg-primary/10 text-primary font-medium" : ""
@@ -292,7 +306,7 @@ export function SiteHeader() {
                   <div className="mt-auto px-4 py-4">
                     <div className="flex items-center justify-between">
                       {/* <LanguageSwitcher /> */}
-                      <Link href="/contact">
+                      <Link href="/contact" onClick={handleLinkClick}>
                         <Button size="sm">{t("contact")}</Button>
                       </Link>
                     </div>
