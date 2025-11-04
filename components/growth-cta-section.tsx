@@ -39,7 +39,7 @@ export function GrowthCTASection() {
         </div>
 
         {/* Floating CTA Bar */}
-        <div className="absolute liquid-glass bottom-6 left-1/2 w-[90%] -translate-x-1/2 rounded-2xl bg-white/90 p-4 shadow-lg backdrop-blur-sm dark:bg-gray-800/90 md:p-6">
+        <div className="absolute glass bottom-6 left-1/2 w-[90%] -translate-x-1/2 rounded-2xl bg-white/90 p-4 shadow-lg backdrop-blur-sm dark:bg-gray-800/90 md:p-6">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <h4 className="text-center text-base font-semibold text-gray-800 dark:text-gray-200 md:text-left md:text-lg">
               {t('ctaPrompt')}

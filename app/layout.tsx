@@ -34,18 +34,18 @@ export const metadata: Metadata = {
   // Title & Description
   title: {
     default: 'Konneckin | Market Entry & Business Expansion Services', // More descriptive
-    template: '%s | Konneckin', 
+    template: '%s | Konneckin',
   },
   description: 'Konneckin simplifies your business expansion. We provide expert market entry services, including company registration, market research, payroll, and tax solutions.',
-  
+
   // SEO & Keywords
   keywords: [
-    'market entry services', 
-    'business expansion', 
-    'company registration', 
-    'consulting firm', 
-    'payroll management', 
-    'tax accounting', 
+    'market entry services',
+    'business expansion',
+    'company registration',
+    'consulting firm',
+    'payroll management',
+    'tax accounting',
     'market research'
   ],
 
@@ -53,11 +53,11 @@ export const metadata: Metadata = {
 
   creator: 'Konneckin',
   publisher: 'Konneckin',
-  
+
   // For Search Engine Crawlers - This allows indexing
   robots: {
     index: true,
-    follow: true, 
+    follow: true,
     googleBot: {
       index: true,
       follow: true,
@@ -66,10 +66,19 @@ export const metadata: Metadata = {
 
   // Favicons
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: '/favicon-16x16.png', // Fallback for some browsers
+    apple: '/apple-touch-icon.png', // For iOS devices
+    // Add any other specific icon sizes you generated, e.g.:
+    // other: [
+    //   { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#5bbad5' },
+    // ],
   },
+  manifest: '/site.webmanifest',
 
   // --- START: IMPROVED OPEN GRAPH & TWITTER ---
 
@@ -77,11 +86,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Konneckin | Market Entry & Business Expansion Services', // Consistent title
     description: 'Konneckin simplifies business expansion with expert services in market entry, company registration, payroll, and tax solutions.', // Consistent description
-    url: 'https://konneckin.com', 
+    url: 'https://konneckin.com',
     siteName: 'Konneckin',
     images: [
       {
-        url: '/og-image.png', 
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Konneckin - Market Entry & Business Expansion Services', // Descriptive alt text
@@ -96,9 +105,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Konneckin | Market Entry & Business Expansion Services', // Consistent title
     description: 'Konneckin simplifies business expansion with expert services in market entry, company registration, payroll, and tax solutions.', // Consistent description
-    site: '@konneckin', 
-    creator: '@konneckin', 
-    images: ['/og-image.png'], 
+    site: '@konneckin',
+    creator: '@konneckin',
+    images: ['/og-image.png'],
   },
 
   // --- END: IMPROVED OPEN GRAPH & TWITTER ---
