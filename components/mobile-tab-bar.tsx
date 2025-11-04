@@ -2,6 +2,7 @@
 import { Home, FileText, Layers, Phone } from "lucide-react"
 import { useI18n } from "./providers"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 const tabs = [
   { key: "home", labelKey: "home", icon: Home, href: "/" },
@@ -21,10 +22,10 @@ export function MobileTabBar() {
       <ul className="grid grid-cols-4">
         {tabs.map(({ key, labelKey, icon: Icon, href }) => (
           <li key={key}>
-            <a href={href} className="flex flex-col items-center justify-center gap-1 py-2 text-xs">
+            <Link href={href} className="flex flex-col items-center justify-center gap-1 py-2 text-xs">
               <Icon className="size-5" aria-hidden="true" />
               <span>{t(labelKey)}</span>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

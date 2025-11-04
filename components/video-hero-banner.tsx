@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useI18n } from "./providers"
 
@@ -11,29 +12,34 @@ export function VideoHeroBanner() {
       <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-muted-foreground md:text-base">
         {t("videoSubheadline")}
       </p>
-      <div className="mt-5 flex justify-center gap-3">
-        <a href="/contact">
-          <Button size="lg" className="md:size-auto p-2">
+      <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+        <Button asChild size="lg" className="min-h-[44px] px-6 py-3">
+          <Link href="/contact">
             {t("getInTouch")}
-          </Button>
-        </a>
-        <a href="/insights">
-          <Button size="lg" variant="outline" className="md:size-auto bg-transparent p-2">
+          </Link>
+        </Button>
+        <Button asChild size="lg" variant="outline" className="min-h-[44px] px-6 py-3 bg-transparent">
+          <Link href="/insights">
             {t("seeHowWeWork")}
-          </Button>
-        </a>
+          </Link>
+        </Button>
       </div>
 
       <div className="mt-6 overflow-hidden rounded-xl border bg-card shadow-sm md:mt-8">
         <video
           className="h-[220px] w-full object-cover md:h-[420px]"
-          // autoPlay
           controls
-          // loop
-          // muted
           playsInline
+          aria-describedby="video-description"
         >
           <source src="/konneckin-introduction-video.webm" type="video/webm" />
+          <track
+            kind="captions"
+            src="/captions/konneckin-introduction-en.vtt"
+            srcLang="en"
+            label="English"
+            default
+          />
           Your browser does not support the video tag.
         </video>
       </div>

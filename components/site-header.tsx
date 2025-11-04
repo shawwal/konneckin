@@ -49,8 +49,8 @@ export function SiteHeader() {
                 <Image
                   src="/konneckin-logo.png"
                   alt="Konneckin Logo"
-                  width={721}
-                  height={111}
+                  width={752}
+                  height={98}
                   className="block h-8 w-auto dark:hidden"
                   priority
                 />
@@ -58,8 +58,8 @@ export function SiteHeader() {
                 <Image
                   src="/konneckin-logo-white.png"
                   alt="Konneckin Logo"
-                  width={721}
-                  height={111}
+                  width={752}
+                  height={98}
                   className="hidden h-8 w-auto dark:block"
                   priority
                 />
