@@ -17,9 +17,11 @@ import {
 } from "@/components/ui/sheet"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export function SiteHeader() {
   const { t } = useI18n()
+  const pathname = usePathname()
   const [servicesMenuOpen, setServicesMenuOpen] = useState(false)
   // Ref to hold the timer ID for hover intent
   const closeTimer = useRef<NodeJS.Timeout | null>(null)
@@ -37,6 +39,13 @@ export function SiteHeader() {
     closeTimer.current = setTimeout(() => {
       setServicesMenuOpen(false)
     }, 200) // 200ms grace period
+  }
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/"
+    }
+    return pathname.startsWith(href)
   }
 
   return (
@@ -85,27 +94,57 @@ export function SiteHeader() {
                   onMouseEnter={handleServicesMouseEnter}
                   onMouseLeave={handleServicesMouseLeave}
                 >
-                  <Link href="/services" className="hover:underline">
+                  <Link 
+                    href="/services" 
+                    className={cn(
+                      "hover:underline transition-colors",
+                      isActive("/services") ? "text-primary font-medium" : ""
+                    )}
+                  >
                     {t("services")}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/industries" className="hover:underline">
+                  <Link 
+                    href="/industries" 
+                    className={cn(
+                      "hover:underline transition-colors",
+                      isActive("/industries") ? "text-primary font-medium" : ""
+                    )}
+                  >
                     {t("industries")}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/insights" className="hover:underline">
+                  <Link 
+                    href="/insights" 
+                    className={cn(
+                      "hover:underline transition-colors",
+                      isActive("/insights") ? "text-primary font-medium" : ""
+                    )}
+                  >
                     {t("insights")}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/careers" className="hover:underline">
+                  <Link 
+                    href="/careers" 
+                    className={cn(
+                      "hover:underline transition-colors",
+                      isActive("/careers") ? "text-primary font-medium" : ""
+                    )}
+                  >
                     {t("careers")}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="hover:underline">
+                  <Link 
+                    href="/about" 
+                    className={cn(
+                      "hover:underline transition-colors",
+                      isActive("/about") ? "text-primary font-medium" : ""
+                    )}
+                  >
                     {t("about")}
                   </Link>
                 </li>
@@ -118,9 +157,9 @@ export function SiteHeader() {
                 {/* <LanguageSwitcher /> */}
               </div>
               <ThemeToggle />
-              <a href="/contact" className="hidden lg:inline-flex">
+              <Link href="/contact" className="hidden lg:inline-flex">
                 <Button variant="default">{t("contact")}</Button>
-              </a>
+              </Link>
 
               <Sheet>
                 <SheetTrigger asChild>
@@ -144,19 +183,109 @@ export function SiteHeader() {
                   <nav className="px-4">
                     <div className="mb-3 text-xs font-medium uppercase text-muted-foreground">Main</div>
                     <ul className="space-y-2">
-                      <li><Link href="/" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("home")}</Link></li>
-                      <li><Link href="/services" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("services")}</Link></li>
-                      <li><Link href="/industries" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("industries")}</Link></li>
-                      <li><Link href="/insights" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("insights")}</Link></li>
-                      <li><Link href="/careers" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("careers")}</Link></li>
-                      <li><Link href="/about" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("about")}</Link></li>
-                      <li><Link href="/contact" className="block rounded-sm px-2 py-2 hover:bg-muted">{t("contact")}</Link></li>
+                      <li>
+                        <Link 
+                          href="/" 
+                          className={cn(
+                            "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
+                            isActive("/") ? "bg-primary/10 text-primary font-medium" : ""
+                          )}
+                        >
+                          {t("home")}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/services" 
+                          className={cn(
+                            "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
+                            isActive("/services") ? "bg-primary/10 text-primary font-medium" : ""
+                          )}
+                        >
+                          {t("services")}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/industries" 
+                          className={cn(
+                            "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
+                            isActive("/industries") ? "bg-primary/10 text-primary font-medium" : ""
+                          )}
+                        >
+                          {t("industries")}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/insights" 
+                          className={cn(
+                            "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
+                            isActive("/insights") ? "bg-primary/10 text-primary font-medium" : ""
+                          )}
+                        >
+                          {t("insights")}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/careers" 
+                          className={cn(
+                            "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
+                            isActive("/careers") ? "bg-primary/10 text-primary font-medium" : ""
+                          )}
+                        >
+                          {t("careers")}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/about" 
+                          className={cn(
+                            "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
+                            isActive("/about") ? "bg-primary/10 text-primary font-medium" : ""
+                          )}
+                        >
+                          {t("about")}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/contact" 
+                          className={cn(
+                            "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
+                            isActive("/contact") ? "bg-primary/10 text-primary font-medium" : ""
+                          )}
+                        >
+                          {t("contact")}
+                        </Link>
+                      </li>
                     </ul>
 
                     <div className="mt-6 mb-3 text-xs font-medium uppercase text-muted-foreground">Legal</div>
                     <ul className="space-y-2">
-                      <li><Link href="/privacy-policy" className="block rounded-sm px-2 py-2 hover:bg-muted">Privacy Policy</Link></li>
-                      <li><Link href="/terms" className="block rounded-sm px-2 py-2 hover:bg-muted">Terms of Use</Link></li>
+                      <li>
+                        <Link 
+                          href="/privacy-policy" 
+                          className={cn(
+                            "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
+                            isActive("/privacy-policy") ? "bg-primary/10 text-primary font-medium" : ""
+                          )}
+                        >
+                          Privacy Policy
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/terms" 
+                          className={cn(
+                            "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
+                            isActive("/terms") ? "bg-primary/10 text-primary font-medium" : ""
+                          )}
+                        >
+                          Terms of Use
+                        </Link>
+                      </li>
                     </ul>
                   </nav>
 
