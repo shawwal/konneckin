@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Business Matchmaking Services | Konneckin',
     description: 'Find the right partners, investors, and clients with Konneckin\'s expert matchmaking.',
-    url: 'https://www.konneckin.com/business-matchmaking',
+    url: '/business-matchmaking',
     images: [
       {
-        url: '/og-image.png',
+        url: '/open-graph/business-matchmaking.png',
         width: 1200,
         height: 630,
         alt: 'Business Matchmaking Services',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     title: 'Business Matchmaking Services | Konneckin',
     description: 'Find the right partners, investors, and clients with Konneckin\'s expert matchmaking.',
-    images: ['/og-image.png'],
+    images: ['/open-graph/business-matchmaking.png'],
   }
 }
 

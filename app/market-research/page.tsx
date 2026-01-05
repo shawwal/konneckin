@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Market Research & Analysis | Konneckin',
     description: 'Make data-driven decisions with our in-depth market research and analysis services.',
-    url: 'https.www.konneckin.com/market-research',
+    url: '/market-research',
     images: [
       {
-        url: '/og-image.png',
+        url: '/open-graph/market-research.png',
         width: 1200,
         height: 630,
         alt: 'Market Research & Analysis',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     title: 'Market Research & Analysis | Konneckin',
     description: 'Make data-driven decisions with our in-depth market research and analysis services.',
-    images: ['/og-image.png'],
+    images: ['/open-graph/market-research.png'],
   }
 }
 // Render the Client Component

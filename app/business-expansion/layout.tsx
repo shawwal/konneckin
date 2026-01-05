@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Business Expansion Services | Konneckin',
     description: 'Konneckin provides end-to-end business expansion services, from market entry to operational setup.',
-    url: 'https.www.konneckin.com/business-expansion',
+    url: '/business-expansion',
     images: [
       {
-        url: '/og-image.png',
+        url: '/open-graph/business-expansion.png',
         width: 1200,
         height: 630,
         alt: 'Business Expansion Services',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     title: 'Business Expansion Services | Konneckin',
     description: 'Konneckin provides end-to-end business expansion services, from market entry to operational setup.',
-    images: ['/og-image.png'],
+    images: ['/open-graph/business-expansion.png'],
   }
 }
 
