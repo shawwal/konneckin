@@ -67,11 +67,6 @@ export function SiteHeader() {
                   width={752}
                   height={98}
                   className="block h-8 w-auto dark:hidden"
-                  style={{
-                    width: 'auto',
-                    height: '2rem',
-                    aspectRatio: '752/98'
-                  }}
                   priority
                 />
                 {/* Dark Mode Logo */}
@@ -81,11 +76,6 @@ export function SiteHeader() {
                   width={752}
                   height={98}
                   className="hidden h-8 w-auto dark:block"
-                  style={{
-                    width: 'auto',
-                    height: '2rem',
-                    aspectRatio: '752/98'
-                  }}
                   priority
                 />
               </Link>
@@ -99,8 +89,8 @@ export function SiteHeader() {
                   onMouseEnter={handleServicesMouseEnter}
                   onMouseLeave={handleServicesMouseLeave}
                 >
-                  <Link 
-                    href="/services" 
+                  <Link
+                    href="/services"
                     className={cn(
                       "hover:underline transition-colors",
                       isActive("/services") ? "text-primary font-medium" : ""
@@ -110,8 +100,8 @@ export function SiteHeader() {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/industries" 
+                  <Link
+                    href="/industries"
                     className={cn(
                       "hover:underline transition-colors",
                       isActive("/industries") ? "text-primary font-medium" : ""
@@ -121,8 +111,8 @@ export function SiteHeader() {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/insights" 
+                  <Link
+                    href="/insights"
                     className={cn(
                       "hover:underline transition-colors",
                       isActive("/insights") ? "text-primary font-medium" : ""
@@ -132,8 +122,8 @@ export function SiteHeader() {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/careers" 
+                  <Link
+                    href="/careers"
                     className={cn(
                       "hover:underline transition-colors",
                       isActive("/careers") ? "text-primary font-medium" : ""
@@ -143,8 +133,8 @@ export function SiteHeader() {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/about" 
+                  <Link
+                    href="/about"
                     className={cn(
                       "hover:underline transition-colors",
                       isActive("/about") ? "text-primary font-medium" : ""
@@ -189,8 +179,8 @@ export function SiteHeader() {
                     <div className="mb-3 text-xs font-medium uppercase text-muted-foreground">Main</div>
                     <ul className="space-y-2">
                       <li>
-                        <Link 
-                          href="/" 
+                        <Link
+                          href="/"
                           onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
@@ -201,8 +191,8 @@ export function SiteHeader() {
                         </Link>
                       </li>
                       <li>
-                        <Link 
-                          href="/services" 
+                        <Link
+                          href="/services"
                           onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
@@ -213,8 +203,8 @@ export function SiteHeader() {
                         </Link>
                       </li>
                       <li>
-                        <Link 
-                          href="/industries" 
+                        <Link
+                          href="/industries"
                           onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
@@ -225,8 +215,8 @@ export function SiteHeader() {
                         </Link>
                       </li>
                       <li>
-                        <Link 
-                          href="/insights" 
+                        <Link
+                          href="/insights"
                           onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
@@ -237,8 +227,8 @@ export function SiteHeader() {
                         </Link>
                       </li>
                       <li>
-                        <Link 
-                          href="/careers" 
+                        <Link
+                          href="/careers"
                           onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
@@ -249,8 +239,8 @@ export function SiteHeader() {
                         </Link>
                       </li>
                       <li>
-                        <Link 
-                          href="/about" 
+                        <Link
+                          href="/about"
                           onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
@@ -261,8 +251,8 @@ export function SiteHeader() {
                         </Link>
                       </li>
                       <li>
-                        <Link 
-                          href="/contact" 
+                        <Link
+                          href="/contact"
                           onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
@@ -277,8 +267,8 @@ export function SiteHeader() {
                     <div className="mt-6 mb-3 text-xs font-medium uppercase text-muted-foreground">Legal</div>
                     <ul className="space-y-2">
                       <li>
-                        <Link 
-                          href="/privacy-policy" 
+                        <Link
+                          href="/privacy-policy"
                           onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",
@@ -289,8 +279,8 @@ export function SiteHeader() {
                         </Link>
                       </li>
                       <li>
-                        <Link 
-                          href="/terms" 
+                        <Link
+                          href="/terms"
                           onClick={handleLinkClick}
                           className={cn(
                             "block rounded-sm px-2 py-2 hover:bg-muted transition-colors",

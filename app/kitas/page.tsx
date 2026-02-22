@@ -164,6 +164,7 @@ export default function KitasPage() {
               <p className="text-muted-foreground">Konneckin operates as a corporate services advisory firm, not a standalone visa processor. This integration ensures your KITAS remains aligned with your business structure over time.</p>
             </div>
           </div>
+          
         </div>
       </section>
 
