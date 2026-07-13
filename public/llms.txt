@@ -1,0 +1,32 @@
+# Konneckin
+
+> Konneckin simplifies business expansion into Indonesia — offering expert market entry services including company registration, market research, licensing, payroll, tax, and compliance support for companies and individuals entering the Indonesian market.
+
+## Services
+- [Business Expansion](https://www.konneckin.com/business-expansion): Market entry into Indonesia via compliance, local insight, and strategic partnerships
+- [Company Registration](https://www.konneckin.com/company-registration): Company incorporation (PT PMA, etc.) guided by local legal experts
+- [Company Regulation](https://www.konneckin.com/company-regulation): Setting up a company in Indonesia the right way, from PT PMA to Representative Office
+- [Business Matchmaking](https://www.konneckin.com/business-matchmaking): Connecting clients with verified partners, investors, and customers
+- [Licensing](https://www.konneckin.com/licensing): Business licensing — NIB, Industrial License, Construction License (IUJK), Trade License
+- [Product Certification & Regulatory Compliance](https://www.konneckin.com/product-certification-regulatory-compliance): Regulatory guidance to get products to market faster
+- [Importer of Record](https://www.konneckin.com/importer-of-record): Customs compliance and import clearance without a local legal entity
+- [Market Research](https://www.konneckin.com/market-research): Data-driven insights on competitors, trends, and opportunities
+- [Payroll Management](https://www.konneckin.com/payroll-management): Accurate, confidential, compliant payroll processing in Indonesia
+- [Tax & Accounting Solutions](https://www.konneckin.com/tax-accounting-solutions): Tax compliance and financial optimization
+- [Recruitment Service](https://www.konneckin.com/recruitment-service): Executive search and specialist hiring in Indonesia
+- [Expatriate Support](https://www.konneckin.com/expatriate-support): Visas/KITAS/KITAP, relocation, and personal tax compliance for foreign talent
+- [KITAS Visa Services](https://www.konneckin.com/kitas): Investor, Working, Director/Commissioner, Dependent, and Second Home visas
+- [Post-Establishment Services](https://www.konneckin.com/post-establishment): Ongoing compliant support after company registration
+- [Industries](https://www.konneckin.com/industries): Sector expertise overview
+- [Industry Coverage](https://www.konneckin.com/industry-coverage): Healthcare, Financial/Strategic Investors, TMT, Consumer & Retail, Natural Resources
+
+## Company
+- [About](https://www.konneckin.com/about): Konneckin's mission, values, and team
+- [Services](https://www.konneckin.com/services): Full overview of Konneckin's service lineup
+- [Insights](https://www.konneckin.com/insights): Articles on Indonesia's economy, investment policy, and supply chains
+- [Careers](https://www.konneckin.com/careers): Current job openings at Konneckin
+- [Contact](https://www.konneckin.com/contact): Get in touch with Konneckin
+
+## Optional
+- [Privacy Policy](https://www.konneckin.com/privacy-policy): Privacy policy
+- [Terms](https://www.konneckin.com/terms): Terms of service

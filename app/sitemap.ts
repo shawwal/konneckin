@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/industries',
     '/industry-coverage',
     '/insights',
+    '/kitas',
     '/licensing',
     '/market-research',
     '/payroll-management',
