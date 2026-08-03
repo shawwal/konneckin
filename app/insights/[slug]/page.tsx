@@ -82,11 +82,30 @@ export default function InsightArticlePage({ params }: { params: { slug: string 
             {article.sections.map((section) => (
               <section key={section.heading} className="space-y-4">
                 <h2 className="font-serif text-2xl font-semibold">{section.heading}</h2>
-                {section.paragraphs.map((paragraph) => (
+                {section.paragraphs?.map((paragraph) => (
                   <p key={paragraph} className="text-base leading-8 text-muted-foreground">
                     {paragraph}
                   </p>
                 ))}
+                {section.bullets?.length ? (
+                  <ul className="grid gap-3 pl-5 text-base leading-8 text-muted-foreground sm:grid-cols-1">
+                    {section.bullets.map((bullet) => (
+                      <li key={bullet} className="list-disc">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                {section.faqs?.length ? (
+                  <div className="space-y-4">
+                    {section.faqs.map((faq) => (
+                      <div key={faq.question} className="rounded-2xl border border-border bg-muted p-5">
+                        <p className="text-base font-semibold">{faq.question}</p>
+                        <p className="mt-2 text-base leading-8 text-muted-foreground">{faq.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
               </section>
             ))}
 
