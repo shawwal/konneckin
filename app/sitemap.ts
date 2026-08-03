@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { insightsArticles } from '@/data/insightsArticles'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.konneckin.com'
@@ -40,20 +41,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  // If you have dynamic pages (e.g., /insights/[slug]),
-  // you would fetch them from your CMS or database here and add them.
+  const dynamicUrls = insightsArticles.map((article) => ({
+    url: `${baseUrl}/insights/${article.slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'weekly' as 'weekly',
+    priority: 0.7,
+  }));
 
-  // For example:
-  // const insightPosts = await fetchAllInsightSlugs();
-  // const dynamicUrls = insightPosts.map(post => ({
-  //   url: `${baseUrl}/insights/${post.slug}`,
-  //   lastModified: post.updatedAt,
-  //   changeFrequency: 'daily',
-  //   priority: 0.7
-  // }));
-  
   return [
     ...staticUrls,
-    // ...dynamicUrls // Add your dynamic URLs here
+    ...dynamicUrls,
   ];
 }

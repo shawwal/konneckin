@@ -1,95 +1,76 @@
+import Image from "next/image"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Layout } from "@/components/layout"
-import { ArrowRight, Mail } from "lucide-react"
-import Image from "next/image"
-
-// Placeholder data for articles using an online service
-const featuredInsights = [
-  {
-    category: "Market Analysis",
-    title: "Navigating Indonesia's Digital Economy in 2026 and Beyond",
-    excerpt: "A deep dive into the key trends, opportunities, and challenges shaping the nation's rapidly evolving digital landscape.",
-    image: "https://placehold.co/800x600/104374/FFFFFF?text=Market+Analysis",
-    link: "#",
-  },
-  {
-    category: "Regulatory Update",
-    title: "Understanding the New Foreign Investment Policies: What You Need to Know",
-    excerpt: "We break down the latest government regulations impacting foreign-owned companies and provide actionable advice for compliance.",
-    image: "https://placehold.co/800x600/E5E7EB/1F2937?text=Regulatory+Update",
-    link: "#",
-  },
-  {
-    category: "Operational Excellence",
-    title: "Three Strategies for Building a Resilient Supply Chain in Southeast Asia",
-    excerpt: "Learn how leading companies are mitigating risks and enhancing efficiency in their supply chain operations across the region.",
-    image: "https://placehold.co/800x600/082C4A/FFFFFF?text=Operational+Excellence",
-    link: "#",
-  },
-]
+import { Mail } from "lucide-react"
+import { insightsArticles } from "@/data/insightsArticles"
 
 export default function InsightsPage() {
   return (
     <Layout>
       <main>
-        {/* Hero Section */}
         <section className="mx-auto container px-4 py-16 text-center md:py-24">
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl">
-            Stay Ahead of the Curve
+          <p className="text-sm uppercase tracking-[0.3em] text-primary">Insights & Analysis</p>
+          <h1 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl">
+            Stay Ahead of Indonesia’s Market Trends
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
-            Explore our latest thinking on the market dynamics, policy shifts, and operational strategies that matter most for your business in Indonesia.
+            Explore our latest thinking on investment strategy, regulatory updates, and operational best practices for business success in Indonesia.
           </p>
         </section>
 
-        {/* Featured Insights Grid */}
         <section className="mx-auto container px-4 pb-16 md:pb-24">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {featuredInsights.map((insight) => (
-              <div key={insight.title} className="group flex flex-col overflow-hidden rounded-lg border bg-card">
-                <a href={insight.link} className="block overflow-hidden">
+            {insightsArticles.map((article) => (
+              <article
+                key={article.slug}
+                className="group flex flex-col overflow-hidden rounded-3xl border bg-card shadow-sm transition-shadow duration-200 hover:shadow-lg"
+              >
+                <Link href={`/insights/${article.slug}`} className="block overflow-hidden">
                   <Image
-                    src={insight.image}
-                    alt={`Image for ${insight.title}`}
+                    src={article.image}
+                    alt={article.title}
                     width={800}
                     height={600}
-                    className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="h-56 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    unoptimized
                   />
-                </a>
+                </Link>
                 <div className="flex flex-grow flex-col p-6">
-                  <p className="text-sm font-medium text-primary">{insight.category}</p>
-                  <h3 className="mt-2 font-serif text-xl font-semibold">
-                    <a href={insight.link} className="hover:underline">{insight.title}</a>
-                  </h3>
-                  <p className="mt-2 flex-grow text-muted-foreground">{insight.excerpt}</p>
-                  <div className="mt-4">
-                    <Button variant="link" asChild className="p-0">
-                      <a href={insight.link}>
-                        <span>Read More</span>
-                        <ArrowRight className="ml-2 size-4" />
-                      </a>
+                  <div className="flex items-center justify-between text-sm text-muted-foreground">
+                    <span className="font-medium text-primary">{article.category}</span>
+                    <span>{article.readingTime}</span>
+                  </div>
+                  <h2 className="mt-4 font-serif text-2xl font-semibold leading-tight">
+                    <Link href={`/insights/${article.slug}`} className="hover:underline">
+                      {article.title}
+                    </Link>
+                  </h2>
+                  <p className="mt-3 flex-grow text-muted-foreground">{article.excerpt}</p>
+                  <div className="mt-6">
+                    <Button variant="outline" asChild>
+                      <Link href={`/insights/${article.slug}`}>Read Article</Link>
                     </Button>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </section>
 
-        {/* Newsletter CTA Section */}
         <section className="bg-muted py-16 md:py-24">
           <div className="mx-auto container px-4">
-            <div className="rounded-lg bg-card p-8 text-center shadow-sm md:p-12">
-              <Mail className="mx-auto size-12 text-primary" />
-              <h2 className="mt-4 font-serif text-3xl md:text-4xl">Get Our Insights Directly</h2>
-              <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
-                Subscribe to our newsletter to receive our latest analysis and updates directly in your inbox.
-              </p>
-              <div className="mt-8">
+            <div className="rounded-3xl bg-card p-8 shadow-sm md:p-12">
+              <div className="flex flex-col items-center text-center gap-4">
+                <Mail className="size-12 text-primary" />
+                <div>
+                  <h2 className="font-serif text-3xl md:text-4xl">Get Our Insights Directly</h2>
+                  <p className="mt-3 max-w-2xl text-muted-foreground">
+                    Subscribe to our newsletter to receive our latest analysis, market updates, and guidance for Indonesia’s evolving business landscape.
+                  </p>
+                </div>
                 <Button size="lg" asChild>
-                  <a href="#">
-                    <span>Subscribe Now</span>
-                  </a>
+                  <Link href="/contact">Subscribe Now</Link>
                 </Button>
               </div>
             </div>
